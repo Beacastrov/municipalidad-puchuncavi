@@ -535,6 +535,10 @@ function sincronizarMenuPrincipal() {
         {
           nombre: "Trámites Dirección de Obras",
           url: ruta("paginas/direccion-obras.html")
+        },
+        {
+          nombre: "Empleo y OMIL",
+          url: ruta("paginas/empleo-omil.html")
         }
       ]
     },
@@ -663,7 +667,16 @@ function sincronizarMenuPrincipal() {
       nombre: "Contacto",
       url: ruta("paginas/contacto.html"),
       seccion: "contacto",
-      hijos: []
+      hijos: [
+        {
+          nombre: "Atención ciudadana",
+          url: ruta("paginas/contacto.html")
+        },
+        {
+          nombre: "Seguridad y emergencias",
+          url: ruta("paginas/seguridad-emergencias.html")
+        }
+      ]
     }
   ];
 
@@ -682,21 +695,20 @@ function sincronizarMenuPrincipal() {
       paginaActual.endsWith("/tramites.html") ||
       paginaActual.endsWith("/pagos-municipales.html") ||
       paginaActual.endsWith("/permiso-circulacion.html") ||
-      paginaActual.endsWith("/direccion-obras.html")
+      paginaActual.endsWith("/direccion-obras.html") ||
+      paginaActual.endsWith("/empleo-omil.html")
     ) {
       return "tramites";
     }
 
     if (
-      paginaActual.endsWith("/desarrollo-comunitario.html") ||
-      paginaActual.endsWith("/empleo-omil.html")
+      paginaActual.endsWith("/desarrollo-comunitario.html")
     ) {
       return "comunidad";
     }
 
     if (
-      paginaActual.endsWith("/departamentos.html") ||
-      paginaActual.endsWith("/seguridad-emergencias.html")
+      paginaActual.endsWith("/departamentos.html")
     ) {
       return "departamentos";
     }
@@ -705,7 +717,8 @@ function sincronizarMenuPrincipal() {
       return "turismo";
     }
 
-    if (paginaActual.endsWith("/contacto.html")) {
+    if (paginaActual.endsWith("/contacto.html") ||
+        paginaActual.endsWith("/seguridad-emergencias.html")) {
       return "contacto";
     }
 
