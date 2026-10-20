@@ -1,0 +1,869 @@
+
+<!DOCTYPE html>
+<html lang="es-CL">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta
+    name="description"
+    content="Ofertas laborales, capacitaciones y orientación de la Oficina Municipal de Intermediación Laboral de Puchuncaví."
+  >
+  <meta name="theme-color" content="#163F55">
+
+  <title>Empleo y OMIL | Municipalidad de Puchuncaví</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet"
+  >
+
+  <link rel="stylesheet" href="../css/estilos.css">
+  <script src="../js/main.js" defer></script>
+</head>
+
+<body class="pagina-interior pagina-empleo">
+
+  <a class="saltar-contenido" href="#contenido-principal">
+    Saltar al contenido principal
+  </a>
+
+  <!-- CABECERA INSTITUCIONAL -->
+
+  <header class="cabecera">
+
+    <div class="barra-superior barra-superior--institucional">
+      <div class="contenedor barra-superior__contenido">
+
+        <div class="barra-superior__redes">
+          <span class="barra-superior__etiqueta">SÍGUENOS</span>
+
+          <nav class="redes-sociales" aria-label="Redes sociales municipales">
+            <a
+              class="redes-sociales__enlace"
+              href="https://www.facebook.com/MunicipalidadPuchuncavi"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Facebook municipal, abre otra pestaña"
+              title="Facebook municipal"
+            >
+              <span aria-hidden="true">f</span>
+            </a>
+
+            <a
+              class="redes-sociales__enlace redes-sociales__enlace--youtube"
+              href="https://www.youtube.com/channel/UCqsq_ICqY2jT9HgJ0vWUYuw"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="YouTube municipal, abre otra pestaña"
+              title="YouTube municipal"
+            >
+              <span aria-hidden="true">▶</span>
+            </a>
+          </nav>
+        </div>
+
+        <nav
+          class="enlaces-institucionales"
+          aria-label="Portales institucionales"
+        >
+          <a
+            href="https://munipuchuncavi.cl/transparencianew2.php"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Transparencia municipal
+            <span aria-hidden="true">↗</span>
+          </a>
+
+          <a
+            href="https://www.leylobby.gob.cl/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Ley del Lobby
+            <span aria-hidden="true">↗</span>
+          </a>
+        </nav>
+
+        <div
+          class="herramientas-accesibilidad"
+          role="group"
+          aria-label="Herramientas de accesibilidad"
+        >
+          <button
+            class="herramienta"
+            type="button"
+            data-accion="reducir-texto"
+            aria-label="Reducir tamaño del texto"
+          >A−</button>
+
+          <button
+            class="herramienta"
+            type="button"
+            data-accion="aumentar-texto"
+            aria-label="Aumentar tamaño del texto"
+          >A+</button>
+
+          <button
+            class="herramienta"
+            type="button"
+            data-accion="alternar-contraste"
+            aria-pressed="false"
+          >Alto contraste</button>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="franja-identidad" aria-hidden="true">
+      <span class="franja-identidad__verde"></span>
+      <span class="franja-identidad__arena"></span>
+      <span class="franja-identidad__celeste"></span>
+    </div>
+
+    <div class="contenedor cabecera__principal">
+
+      <a
+        class="identidad"
+        href="../index.html"
+        aria-label="Municipalidad de Puchuncaví, volver al inicio"
+      >
+        <img
+          class="identidad__logo"
+          src="../assets/imagenes/identidad/logo-puchuncavi.jpg"
+          alt=""
+          width="400"
+          height="400"
+        >
+
+        <span class="identidad__texto">
+          <span class="identidad__superior">
+            Ilustre Municipalidad de
+          </span>
+          <span class="identidad__nombre">
+            Puchuncaví
+          </span>
+          <span class="identidad__descripcion">
+            Donde el campo se junta con el mar
+          </span>
+        </span>
+      </a>
+
+      <div class="cabecera__acciones">
+        <a
+          class="cabecera__contacto boton boton--secundario"
+          href="contacto.html"
+        >
+          Atención ciudadana
+          <span aria-hidden="true">↗</span>
+        </a>
+
+        <button
+          class="boton-menu"
+          type="button"
+          aria-controls="menu-principal"
+          aria-expanded="false"
+          aria-label="Abrir menú de navegación"
+        >
+          <span class="boton-menu__linea"></span>
+          <span class="boton-menu__linea"></span>
+          <span class="boton-menu__linea"></span>
+        </button>
+      </div>
+
+    </div>
+
+    <nav
+      class="navegacion"
+      id="menu-principal"
+      aria-label="Navegación principal"
+    >
+      <div class="contenedor">
+        <ul class="navegacion__lista">
+
+          <li>
+            <a class="navegacion__enlace" href="../index.html">
+              Inicio
+            </a>
+          </li>
+
+          <li>
+            <a class="navegacion__enlace" href="tramites.html">
+              Trámites y servicios
+            </a>
+          </li>
+
+          <li>
+            <a class="navegacion__enlace" href="desarrollo-comunitario.html">
+              Comunidad
+            </a>
+          </li>
+
+          <li>
+            <a class="navegacion__enlace" href="seguridad-emergencias.html">
+              Seguridad
+            </a>
+          </li>
+
+          <li>
+            <a class="navegacion__enlace" href="noticias.html">
+              Noticias
+            </a>
+          </li>
+
+          <li>
+            <a class="navegacion__enlace" href="contacto.html">
+              Contacto
+            </a>
+          </li>
+
+        </ul>
+      </div>
+    </nav>
+
+  </header>
+
+  <!-- CONTENIDO PRINCIPAL -->
+
+  <main id="contenido-principal">
+
+    <!-- PORTADA -->
+
+    <section
+      class="interior-hero interior-hero--empleo"
+      aria-labelledby="titulo-empleo"
+    >
+      <div class="contenedor">
+
+        <nav class="migas" aria-label="Ruta de navegación">
+          <ol>
+            <li><a href="../index.html">Inicio</a></li>
+            <li aria-current="page">Empleo y OMIL</li>
+          </ol>
+        </nav>
+
+        <div class="interior-hero__contenido">
+
+          <div class="interior-hero__texto">
+            <p class="etiqueta etiqueta--clara">
+              Trabajo y oportunidades
+            </p>
+
+            <h1 id="titulo-empleo">
+              Empleo y
+              <span>OMIL</span>
+            </h1>
+
+            <p>
+              Encuentra ofertas laborales publicadas
+              por la municipalidad, orientación
+              para postular y servicios de
+              intermediación laboral.
+            </p>
+          </div>
+
+          <div class="interior-hero__detalle" aria-hidden="true">
+            <span class="interior-hero__numero">07</span>
+            <span class="interior-hero__detalle-texto">
+              Desarrollo laboral
+            </span>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- INTRODUCCIÓN -->
+
+    <section
+      class="seccion seccion--introduccion"
+      aria-labelledby="titulo-omil"
+    >
+      <div class="contenedor">
+
+        <div class="introduccion-interior">
+
+          <div>
+            <p class="etiqueta etiqueta--verde">
+              Oficina Municipal de Intermediación Laboral
+            </p>
+
+            <h2 id="titulo-omil">
+              Un espacio para conectar personas y oportunidades
+            </h2>
+
+            <p>
+              La OMIL orienta a personas que buscan trabajo,
+              apoya procesos de vinculación laboral
+              y entrega información sobre
+              capacitaciones y servicios de empleo.
+            </p>
+          </div>
+
+          <a
+            class="boton boton--secundario"
+            href="#contacto-omil"
+          >
+            Contactar a OMIL
+            <span aria-hidden="true">↓</span>
+          </a>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- LISTADO DE OFERTAS REALES -->
+
+    <section
+      class="seccion seccion--categorias"
+      aria-labelledby="titulo-ofertas"
+    >
+      <div class="contenedor">
+
+        <div class="seccion__encabezado">
+          <div>
+            <p class="etiqueta etiqueta--verde">
+              Publicaciones municipales
+            </p>
+
+            <h2 id="titulo-ofertas">
+              Ofertas laborales
+            </h2>
+
+            <p class="seccion__descripcion">
+              Selección de ofertas publicadas
+              en el portal municipal de 2026.
+              Consulta la fuente oficial para
+              comprobar su disponibilidad actual.
+            </p>
+          </div>
+        </div>
+
+        <!--
+          Cada oferta mantiene la misma estructura:
+          cargo, empresa, localidad, fecha y enlace.
+          El listado es una selección de publicaciones,
+          no una consulta de vacantes en tiempo real.
+        -->
+
+        <div class="cuadricula cuadricula--dos">
+
+          <article class="categoria-tramite categoria-tramite--verde">
+            <div class="categoria-tramite__encabezado">
+              <span class="categoria-tramite__numero" aria-hidden="true">
+                01
+              </span>
+              <span class="categoria-tramite__tipo">
+                Oferta publicada
+              </span>
+            </div>
+
+            <h3>Operarios Crew</h3>
+
+            <p>
+              <strong>Empresa:</strong> McDonald's
+              <br>
+              <strong>Localidad:</strong> Puchuncaví
+              <br>
+              <strong>Publicación:</strong>
+              <time datetime="2026-10-13">13 de octubre de 2026</time>
+            </p>
+
+            <ul class="categoria-tramite__enlaces">
+              <li>
+                <a
+                  href="https://www.munipuchuncavi.cl/ofertasLaborales2026.php"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Consultar publicación original
+                  <span aria-hidden="true">↗</span>
+                </a>
+              </li>
+            </ul>
+          </article>
+
+          <article class="categoria-tramite categoria-tramite--arena">
+            <div class="categoria-tramite__encabezado">
+              <span class="categoria-tramite__numero" aria-hidden="true">
+                02
+              </span>
+              <span class="categoria-tramite__tipo">
+                Oferta publicada
+              </span>
+            </div>
+
+            <h3>Vendedor Frutas y Verduras</h3>
+
+            <p>
+              <strong>Empresa:</strong> Frutas y Verduras JYA
+              <br>
+              <strong>Localidad:</strong> Puchuncaví
+              <br>
+              <strong>Publicación:</strong>
+              <time datetime="2026-10-13">13 de octubre de 2026</time>
+            </p>
+
+            <ul class="categoria-tramite__enlaces">
+              <li>
+                <a
+                  href="https://www.munipuchuncavi.cl/ofertasLaborales2026.php"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Consultar publicación original
+                  <span aria-hidden="true">↗</span>
+                </a>
+              </li>
+            </ul>
+          </article>
+
+          <article class="categoria-tramite categoria-tramite--azul">
+            <div class="categoria-tramite__encabezado">
+              <span class="categoria-tramite__numero" aria-hidden="true">
+                03
+              </span>
+              <span class="categoria-tramite__tipo">
+                Oferta publicada
+              </span>
+            </div>
+
+            <h3>Trazador para Obra</h3>
+
+            <p>
+              <strong>Empresa:</strong> Constructora
+              <br>
+              <strong>Localidad:</strong> Puchuncaví
+              <br>
+              <strong>Publicación:</strong>
+              <time datetime="2026-10-13">13 de octubre de 2026</time>
+            </p>
+
+            <ul class="categoria-tramite__enlaces">
+              <li>
+                <a
+                  href="https://www.munipuchuncavi.cl/ofertasLaborales2026.php"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Consultar publicación original
+                  <span aria-hidden="true">↗</span>
+                </a>
+              </li>
+            </ul>
+          </article>
+
+          <article class="categoria-tramite categoria-tramite--celeste">
+            <div class="categoria-tramite__encabezado">
+              <span class="categoria-tramite__numero" aria-hidden="true">
+                04
+              </span>
+              <span class="categoria-tramite__tipo">
+                Oferta publicada
+              </span>
+            </div>
+
+            <h3>Técnico en Prevención de Riesgos</h3>
+
+            <p>
+              <strong>Empresa:</strong> Constructora
+              <br>
+              <strong>Localidad:</strong> Puchuncaví
+              <br>
+              <strong>Publicación:</strong>
+              <time datetime="2026-10-09">9 de octubre de 2026</time>
+            </p>
+
+            <ul class="categoria-tramite__enlaces">
+              <li>
+                <a
+                  href="https://www.munipuchuncavi.cl/ofertasLaborales2026.php"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Consultar publicación original
+                  <span aria-hidden="true">↗</span>
+                </a>
+              </li>
+            </ul>
+          </article>
+
+        </div>
+
+        <div class="bloque-orientacion bloque-orientacion--separado">
+          <div class="bloque-orientacion__texto">
+            <p class="etiqueta etiqueta--clara">
+              Fuente oficial
+            </p>
+
+            <h2>
+              Revisa todas las publicaciones
+            </h2>
+
+            <p>
+              El listado municipal contiene más ofertas
+              y antecedentes. Su disponibilidad puede cambiar
+              después de la fecha de publicación.
+            </p>
+          </div>
+
+          <a
+            class="boton boton--claro"
+            href="https://www.munipuchuncavi.cl/ofertasLaborales2026.php"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Ver ofertas oficiales
+            <span aria-hidden="true">↗</span>
+          </a>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- SERVICIOS DE LA OFICINA OMIL -->
+
+    <section
+      class="seccion seccion--tramites-destacados"
+      aria-labelledby="titulo-servicios-omil"
+    >
+      <div class="contenedor">
+
+        <div class="seccion__encabezado">
+          <div>
+            <p class="etiqueta etiqueta--azul">
+              Orientación laboral
+            </p>
+
+            <h2 id="titulo-servicios-omil">
+              ¿En qué puede ayudarte OMIL?
+            </h2>
+
+            <p class="seccion__descripcion">
+              Servicios y áreas de atención descritos
+              por la Oficina Municipal de Intermediación Laboral.
+            </p>
+          </div>
+        </div>
+
+        <div class="cuadricula cuadricula--tres">
+
+          <article class="tarjeta-servicio">
+            <span
+              class="tarjeta-servicio__icono tarjeta-servicio__icono--verde"
+              aria-hidden="true"
+            >01</span>
+
+            <h3>Vinculación laboral</h3>
+            <p>
+              Orientación para la búsqueda de empleo,
+              recepción de antecedentes y conexión
+              con oportunidades laborales.
+            </p>
+
+            <a href="#contacto-omil">
+              Consultar a OMIL
+              <span aria-hidden="true">→</span>
+            </a>
+          </article>
+
+          <article class="tarjeta-servicio">
+            <span
+              class="tarjeta-servicio__icono tarjeta-servicio__icono--arena"
+              aria-hidden="true"
+            >02</span>
+
+            <h3>Capacitaciones</h3>
+            <p>
+              Información y orientación para participar
+              en cursos y actividades de formación
+              laboral difundidos por la oficina.
+            </p>
+
+            <a
+              href="https://www.munipuchuncavi.cl/ofertas.php"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Ver información oficial
+              <span aria-hidden="true">↗</span>
+            </a>
+          </article>
+
+          <article class="tarjeta-servicio">
+            <span
+              class="tarjeta-servicio__icono tarjeta-servicio__icono--azul"
+              aria-hidden="true"
+            >03</span>
+
+            <h3>Orientación para postular</h3>
+            <p>
+              Consulta las alternativas disponibles
+              para presentar antecedentes y recibir
+              orientación en la búsqueda laboral.
+            </p>
+
+            <a href="#como-postular">
+              Conocer las opciones
+              <span aria-hidden="true">↓</span>
+            </a>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- POSTULACIONES -->
+
+    <section
+      class="seccion seccion--tramites"
+      id="como-postular"
+      aria-labelledby="titulo-postular"
+    >
+      <div class="contenedor">
+
+        <div class="seccion__encabezado">
+          <div>
+            <p class="etiqueta etiqueta--verde">
+              Guía de atención
+            </p>
+
+            <h2 id="titulo-postular">
+              ¿Cómo consultar o postular?
+            </h2>
+
+            <p class="seccion__descripcion">
+              La municipalidad informa alternativas
+              de atención digital y presencial.
+            </p>
+          </div>
+        </div>
+
+        <div class="cuadricula cuadricula--dos">
+
+          <article class="categoria-tramite categoria-tramite--verde">
+            <div class="categoria-tramite__encabezado">
+              <span class="categoria-tramite__numero" aria-hidden="true">
+                01
+              </span>
+              <span class="categoria-tramite__tipo">
+                Canal digital
+              </span>
+            </div>
+
+            <h3>Formulario de postulación</h3>
+
+            <p>
+              La página oficial de OMIL publica
+              un formulario externo para presentar
+              postulaciones. Revisa las instrucciones
+              de la municipalidad antes de enviar
+              tus datos personales.
+            </p>
+
+            <ul class="categoria-tramite__enlaces">
+              <li>
+                <a
+                  href="https://forms.gle/nvrRvSuUmkgK8mAd7"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Abrir formulario indicado por OMIL
+                  <span aria-hidden="true">↗</span>
+                </a>
+              </li>
+            </ul>
+          </article>
+
+          <article class="categoria-tramite categoria-tramite--arena">
+            <div class="categoria-tramite__encabezado">
+              <span class="categoria-tramite__numero" aria-hidden="true">
+                02
+              </span>
+              <span class="categoria-tramite__tipo">
+                Canal presencial
+              </span>
+            </div>
+
+            <h3>Atención en oficinas municipales</h3>
+
+            <p>
+              La página municipal indica atención
+              en la Municipalidad de Puchuncaví
+              y en la Delegación Municipal
+              de Las Ventanas.
+            </p>
+
+            <p>
+              <strong>Horario publicado:</strong>
+              lunes a viernes, de 08:30 a 13:30 horas.
+            </p>
+
+            <ul class="categoria-tramite__enlaces">
+              <li>
+                <a href="#contacto-omil">
+                  Ver datos de contacto
+                  <span aria-hidden="true">↓</span>
+                </a>
+              </li>
+            </ul>
+          </article>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- CONTACTO ESPECÍFICO OMIL -->
+
+    <section
+      class="seccion seccion--introduccion"
+      id="contacto-omil"
+      aria-labelledby="titulo-contacto-omil"
+    >
+      <div class="contenedor">
+
+        <div class="introduccion-interior">
+
+          <div>
+            <p class="etiqueta etiqueta--verde">
+              Contacto oficial
+            </p>
+
+            <h2 id="titulo-contacto-omil">
+              Oficina Municipal de Intermediación Laboral
+            </h2>
+
+            <p>
+              <strong>Teléfono:</strong>
+              <a href="tel:+56322139625">
+                32 2139625
+              </a>
+            </p>
+
+            <p>
+              <strong>Correo electrónico:</strong>
+              <a href="mailto:omil_puchuncavi@munipuchuncavi.cl">
+                omil_puchuncavi@munipuchuncavi.cl
+              </a>
+            </p>
+
+            <p>
+              <strong>Atención presencial publicada:</strong>
+              lunes a viernes, de 08:30 a 13:30 horas.
+              Confirma el horario antes de asistir.
+            </p>
+          </div>
+
+          <a
+            class="boton boton--secundario"
+            href="https://www.munipuchuncavi.cl/omil.php"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Consultar OMIL oficial
+            <span aria-hidden="true">↗</span>
+          </a>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- OTRAS SECCIONES -->
+
+    <section
+      class="seccion seccion--orientacion"
+      aria-labelledby="titulo-cierre"
+    >
+      <div class="contenedor">
+
+        <div class="bloque-orientacion">
+
+          <div class="bloque-orientacion__texto">
+            <p class="etiqueta etiqueta--clara">
+              Más orientación
+            </p>
+
+            <h2 id="titulo-cierre">
+              Encuentra otros servicios municipales.
+            </h2>
+
+            <p>
+              Consulta las áreas de atención disponibles
+              para habitantes y organizaciones
+              de la comuna.
+            </p>
+          </div>
+
+          <a
+            class="boton boton--claro"
+            href="desarrollo-comunitario.html"
+          >
+            Ver desarrollo comunitario
+            <span aria-hidden="true">→</span>
+          </a>
+
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- PIE DE PÁGINA -->
+
+  <footer class="pie-pagina">
+
+    <div class="contenedor pie-pagina__contenido">
+
+      <div class="pie-pagina__identidad">
+        <h2>Municipalidad de Puchuncaví</h2>
+        <p>Donde el campo se junta con el mar.</p>
+        <p>
+          Portal de información y orientación
+          para la comunidad.
+        </p>
+      </div>
+
+      <div class="pie-pagina__enlaces">
+        <h2>Acceso rápido</h2>
+        <ul>
+          <li><a href="../index.html">Inicio</a></li>
+          <li><a href="tramites.html">Trámites y servicios</a></li>
+          <li><a href="desarrollo-comunitario.html">Comunidad</a></li>
+          <li><a href="noticias.html">Noticias</a></li>
+          <li><a href="contacto.html">Contacto</a></li>
+        </ul>
+      </div>
+
+      <div class="pie-pagina__atencion">
+        <h2>Orientación ciudadana</h2>
+        <p>
+          Accede a los canales de atención
+          de la Municipalidad de Puchuncaví.
+        </p>
+        <a href="contacto.html">
+          Consultar atención →
+        </a>
+      </div>
+
+    </div>
+
+    <div class="pie-pagina__inferior">
+      <div class="contenedor">
+        <p>
+          Proyecto académico de rediseño web.
+          Beatriz Castro y Sofía Gomara · 2026.
+        </p>
+      </div>
+    </div>
+
+  </footer>
+
+</body>
+</html>

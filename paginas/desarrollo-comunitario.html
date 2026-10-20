@@ -1,0 +1,950 @@
+
+<!DOCTYPE html>
+<html lang="es-CL">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta
+    name="description"
+    content="Información comunitaria, orientación social, participación ciudadana y servicios de la Municipalidad de Puchuncaví."
+  >
+
+  <meta name="theme-color" content="#163f55">
+
+  <title>Comunidad | Municipalidad de Puchuncaví</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet"
+  >
+
+  <link rel="stylesheet" href="../css/estilos.css">
+  <script src="../js/main.js" defer></script>
+
+
+</head>
+
+<body class="pagina-interior pagina-comunidad">
+
+  <a class="saltar-contenido" href="#contenido-principal">
+    Saltar al contenido principal
+  </a>
+
+  <!-- =========================================
+       CABECERA INSTITUCIONAL
+  ========================================= -->
+
+  <header class="cabecera">
+
+    <!-- BARRA SUPERIOR -->
+
+    <div class="barra-superior barra-superior--institucional">
+
+      <div class="contenedor barra-superior__contenido">
+
+        <div class="barra-superior__redes">
+
+          <span class="barra-superior__etiqueta">
+            SÍGUENOS
+          </span>
+
+          <nav
+            class="redes-sociales"
+            aria-label="Redes sociales municipales"
+          >
+
+            <a
+              class="redes-sociales__enlace"
+              href="https://www.facebook.com/MunicipalidadPuchuncavi"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Facebook municipal"
+            >
+              f
+            </a>
+
+            <a
+              class="redes-sociales__enlace redes-sociales__enlace--youtube"
+              href="https://www.youtube.com/channel/UCqsq_ICqY2jT9HgJ0vWUYuw"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="YouTube municipal"
+            >
+              ▶
+            </a>
+
+          </nav>
+
+        </div>
+
+        <!-- ACCESOS INSTITUCIONALES DESDE MAIN.JS -->
+
+        <nav
+          class="enlaces-institucionales"
+          aria-label="Accesos institucionales"
+        ></nav>
+
+        <!-- ACCESIBILIDAD -->
+
+        <div
+          class="herramientas-accesibilidad"
+          role="group"
+          aria-label="Herramientas de accesibilidad"
+        >
+
+          <button
+            class="herramienta"
+            type="button"
+            data-accion="reducir-texto"
+            aria-label="Reducir tamaño del texto"
+          >
+            A−
+          </button>
+
+          <button
+            class="herramienta"
+            type="button"
+            data-accion="aumentar-texto"
+            aria-label="Aumentar tamaño del texto"
+          >
+            A+
+          </button>
+
+          <button
+            class="herramienta"
+            type="button"
+            data-accion="alternar-contraste"
+            aria-pressed="false"
+          >
+            Alto contraste
+          </button>
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- FRANJA DE IDENTIDAD -->
+
+    <div class="franja-identidad" aria-hidden="true">
+      <span class="franja-identidad__verde"></span>
+      <span class="franja-identidad__arena"></span>
+      <span class="franja-identidad__celeste"></span>
+    </div>
+
+    <!-- ESCUDO Y NOMBRE -->
+
+    <div class="contenedor cabecera__principal">
+
+      <a
+        class="identidad"
+        href="../index.html"
+        aria-label="Municipalidad de Puchuncaví, ir al inicio"
+      >
+
+        <img
+          class="identidad__logo"
+          src="../assets/imagenes/identidad/logo-puchuncavi.jpg"
+          alt=""
+          width="400"
+          height="400"
+        >
+
+        <span class="identidad__texto">
+
+          <span class="identidad__superior">
+            Ilustre Municipalidad de
+          </span>
+
+          <span class="identidad__nombre">
+            Puchuncaví
+          </span>
+
+          <span class="identidad__descripcion">
+            Donde el campo se junta con el mar
+          </span>
+
+        </span>
+
+      </a>
+
+      <div class="cabecera__acciones">
+
+        <a
+          class="cabecera__contacto boton boton--secundario"
+          href="contacto.html"
+        >
+          Atención ciudadana
+          <span aria-hidden="true">↗</span>
+        </a>
+
+        <button
+          class="boton-menu"
+          type="button"
+          aria-controls="menu-principal"
+          aria-expanded="false"
+          aria-label="Abrir menú de navegación"
+        >
+
+          <span class="boton-menu__linea"></span>
+          <span class="boton-menu__linea"></span>
+          <span class="boton-menu__linea"></span>
+
+        </button>
+
+      </div>
+
+    </div>
+
+    <!-- MENÚ COMPARTIDO -->
+
+    <nav
+      class="navegacion"
+      id="menu-principal"
+      aria-label="Navegación principal"
+    ></nav>
+
+  </header>
+
+  <!-- =========================================
+       CONTENIDO PRINCIPAL
+  ========================================= -->
+
+  <main id="contenido-principal">
+
+    <!-- =========================================
+         PORTADA CON FOTOGRAFÍA DE COMUNIDAD
+    ========================================= -->
+
+    <section
+      class="interior-hero"
+      aria-labelledby="titulo-comunidad"
+    >
+
+      <div class="contenedor">
+
+        <nav class="migas" aria-label="Ruta de navegación">
+
+          <a href="../index.html">
+            Inicio
+          </a>
+
+          <span aria-hidden="true">
+            /
+          </span>
+
+          <span aria-current="page">
+            Comunidad
+          </span>
+
+        </nav>
+
+        <div class="interior-hero__contenido">
+
+          <div class="interior-hero__texto">
+
+            <p class="etiqueta etiqueta--clara">
+              Personas y territorio
+            </p>
+
+            <h1 id="titulo-comunidad">
+              Una comunidad que crece unida.
+            </h1>
+
+            <p>
+              Conoce las áreas de orientación,
+              participación y apoyo comunitario
+              para quienes habitan Puchuncaví.
+            </p>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- =========================================
+         INTRODUCCIÓN
+    ========================================= -->
+
+    <section
+      class="seccion seccion--introduccion"
+      aria-labelledby="titulo-introduccion"
+    >
+
+      <div class="contenedor">
+
+        <div class="introduccion-interior">
+
+          <div>
+
+            <p class="etiqueta etiqueta--verde">
+              Al servicio de las personas
+            </p>
+
+            <h2 id="titulo-introduccion">
+              Orientación para la vida en comunidad
+            </h2>
+
+            <p>
+              El desarrollo comunitario reúne distintas
+              áreas de interés para los habitantes
+              de la comuna.
+
+              Esta sección organiza temas de consulta
+              relacionados con apoyo social,
+              participación y bienestar para facilitar
+              el acceso a información.
+            </p>
+
+          </div>
+
+          <a
+            class="boton boton--secundario"
+            href="contacto.html"
+          >
+            Consultar atención
+            <span aria-hidden="true">→</span>
+          </a>
+
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- =========================================
+         ÁREAS DE ORIENTACIÓN
+
+         CUATRO FICHAS CON FONDOS DE COLORES
+    ========================================= -->
+
+    <section
+      class="seccion seccion--categorias seccion--areas-comunidad"
+      aria-labelledby="titulo-areas"
+    >
+
+      <div class="contenedor">
+
+        <div class="seccion__encabezado">
+
+          <div>
+
+            <p class="etiqueta etiqueta--verde">
+              Servicios para habitantes
+            </p>
+
+            <h2 id="titulo-areas">
+              ¿En qué área necesitas orientación?
+            </h2>
+
+            <p class="seccion__descripcion">
+              Explora las principales temáticas
+              de interés comunitario.
+            </p>
+
+          </div>
+
+        </div>
+
+        <div class="cuadricula cuadricula--dos">
+
+          <!-- 01: APOYO SOCIAL - VERDE -->
+
+          <article
+            class="categoria-tramite categoria-tramite--verde"
+          >
+
+            <div class="categoria-tramite__encabezado">
+
+              <span
+                class="categoria-tramite__numero"
+                aria-hidden="true"
+              >
+                01
+              </span>
+
+              <span class="categoria-tramite__tipo">
+                Bienestar
+              </span>
+
+            </div>
+
+            <h3>
+              Apoyo y orientación social
+            </h3>
+
+            <p>
+              Infórmate sobre los canales
+              para realizar consultas relacionadas
+              con orientación social, beneficios
+              y servicios de apoyo comunitario.
+            </p>
+
+            <ul class="categoria-tramite__enlaces">
+
+              <li>
+                <a href="contacto.html">
+                  Consultar canales de orientación
+                  <span aria-hidden="true">→</span>
+                </a>
+              </li>
+
+            </ul>
+
+          </article>
+
+          <!-- 02: ORGANIZACIONES - ARENA -->
+
+          <article
+            class="categoria-tramite categoria-tramite--arena"
+          >
+
+            <div class="categoria-tramite__encabezado">
+
+              <span
+                class="categoria-tramite__numero"
+                aria-hidden="true"
+              >
+                02
+              </span>
+
+              <span class="categoria-tramite__tipo">
+                Participación
+              </span>
+
+            </div>
+
+            <h3>
+              Organizaciones comunitarias
+            </h3>
+
+            <p>
+              Encuentra orientación para
+              consultas sobre organizaciones
+              territoriales, participación
+              vecinal e iniciativas de
+              interés para la comunidad.
+            </p>
+
+            <ul class="categoria-tramite__enlaces">
+
+              <li>
+                <a href="contacto.html">
+                  Solicitar información
+                  <span aria-hidden="true">→</span>
+                </a>
+              </li>
+
+            </ul>
+
+          </article>
+
+          <!-- 03: PERSONAS - AZUL -->
+
+          <article
+            class="categoria-tramite categoria-tramite--azul"
+          >
+
+            <div class="categoria-tramite__encabezado">
+
+              <span
+                class="categoria-tramite__numero"
+                aria-hidden="true"
+              >
+                03
+              </span>
+
+              <span class="categoria-tramite__tipo">
+                Personas
+              </span>
+
+            </div>
+
+            <h3>
+              Niñez, personas mayores y familias
+            </h3>
+
+            <p>
+              Accede a canales de consulta
+              sobre información y servicios
+              municipales de interés para
+              distintos grupos de habitantes.
+            </p>
+
+            <ul class="categoria-tramite__enlaces">
+
+              <li>
+                <a href="contacto.html">
+                  Ver atención ciudadana
+                  <span aria-hidden="true">→</span>
+                </a>
+              </li>
+
+            </ul>
+
+          </article>
+
+          <!-- 04: TERRITORIO - CELESTE -->
+
+          <article
+            class="categoria-tramite categoria-tramite--celeste"
+          >
+
+            <div class="categoria-tramite__encabezado">
+
+              <span
+                class="categoria-tramite__numero"
+                aria-hidden="true"
+              >
+                04
+              </span>
+
+              <span class="categoria-tramite__tipo">
+                Territorio
+              </span>
+
+            </div>
+
+            <h3>
+              Actividades y vida comunitaria
+            </h3>
+
+            <p>
+              Consulta información sobre
+              actividades y espacios de
+              encuentro que contribuyen
+              a la vida de la comuna.
+            </p>
+
+            <ul class="categoria-tramite__enlaces">
+
+              <li>
+                <a href="noticias.html">
+                  Ver sección de actualidad
+                  <span aria-hidden="true">→</span>
+                </a>
+              </li>
+
+            </ul>
+
+          </article>
+
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- =========================================
+         PARTICIPACIÓN Y SERVICIOS RELACIONADOS
+         SIN CAMBIOS
+    ========================================= -->
+
+    <section
+      class="seccion seccion--tramites-destacados"
+      aria-labelledby="titulo-participacion"
+    >
+
+      <div class="contenedor">
+
+        <div class="seccion__encabezado">
+
+          <div>
+
+            <p class="etiqueta etiqueta--azul">
+              Comunidad activa
+            </p>
+
+            <h2 id="titulo-participacion">
+              Participar también es construir comunidad
+            </h2>
+
+            <p class="seccion__descripcion">
+              Encuentra otras secciones
+              que pueden ser útiles
+              para tu vida cotidiana.
+            </p>
+
+          </div>
+
+        </div>
+
+        <div class="cuadricula cuadricula--tres">
+
+          <!-- EMPLEO Y OMIL -->
+
+          <article
+            class="tarjeta-comunidad tarjeta-comunidad--verde"
+          >
+
+            <div class="tarjeta-comunidad__contenido">
+
+              <span class="tarjeta-comunidad__numero">
+                Oportunidades
+              </span>
+
+              <h3>
+                Empleo y OMIL
+              </h3>
+
+              <p>
+                Orientación para consultas
+                relacionadas con búsqueda
+                de empleo y servicios laborales.
+              </p>
+
+              <a href="empleo-omil.html">
+                Explorar servicios
+                <span aria-hidden="true">→</span>
+              </a>
+
+            </div>
+
+          </article>
+
+          <!-- NOTICIAS -->
+
+          <article
+            class="tarjeta-comunidad tarjeta-comunidad--arena"
+          >
+
+            <div class="tarjeta-comunidad__contenido">
+
+              <span class="tarjeta-comunidad__numero">
+                Información
+              </span>
+
+              <h3>
+                Noticias y actividades
+              </h3>
+
+              <p>
+                Un espacio para conocer
+                contenidos, novedades y
+                temas relacionados con
+                la vida comunal.
+              </p>
+
+              <a href="noticias.html">
+                Ir a noticias
+                <span aria-hidden="true">→</span>
+              </a>
+
+            </div>
+
+          </article>
+
+          <!-- SEGURIDAD -->
+
+          <article
+            class="tarjeta-comunidad tarjeta-comunidad--azul"
+          >
+
+            <div class="tarjeta-comunidad__contenido">
+
+              <span class="tarjeta-comunidad__numero">
+                Prevención
+              </span>
+
+              <h3>
+                Seguridad y emergencias
+              </h3>
+
+              <p>
+                Información y canales de orientación
+                sobre prevención y seguridad
+                en la comuna.
+              </p>
+
+              <a href="seguridad-emergencias.html">
+                Ver información
+                <span aria-hidden="true">→</span>
+              </a>
+
+            </div>
+
+          </article>
+
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- =========================================
+         GUÍA DE ORIENTACIÓN
+
+         FRANJA MARRÓN Y TRES BORDES MARRONES
+    ========================================= -->
+
+    <section
+      class="seccion seccion--tramites seccion--guia-marron"
+      aria-labelledby="titulo-guia"
+    >
+
+      <div class="contenedor">
+
+        <div class="seccion__encabezado">
+
+          <div>
+
+            <p class="etiqueta etiqueta--verde">
+              Atención y orientación
+            </p>
+
+            <h2 id="titulo-guia">
+              ¿Cómo encontrar el apoyo que buscas?
+            </h2>
+
+            <p class="seccion__descripcion">
+              Tres acciones sencillas
+              para comenzar tu consulta.
+            </p>
+
+          </div>
+
+        </div>
+
+        <div class="cuadricula cuadricula--tres">
+
+          <!-- PASO 01 -->
+
+          <article class="tarjeta-servicio">
+
+            <span
+              class="tarjeta-servicio__icono tarjeta-servicio__icono--verde"
+              aria-hidden="true"
+            >
+              01
+            </span>
+
+            <h3>
+              Identifica tu necesidad
+            </h3>
+
+            <p>
+              Revisa las áreas de orientación
+              comunitaria y encuentra la temática
+              más cercana a tu consulta.
+            </p>
+
+            <a href="#titulo-areas">
+              Revisar áreas
+              <span aria-hidden="true">↑</span>
+            </a>
+
+          </article>
+
+          <!-- PASO 02 -->
+
+          <article class="tarjeta-servicio">
+
+            <span
+              class="tarjeta-servicio__icono tarjeta-servicio__icono--arena"
+              aria-hidden="true"
+            >
+              02
+            </span>
+
+            <h3>
+              Consulta la información
+            </h3>
+
+            <p>
+              Identifica los canales de atención
+              municipal disponibles para solicitar
+              información actualizada.
+            </p>
+
+            <a href="contacto.html">
+              Ver orientación
+              <span aria-hidden="true">→</span>
+            </a>
+
+          </article>
+
+          <!-- PASO 03 -->
+
+          <article class="tarjeta-servicio">
+
+            <span
+              class="tarjeta-servicio__icono tarjeta-servicio__icono--azul"
+              aria-hidden="true"
+            >
+              03
+            </span>
+
+            <h3>
+              Encuentra otros servicios
+            </h3>
+
+            <p>
+              Si tu consulta corresponde a otra
+              área municipal, explora el
+              directorio general de trámites.
+            </p>
+
+            <a href="tramites.html">
+              Ver todos los trámites
+              <span aria-hidden="true">→</span>
+            </a>
+
+          </article>
+
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- =========================================
+         ORIENTACIÓN FINAL
+         SIN CAMBIOS
+    ========================================= -->
+
+    <section
+      class="seccion seccion--orientacion"
+      aria-labelledby="titulo-ayuda"
+    >
+
+      <div class="contenedor">
+
+        <div class="bloque-orientacion">
+
+          <div class="bloque-orientacion__texto">
+
+            <p class="etiqueta etiqueta--clara">
+              Cercanía con la comunidad
+            </p>
+
+            <h2 id="titulo-ayuda">
+              Tu consulta es importante.
+            </h2>
+
+            <p>
+              Si necesitas conocer un programa,
+              servicio o canal de orientación,
+              revisa las alternativas
+              de contacto municipal.
+            </p>
+
+          </div>
+
+          <a
+            class="boton boton--claro"
+            href="contacto.html"
+          >
+            Ir a Atención ciudadana
+            <span aria-hidden="true">→</span>
+          </a>
+
+        </div>
+
+      </div>
+
+    </section>
+
+  </main>
+
+  <!-- =========================================
+       PIE DE PÁGINA
+  ========================================= -->
+
+  <footer class="pie-pagina">
+
+    <div class="contenedor pie-pagina__contenido">
+
+      <div class="pie-pagina__identidad">
+
+        <h2>
+          Municipalidad de Puchuncaví
+        </h2>
+
+        <p>
+          Donde el campo se junta con el mar.
+        </p>
+
+        <p>
+          Información y orientación para
+          la comunidad.
+        </p>
+
+      </div>
+
+      <div class="pie-pagina__enlaces">
+
+        <h2>
+          Acceso rápido
+        </h2>
+
+        <ul>
+
+          <li>
+            <a href="../index.html">
+              Inicio
+            </a>
+          </li>
+
+          <li>
+            <a href="tramites.html">
+              Trámites y servicios
+            </a>
+          </li>
+
+          <li>
+            <a href="empleo-omil.html">
+              Empleo y OMIL
+            </a>
+          </li>
+
+          <li>
+            <a href="contacto.html">
+              Contacto
+            </a>
+          </li>
+
+        </ul>
+
+      </div>
+
+      <div class="pie-pagina__atencion">
+
+        <h2>
+          Orientación ciudadana
+        </h2>
+
+        <p>
+          Encuentra información sobre
+          los canales de atención municipal.
+        </p>
+
+        <a href="contacto.html">
+          Consultar atención
+          <span aria-hidden="true">→</span>
+        </a>
+
+      </div>
+
+    </div>
+
+    <div class="pie-pagina__inferior">
+
+      <div class="contenedor">
+        <p>© Municipalidad de Puchuncaví</p>
+      </div>
+
+    </div>
+
+  </footer>
+
+</body>
+</html>

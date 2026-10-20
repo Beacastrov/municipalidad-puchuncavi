@@ -1,0 +1,7452 @@
+
+/* ==================================================
+   MUNICIPALIDAD DE PUCHUNCAVÍ
+   HOJA DE ESTILOS COMPARTIDA
+================================================== */
+
+:root {
+  --azul-900: #163f55;
+  --azul-800: #20536a;
+  --azul-700: #286781;
+  --verde-700: #33716c;
+  --verde-600: #477d68;
+  --verde-100: #e9f2ed;
+  --arena-600: #a37c40;
+  --arena-300: #e6d6b8;
+  --celeste: #6bb7c7;
+  --fondo: #f4f6f5;
+  --texto: #1c3340;
+  --texto-secundario: #50636d;
+  --borde: #dce4e3;
+  --fuente: "Inter", Arial, sans-serif;
+  --radio-sm: 8px;
+  --radio-md: 14px;
+  --radio-lg: 22px;
+  --sombra-suave: 0 8px 28px rgba(16,51,68,.06);
+  --sombra-media: 0 18px 48px rgba(16,51,68,.12);
+  --transicion: 220ms ease;
+}
+
+/* ESTILOS BÁSICOS */
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: var(--fondo);
+  color: var(--texto);
+  font-family: var(--fuente);
+  font-size: 1rem;
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+}
+
+img, picture, video, svg {
+  display: block;
+  max-width: 100%;
+}
+
+img {
+  height: auto;
+}
+
+button, input, select, textarea {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+h1, h2, h3, p {
+  margin-top: 0;
+}
+
+h1, h2, h3 {
+  line-height: 1.17;
+  letter-spacing: -.035em;
+}
+
+h1, h2 {
+  text-wrap: balance;
+}
+
+p {
+  max-width: 75ch;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+.contenedor {
+  width: min(calc(100% - 48px), 1540px);
+  margin-inline: auto;
+}
+
+.seccion {
+  padding-block: 80px;
+}
+
+.seccion__encabezado {
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+  gap: 30px;
+  margin-bottom: 32px;
+}
+
+.seccion__encabezado h2 {
+  margin-bottom: 12px;
+  color: var(--azul-900);
+  font-size: clamp(1.9rem,3vw,2.65rem);
+  font-weight: 800;
+}
+
+.seccion__descripcion {
+  color: var(--texto-secundario);
+  font-size: 1.05rem;
+}
+
+.cuadricula {
+  display: grid;
+  gap: 22px;
+}
+
+.cuadricula--cuatro {
+  grid-template-columns: repeat(4,minmax(0,1fr));
+}
+
+.cuadricula--tres {
+  grid-template-columns: repeat(3,minmax(0,1fr));
+}
+
+.cuadricula--dos {
+  grid-template-columns: repeat(2,minmax(0,1fr));
+}
+
+.etiqueta {
+  margin-bottom: 13px;
+  font-size: .76rem;
+  font-weight: 800;
+  letter-spacing: .13em;
+  text-transform: uppercase;
+}
+
+.etiqueta--verde {
+  color: var(--verde-700);
+}
+
+.etiqueta--azul {
+  color: var(--azul-700);
+}
+
+.etiqueta--clara {
+  color: #f4e0b4;
+}
+
+/* BOTONES */
+
+.boton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  min-height: 50px;
+  padding: 13px 22px;
+  border: 2px solid transparent;
+  border-radius: var(--radio-sm);
+  font-weight: 700;
+  line-height: 1.3;
+  text-align: center;
+  transition:
+    background var(--transicion),
+    color var(--transicion),
+    transform var(--transicion);
+}
+
+.boton:hover {
+  transform: translateY(-2px);
+}
+
+.boton--primario {
+  background: var(--azul-900);
+  color: #ffffff;
+}
+
+.boton--primario:hover {
+  background: #0d3043;
+}
+
+.boton--secundario {
+  background: var(--verde-100);
+  color: var(--azul-900);
+}
+
+.boton--secundario:hover {
+  background: #d6e8df;
+}
+
+.boton--claro {
+  background: #ffffff;
+  color: var(--azul-900);
+}
+
+.boton--claro:hover {
+  background: #eef5f1;
+}
+
+.enlace-destacado {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  min-height: 44px;
+  color: var(--azul-900);
+  font-weight: 800;
+}
+
+.enlace-destacado:hover {
+  text-decoration: underline;
+}
+
+/* ==================================================
+   CABECERA MUNICIPAL
+================================================== */
+
+.cabecera {
+  position: relative;
+  z-index: 30;
+  background: #ffffff;
+}
+
+.barra-superior {
+  background: var(--azul-900);
+  color: #ffffff;
+}
+
+.barra-superior__contenido {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px 25px;
+  min-height: 72px;
+  padding-block: 12px;
+}
+
+.barra-superior__redes {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.barra-superior__etiqueta {
+  color: #b4e4e4;
+  font-size: .8rem;
+  font-weight: 800;
+  letter-spacing: .06em;
+}
+
+.redes-sociales {
+  display: flex;
+  gap: 7px;
+}
+
+.redes-sociales__enlace {
+  display: grid;
+  place-items: center;
+  width: 43px;
+  height: 43px;
+  border: 1px solid rgba(255,255,255,.85);
+  border-radius: 5px;
+  color: #ffffff;
+  font-family: Arial,sans-serif;
+  font-size: 1.5rem;
+  font-weight: 800;
+  line-height: 1;
+}
+
+.redes-sociales__enlace:hover {
+  background: rgba(255,255,255,.18);
+}
+
+.redes-sociales__enlace--youtube {
+  font-size: 1.1rem;
+}
+
+/* CINCO ACCESOS */
+
+.barra-superior--institucional .barra-superior__contenido {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: center;
+  gap: 15px 24px;
+  padding-block: 14px 18px;
+}
+
+.barra-superior--institucional .barra-superior__redes {
+  grid-column: 1;
+  grid-row: 1;
+}
+
+.barra-superior--institucional .herramientas-accesibilidad {
+  grid-column: 2;
+  grid-row: 1;
+  justify-content: flex-end;
+}
+
+.enlaces-institucionales {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.barra-superior--institucional .enlaces-institucionales {
+  grid-column: 1 / -1;
+  grid-row: 2;
+  display: grid;
+  grid-template-columns: repeat(5,minmax(0,1fr));
+  gap: 10px;
+  width: 100%;
+  margin-top: 5px;
+}
+
+.enlaces-institucionales > a {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 10px;
+  min-height: 68px;
+  min-width: 0;
+  padding: 12px 11px;
+  border: 1px solid rgba(255,255,255,.35);
+  border-radius: 9px;
+  background: #20536a;
+  color: #ffffff;
+  font-size: .8rem;
+  font-weight: 700;
+  line-height: 1.3;
+  transition:
+    background .2s,
+    border-color .2s,
+    transform .2s;
+}
+
+.enlaces-institucionales > a:hover {
+  background: #286781;
+  border-color: #d0ab68;
+  transform: translateY(-2px);
+}
+
+.enlaces-institucionales .acceso-icono {
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+  width: 34px;
+  height: 34px;
+  border-radius: 7px;
+  background: rgba(255,255,255,.12);
+  color: #e6d6b8;
+  font-size: 1.25rem;
+}
+
+.enlaces-institucionales .acceso-texto {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 3px;
+  min-width: 0;
+  font-size: .8rem;
+  font-weight: 800;
+  line-height: 1.25;
+}
+
+.enlaces-institucionales .acceso-texto small {
+  color: #c6e5e5;
+  font-size: .7rem;
+  font-weight: 500;
+}
+
+.enlaces-institucionales .acceso-flecha {
+  align-self: flex-start;
+  flex-shrink: 0;
+  color: #f0d8a7;
+}
+
+.herramientas-accesibilidad {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 5px;
+}
+
+.herramienta {
+  min-width: 44px;
+  min-height: 43px;
+  padding: 7px 10px;
+  border: 1px solid rgba(255,255,255,.5);
+  border-radius: 5px;
+  background: transparent;
+  color: #ffffff;
+  font-size: .79rem;
+  font-weight: 700;
+}
+
+.herramienta:hover {
+  background: rgba(255,255,255,.18);
+}
+
+.herramienta:disabled {
+  opacity: .5;
+  cursor: not-allowed;
+}
+
+/* FRANJA DE COLORES */
+
+.franja-identidad {
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  height: 5px;
+}
+
+.franja-identidad__verde {
+  background: #33716c;
+}
+
+.franja-identidad__arena {
+  background: #d0ab68;
+}
+
+.franja-identidad__celeste {
+  background: #6bb7c7;
+}
+
+/* ESCUDO */
+
+.cabecera__principal {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 30px;
+  min-height: 125px;
+  padding-block: 15px;
+}
+
+.identidad {
+  display: inline-flex;
+  align-items: center;
+  gap: 18px;
+  min-width: 0;
+}
+
+.identidad__logo {
+  width: 94px;
+  height: 94px;
+  flex-shrink: 0;
+  object-fit: contain;
+  background: #ffffff;
+}
+
+.identidad__texto {
+  display: flex;
+  flex-direction: column;
+}
+
+.identidad__superior {
+  margin-bottom: 2px;
+  color: var(--texto-secundario);
+  font-size: .75rem;
+  font-weight: 700;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+}
+
+.identidad__nombre {
+  color: var(--azul-900);
+  font-size: clamp(1.5rem,2.5vw,2.05rem);
+  font-weight: 800;
+  line-height: 1.15;
+}
+
+.identidad__descripcion {
+  margin-top: 7px;
+  color: var(--verde-700);
+  font-size: .77rem;
+  font-weight: 600;
+}
+
+.cabecera__acciones {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+/* MENÚ PRINCIPAL */
+
+.navegacion {
+  background: var(--azul-900);
+}
+
+.navegacion__lista {
+  display: flex;
+  align-items: center;
+  list-style: none;
+}
+
+.navegacion__item {
+  position: relative;
+}
+
+.navegacion__enlace {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  min-height: 57px;
+  padding: 14px 23px;
+  border-bottom: 3px solid transparent;
+  color: #ffffff;
+  font-size: .88rem;
+  font-weight: 700;
+}
+
+.navegacion__enlace:hover,
+.navegacion__item:focus-within > .navegacion__enlace {
+  background: var(--azul-800);
+}
+
+.navegacion__enlace[aria-current="page"] {
+  background: rgba(255,255,255,.09);
+  border-bottom-color: var(--arena-300);
+}
+
+/* DESPLEGABLES */
+
+.navegacion__submenu {
+  position: absolute;
+  z-index: 150;
+  top: 100%;
+  left: 0;
+  min-width: 260px;
+  max-width: 370px;
+  max-height: 70vh;
+  overflow-y: auto;
+  margin: 0;
+  padding: 10px;
+  border: 1px solid var(--borde);
+  border-top: 4px solid #d0ab68;
+  border-radius: 0 0 12px 12px;
+  background: #ffffff;
+  box-shadow: 0 18px 40px rgba(10,40,55,.2);
+  list-style: none;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transform: translateY(6px);
+  transition: opacity .18s, transform .18s;
+}
+
+.navegacion__submenu--amplio {
+  min-width: 340px;
+}
+
+.navegacion__item:hover > .navegacion__submenu,
+.navegacion__item:focus-within > .navegacion__submenu {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  transform: translateY(0);
+}
+
+.navegacion__submenu a {
+  display: block;
+  padding: 10px 12px;
+  border-radius: 6px;
+  color: var(--azul-900);
+  font-size: .85rem;
+  font-weight: 600;
+}
+
+.navegacion__submenu a:hover {
+  background: var(--verde-100);
+  color: var(--verde-700);
+}
+
+.boton-menu {
+  display: none;
+  width: 50px;
+  height: 50px;
+  padding: 12px;
+  border: 0;
+  border-radius: 8px;
+  background: var(--azul-900);
+}
+
+.boton-menu__linea {
+  display: block;
+  width: 100%;
+  height: 2px;
+  margin-block: 5px;
+  background: #ffffff;
+}
+
+/* ==================================================
+   PORTADA
+================================================== */
+
+.hero--fotografia {
+  position: relative;
+  isolation: isolate;
+  display: flex;
+  align-items: center;
+  min-height: 500px;
+  overflow: hidden;
+  background: var(--azul-900);
+  color: #ffffff;
+}
+
+.hero__imagen {
+  position: absolute;
+  z-index: -2;
+  inset: 0;
+  background-image:
+    url("../assets/imagenes/portada/hero-puchuncavi.jpg");
+  background-size: cover;
+  background-position: center 47%;
+}
+
+.hero--fotografia::after {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  inset: 0;
+  background: linear-gradient(
+    90deg,
+    rgba(10,39,55,.93),
+    rgba(14,48,62,.77) 45%,
+    rgba(15,48,61,.2)
+  );
+}
+
+.hero__contenido {
+  padding-block: 110px;
+}
+
+.hero__informacion {
+  max-width: 760px;
+}
+
+.hero__titulo {
+  color: #ffffff;
+  font-size: clamp(2.8rem,5vw,4.8rem);
+  font-weight: 800;
+  line-height: 1.08;
+}
+
+.hero__titulo span {
+  display: block;
+  color: #e9d5ac;
+}
+
+.hero__descripcion {
+  max-width: 570px;
+  margin-bottom: 25px;
+  color: #ffffff;
+  font-size: 1.1rem;
+}
+
+/* ==================================================
+   NOTICIAS
+================================================== */
+
+.seccion--noticias {
+  background: #ffffff;
+}
+
+.tarjeta-noticia {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  overflow: hidden;
+  border: 1px solid var(--borde);
+  border-radius: var(--radio-md);
+  background: #ffffff;
+  box-shadow: var(--sombra-suave);
+  transition:
+    transform var(--transicion),
+    box-shadow var(--transicion);
+}
+
+.tarjeta-noticia:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--sombra-media);
+}
+
+.tarjeta-noticia__imagen {
+  min-height: 150px;
+  background:
+    linear-gradient(
+      130deg,
+      #b5d4cf,
+      #5c9f9f 50%,
+      #20536a
+    );
+}
+
+.tarjeta-noticia:nth-child(3n+2)
+.tarjeta-noticia__imagen {
+  background:
+    linear-gradient(
+      135deg,
+      #e6d6b8,
+      #8bb4b5,
+      #20536a
+    );
+}
+
+.tarjeta-noticia:nth-child(3n+3)
+.tarjeta-noticia__imagen {
+  background:
+    linear-gradient(
+      135deg,
+      #c7e1e5,
+      #93b6a5,
+      #33716c
+    );
+}
+
+/* Gráficas de respaldo hasta incorporar
+   las fotografías originales en JPG. */
+
+.tarjeta-noticia__imagen--costa {
+  background:
+    linear-gradient(135deg,#b8e0e4,#5a9bab 58%,#d7c7a5 59%);
+}
+
+.tarjeta-noticia__imagen--comunidad {
+  background:
+    linear-gradient(135deg,#d8e7d3,#a6c9ad 60%,#5c917b);
+}
+
+.tarjeta-noticia__imagen--servicios {
+  background:
+    linear-gradient(135deg,#d7eaf0,#9ebfc9 55%,#587f90);
+}
+
+.tarjeta-noticia__contenido {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  padding: 25px;
+}
+
+.noticia-fecha,
+.tarjeta-noticia__categoria {
+  margin-bottom: 11px;
+  color: var(--verde-700);
+  font-size: .77rem;
+  font-weight: 800;
+}
+
+.tarjeta-noticia h3 {
+  margin-bottom: 15px;
+  color: var(--azul-900);
+  font-size: 1.18rem;
+  font-weight: 800;
+  line-height: 1.4;
+  overflow-wrap: anywhere;
+}
+
+.tarjeta-noticia p {
+  color: var(--texto-secundario);
+  font-size: .93rem;
+}
+
+.tarjeta-noticia__contenido > a {
+  display: inline-flex;
+  align-items: center;
+  margin-top: auto;
+  padding-top: 12px;
+  color: var(--verde-700);
+  font-size: .9rem;
+  font-weight: 800;
+}
+
+.tarjeta-noticia__contenido > a:hover {
+  text-decoration: underline;
+}
+
+/* NOTICIA DESTACADA EN PÁGINAS INTERIORES */
+
+.noticia-principal {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  overflow: hidden;
+  border-radius: var(--radio-lg);
+  background: #ffffff;
+  box-shadow: var(--sombra-suave);
+}
+
+.noticia-principal > .tarjeta-noticia__imagen {
+  min-height: 350px;
+}
+
+.noticia-principal__contenido {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 45px;
+}
+
+.noticia-principal__contenido h3 {
+  color: var(--azul-900);
+  font-size: clamp(1.7rem,2.5vw,2.5rem);
+}
+
+.noticia-principal__contenido p {
+  color: var(--texto-secundario);
+}
+
+/* PAGINACIÓN */
+
+.paginacion {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 35px;
+}
+
+.paginacion a,
+.paginacion__actual {
+  display: grid;
+  place-items: center;
+  min-width: 45px;
+  min-height: 45px;
+  padding: 8px;
+  border: 1px solid var(--borde);
+  border-radius: 8px;
+  background: #ffffff;
+  color: var(--azul-900);
+  font-weight: 800;
+}
+
+.paginacion a:hover {
+  background: var(--verde-100);
+  border-color: var(--verde-700);
+}
+
+.paginacion__actual {
+  background: var(--azul-900);
+  border-color: var(--azul-900);
+  color: #ffffff;
+}
+
+/* ==================================================
+   LINKS DE INTERÉS
+================================================== */
+
+.seccion--categorias {
+  background: #f0f4f1;
+}
+
+.tarjeta-interes {
+  display: flex;
+  flex-direction: column;
+  min-height: 195px;
+  min-width: 0;
+  padding: 25px;
+  border: 1px solid var(--borde);
+  border-left: 5px solid var(--verde-700);
+  border-radius: 12px;
+  background: #ffffff;
+  box-shadow: var(--sombra-suave);
+  transition:
+    transform var(--transicion),
+    border-color var(--transicion);
+}
+
+.tarjeta-interes:nth-child(4n+2) {
+  border-left-color: #c09a59;
+}
+
+.tarjeta-interes:nth-child(4n+3) {
+  border-left-color: #286781;
+}
+
+.tarjeta-interes:nth-child(4n+4) {
+  border-left-color: #6bb7c7;
+}
+
+.tarjeta-interes:hover {
+  transform: translateY(-3px);
+}
+
+.tarjeta-interes__area {
+  margin-bottom: 14px;
+  color: var(--verde-700);
+  font-size: .71rem;
+  font-weight: 800;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+  overflow-wrap: anywhere;
+}
+
+.tarjeta-interes h3 {
+  margin-bottom: 22px;
+  color: var(--azul-900);
+  font-size: 1.09rem;
+  font-weight: 800;
+  line-height: 1.35;
+  overflow-wrap: anywhere;
+}
+
+.tarjeta-interes__enlace {
+  display: inline-flex;
+  margin-top: auto;
+  color: var(--verde-700);
+  font-size: .85rem;
+  font-weight: 800;
+}
+
+.tarjeta-interes__enlace:hover {
+  text-decoration: underline;
+}
+
+/* ==================================================
+   YOUTUBE
+================================================== */
+
+.seccion--video {
+  background: #ffffff;
+}
+
+.video-municipal {
+  width: 100%;
+  max-width: 1050px;
+  margin-inline: auto;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  border-radius: 18px;
+  background: var(--azul-900);
+  box-shadow: var(--sombra-media);
+}
+
+.video-municipal iframe {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+/* ==================================================
+   ESTILOS DE LAS PÁGINAS INTERIORES
+================================================== */
+
+.interior-hero {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  padding-block: 36px 82px;
+  background: linear-gradient(
+    115deg,
+    #163f55,
+    #286781
+  );
+  color: #ffffff;
+}
+
+.interior-hero::after {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  width: 440px;
+  height: 440px;
+  right: -125px;
+  bottom: -210px;
+  border: 90px solid rgba(255,255,255,.05);
+  border-radius: 50%;
+}
+
+.migas {
+  margin-bottom: 54px;
+}
+
+.migas ol {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  padding: 0;
+  list-style: none;
+}
+
+.migas li {
+  color: #edf4f6;
+  font-size: .84rem;
+}
+
+.migas li + li::before {
+  content: "/";
+  margin-right: 10px;
+  color: #b6d6dd;
+}
+
+.migas a:hover {
+  text-decoration: underline;
+}
+
+.interior-hero__contenido {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 40px;
+}
+
+.interior-hero__texto {
+  max-width: 760px;
+}
+
+.interior-hero h1 {
+  margin-bottom: 24px;
+  font-size: clamp(2.7rem,5.1vw,4.8rem);
+  font-weight: 800;
+}
+
+.interior-hero h1 span {
+  display: block;
+  color: #e6d6b8;
+}
+
+.interior-hero__texto > p:last-child {
+  max-width: 590px;
+  color: #eff4f5;
+  font-size: 1.12rem;
+}
+
+.interior-hero__detalle {
+  display: none;
+}
+
+.seccion--introduccion {
+  background: #ffffff;
+}
+
+.introduccion-interior {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 45px;
+}
+
+.introduccion-interior > div {
+  max-width: 800px;
+}
+
+.introduccion-interior h2 {
+  color: var(--azul-900);
+  font-size: clamp(1.85rem,3vw,2.5rem);
+}
+
+.introduccion-interior p {
+  color: var(--texto-secundario);
+}
+
+.introduccion-interior a:not(.boton) {
+  color: var(--azul-700);
+  text-decoration: underline;
+}
+
+.seccion--tramites,
+.seccion--tramites-destacados {
+  background: #ffffff;
+}
+
+.seccion--comunidad {
+  background: #edf3ef;
+}
+
+.seccion--orientacion {
+  background: #edf3ef;
+}
+
+/* TARJETAS DE SERVICIOS */
+
+.tarjeta-servicio {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  min-height: 255px;
+  padding: 28px 24px;
+  border: 1px solid var(--borde);
+  border-radius: var(--radio-md);
+  background: #ffffff;
+  box-shadow: var(--sombra-suave);
+  transition: transform var(--transicion);
+}
+
+.tarjeta-servicio:hover {
+  transform: translateY(-4px);
+}
+
+.tarjeta-servicio__icono {
+  display: grid;
+  place-items: center;
+  width: 48px;
+  height: 48px;
+  margin-bottom: 24px;
+  border-radius: 12px;
+  font-size: .9rem;
+  font-weight: 800;
+}
+
+.tarjeta-servicio__icono--azul {
+  background: #e5eef2;
+  color: #20536a;
+}
+
+.tarjeta-servicio__icono--verde {
+  background: #e5f0e9;
+  color: #33716c;
+}
+
+.tarjeta-servicio__icono--arena {
+  background: #f4ead7;
+  color: #86601f;
+}
+
+.tarjeta-servicio__icono--celeste {
+  background: #e3f3f6;
+  color: #286781;
+}
+
+.tarjeta-servicio h3 {
+  margin-bottom: 12px;
+  color: var(--azul-900);
+  font-size: 1.28rem;
+  font-weight: 800;
+}
+
+.tarjeta-servicio p {
+  flex: 1;
+  color: var(--texto-secundario);
+  font-size: .93rem;
+}
+
+.tarjeta-servicio a {
+  display: inline-flex;
+  align-items: center;
+  align-self: flex-start;
+  gap: 8px;
+  color: var(--verde-700);
+  font-size: .9rem;
+  font-weight: 800;
+  overflow-wrap: anywhere;
+}
+
+.tarjeta-servicio a:hover {
+  text-decoration: underline;
+}
+
+/* CATEGORÍAS */
+
+.categoria-tramite {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  padding: 34px;
+  border: 1px solid var(--borde);
+  border-top: 5px solid var(--verde-700);
+  border-radius: var(--radio-md);
+  background: #ffffff;
+  box-shadow: var(--sombra-suave);
+}
+
+.categoria-tramite--azul {
+  border-top-color: #286781;
+}
+
+.categoria-tramite--verde {
+  border-top-color: #33716c;
+}
+
+.categoria-tramite--arena {
+  border-top-color: #c09a59;
+}
+
+.categoria-tramite--celeste {
+  border-top-color: #6bb7c7;
+}
+
+.categoria-tramite__encabezado {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 23px;
+}
+
+.categoria-tramite__numero {
+  color: var(--azul-700);
+  font-size: 1.25rem;
+  font-weight: 800;
+}
+
+.categoria-tramite__tipo {
+  color: var(--verde-700);
+  font-size: .73rem;
+  font-weight: 800;
+  text-align: right;
+  text-transform: uppercase;
+}
+
+.categoria-tramite h3 {
+  margin-bottom: 14px;
+  color: var(--azul-900);
+  font-size: 1.55rem;
+  font-weight: 800;
+}
+
+.categoria-tramite > p {
+  color: var(--texto-secundario);
+  font-size: .95rem;
+}
+
+.categoria-tramite__enlaces {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: auto;
+  padding-top: 16px;
+  list-style: none;
+}
+
+.categoria-tramite__enlaces a {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--verde-700);
+  font-weight: 800;
+  overflow-wrap: anywhere;
+}
+
+.categoria-tramite__enlaces a:hover {
+  text-decoration: underline;
+}
+
+/* REQUISITOS DESPLEGABLES */
+
+.categoria-tramite details {
+  margin-top: 16px;
+  padding: 16px;
+  border: 1px solid var(--borde);
+  border-radius: 10px;
+  background: #f5f8f6;
+}
+
+.categoria-tramite summary {
+  color: var(--azul-900);
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.categoria-tramite details[open] summary {
+  margin-bottom: 15px;
+}
+
+.categoria-tramite details ul {
+  padding-left: 20px;
+  list-style: disc;
+}
+
+.categoria-tramite details li {
+  margin-bottom: 8px;
+}
+
+/* TARJETAS DE COMUNIDAD */
+
+.tarjeta-comunidad {
+  display: flex;
+  min-height: 300px;
+  padding: 30px;
+  border-radius: var(--radio-lg);
+  color: #ffffff;
+}
+
+.tarjeta-comunidad--verde {
+  background: linear-gradient(145deg,#33716c,#204b4d);
+}
+
+.tarjeta-comunidad--azul {
+  background: linear-gradient(145deg,#286781,#163f55);
+}
+
+.tarjeta-comunidad--arena {
+  background: linear-gradient(145deg,#a37c40,#765b32);
+}
+
+.tarjeta-comunidad__contenido {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.tarjeta-comunidad__numero {
+  margin-bottom: 30px;
+  color: #e9e4d3;
+  font-size: .76rem;
+  font-weight: 700;
+}
+
+.tarjeta-comunidad h3 {
+  color: #ffffff;
+  font-size: 1.7rem;
+}
+
+.tarjeta-comunidad p {
+  flex: 1;
+  color: #f2f6f4;
+}
+
+.tarjeta-comunidad a {
+  display: inline-flex;
+  gap: 10px;
+  color: #ffffff;
+  font-weight: 800;
+}
+
+.tarjeta-comunidad a:hover {
+  text-decoration: underline;
+}
+
+/* ORIENTACIÓN */
+
+.bloque-orientacion {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 35px;
+  padding: 47px 55px;
+  border-radius: var(--radio-lg);
+  background: linear-gradient(110deg,#163f55,#33716c);
+  color: #ffffff;
+}
+
+.bloque-orientacion__texto {
+  max-width: 650px;
+}
+
+.bloque-orientacion h2 {
+  color: #ffffff;
+  font-size: clamp(1.9rem,3vw,2.75rem);
+}
+
+.bloque-orientacion p:last-child {
+  color: #edf4f2;
+}
+
+/* ==================================================
+   PIE DE PÁGINA
+================================================== */
+
+.pie-pagina {
+  background: #163f55;
+  color: #ffffff;
+}
+
+.pie-pagina__contenido {
+  display: grid;
+  grid-template-columns: 1.2fr .8fr 1fr;
+  gap: 65px;
+  padding-block: 70px;
+}
+
+.pie-pagina h2 {
+  margin-bottom: 20px;
+  color: #ffffff;
+  font-size: 1.13rem;
+  font-weight: 800;
+}
+
+.pie-pagina p {
+  color: #dae7e9;
+  font-size: .91rem;
+}
+
+.pie-pagina__enlaces ul {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  list-style: none;
+}
+
+.pie-pagina a {
+  color: #ffffff;
+  font-size: .9rem;
+  font-weight: 600;
+  overflow-wrap: anywhere;
+}
+
+.pie-pagina a:hover {
+  text-decoration: underline;
+}
+
+.pie-pagina__inferior {
+  padding-block: 19px;
+  border-top: 1px solid rgba(255,255,255,.17);
+}
+
+.pie-pagina__inferior p {
+  margin: 0;
+  color: #c7dcdf;
+  font-size: .8rem;
+}
+
+/* ==================================================
+   ACCESIBILIDAD Y CONTRASTE
+================================================== */
+
+.saltar-contenido {
+  position: absolute;
+  z-index: 999;
+  top: -100px;
+  left: 20px;
+  padding: 12px 18px;
+  border-radius: 8px;
+  background: #ffffff;
+  color: #163f55;
+  font-weight: 800;
+}
+
+.saltar-contenido:focus {
+  top: 12px;
+}
+
+:focus-visible {
+  outline: 3px solid #c69b4c;
+  outline-offset: 3px;
+}
+
+html.contraste-alto {
+  --fondo: #ffffff;
+  --texto: #092e44;
+  --texto-secundario: #244b61;
+  --borde: #64889a;
+  --verde-100: #e6f2f5;
+}
+
+html.contraste-alto body {
+  background: #ffffff;
+  color: #092e44;
+}
+
+html.contraste-alto .barra-superior,
+html.contraste-alto .navegacion,
+html.contraste-alto .pie-pagina {
+  background: #06283d;
+}
+
+html.contraste-alto .seccion--categorias,
+html.contraste-alto .seccion--comunidad,
+html.contraste-alto .seccion--orientacion {
+  background: #eef5f8;
+}
+
+html.contraste-alto .tarjeta-noticia,
+html.contraste-alto .tarjeta-interes,
+html.contraste-alto .tarjeta-servicio,
+html.contraste-alto .categoria-tramite {
+  border-color: #547c92;
+  box-shadow: none;
+}
+
+html.contraste-alto .hero__imagen {
+  opacity: .85;
+}
+
+html.contraste-alto .hero--fotografia::after {
+  background: linear-gradient(
+    90deg,
+    rgba(3,27,44,.96),
+    rgba(3,27,44,.85),
+    rgba(3,27,44,.4)
+  );
+}
+
+html.contraste-alto .hero__titulo span,
+html.contraste-alto .interior-hero h1 span {
+  color: #ffe0a0;
+}
+
+html.contraste-alto .herramienta[aria-pressed="true"] {
+  background: #e5f5ff;
+  color: #06283d;
+}
+
+/* ==================================================
+   RESPONSIVIDAD
+================================================== */
+
+@media (max-width: 1150px) {
+
+  .cuadricula--cuatro {
+    grid-template-columns: repeat(3,minmax(0,1fr));
+  }
+
+  .barra-superior--institucional .enlaces-institucionales {
+    grid-template-columns: repeat(3,minmax(0,1fr));
+  }
+
+  .navegacion__enlace {
+    padding-inline: 14px;
+  }
+}
+
+@media (max-width: 900px) {
+
+  .cabecera__principal {
+    min-height: 100px;
+  }
+
+  .identidad__logo {
+    width: 75px;
+    height: 75px;
+  }
+
+  .cabecera__contacto {
+    display: none;
+  }
+
+  .boton-menu {
+    display: block;
+  }
+
+  .navegacion {
+    display: none;
+  }
+
+  .navegacion.is-open,
+  .navegacion.abierta,
+  .navegacion.esta-abierta {
+    display: block;
+  }
+
+  .navegacion__lista {
+    flex-direction: column;
+    align-items: stretch;
+    padding-block: 10px;
+  }
+
+  .navegacion__item {
+    width: 100%;
+  }
+
+  .navegacion__enlace {
+    width: 100%;
+    min-height: 48px;
+    justify-content: space-between;
+  }
+
+  .navegacion__submenu {
+    position: static;
+    width: 100%;
+    min-width: 0;
+    max-width: none;
+    max-height: none;
+    margin: 0 0 8px;
+    padding: 0 0 0 15px;
+    border: none;
+    border-left: 3px solid #d0ab68;
+    border-radius: 0;
+    box-shadow: none;
+    background: #f1f6f3;
+    opacity: 1;
+    visibility: visible;
+    transform: none;
+    pointer-events: auto;
+  }
+
+  .cuadricula--tres,
+  .cuadricula--cuatro {
+    grid-template-columns: repeat(2,minmax(0,1fr));
+  }
+
+  .pie-pagina__contenido {
+    grid-template-columns: repeat(2,minmax(0,1fr));
+    gap: 35px;
+  }
+}
+
+@media (max-width: 767px) {
+
+  .contenedor {
+    width: min(calc(100% - 32px),1540px);
+  }
+
+  .seccion {
+    padding-block: 58px;
+  }
+
+  .seccion__encabezado {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+
+  .cuadricula--dos,
+  .cuadricula--tres,
+  .cuadricula--cuatro {
+    grid-template-columns: minmax(0,1fr);
+  }
+
+  .barra-superior--institucional .barra-superior__contenido {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .barra-superior--institucional .barra-superior__redes {
+    grid-column: 1;
+    grid-row: 1;
+  }
+
+  .barra-superior--institucional .herramientas-accesibilidad {
+    grid-column: 1;
+    grid-row: 2;
+    justify-content: flex-start;
+  }
+
+  .barra-superior--institucional .enlaces-institucionales {
+    grid-column: 1;
+    grid-row: 3;
+    grid-template-columns: repeat(2,minmax(0,1fr));
+    gap: 8px;
+  }
+
+  .enlaces-institucionales > a {
+    min-height: 75px;
+    padding: 10px 8px;
+    gap: 7px;
+  }
+
+  .enlaces-institucionales .acceso-icono {
+    width: 29px;
+    height: 29px;
+    font-size: 1rem;
+  }
+
+  .enlaces-institucionales .acceso-texto {
+    font-size: .72rem;
+  }
+
+  .enlaces-institucionales .acceso-texto small {
+    font-size: .65rem;
+  }
+
+  .identidad {
+    gap: 10px;
+  }
+
+  .identidad__logo {
+    width: 62px;
+    height: 62px;
+  }
+
+  .identidad__superior {
+    font-size: .59rem;
+  }
+
+  .identidad__nombre {
+    font-size: 1.38rem;
+  }
+
+  .identidad__descripcion {
+    font-size: .67rem;
+  }
+
+  .hero--fotografia {
+    min-height: 400px;
+  }
+
+  .hero__contenido {
+    padding-block: 70px 90px;
+  }
+
+  .hero__titulo {
+    font-size: clamp(2.3rem,9vw,3.6rem);
+  }
+
+  .tarjeta-servicio,
+  .categoria-tramite {
+    padding: 25px;
+  }
+
+  .interior-hero {
+    padding-block: 26px 58px;
+  }
+
+  .migas {
+    margin-bottom: 34px;
+  }
+
+  .interior-hero h1 {
+    font-size: clamp(2.2rem,8.4vw,3.2rem);
+  }
+
+  .interior-hero__contenido,
+  .introduccion-interior,
+  .bloque-orientacion {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .bloque-orientacion {
+    padding: 32px 25px;
+  }
+
+  .noticia-principal {
+    grid-template-columns: 1fr;
+  }
+
+  .noticia-principal__contenido {
+    padding: 28px;
+  }
+
+  .pie-pagina__contenido {
+    grid-template-columns: 1fr;
+    gap: 30px;
+    padding-block: 50px;
+  }
+}
+
+@media (max-width: 390px) {
+
+  .identidad__nombre {
+    font-size: 1.15rem;
+  }
+
+  .identidad__descripcion {
+    font-size: .57rem;
+  }
+
+  .identidad__logo {
+    width: 52px;
+    height: 52px;
+  }
+
+  .barra-superior--institucional .enlaces-institucionales {
+    grid-template-columns: 1fr;
+  }
+
+  .hero__titulo {
+    font-size: 2.25rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *, *::before, *::after {
+    animation-duration: .01ms !important;
+    transition-duration: .01ms !important;
+  }
+}
+/* =========================================
+   AJUSTE DE COLOR PARA FICHAS DE NOTICIAS
+   Fondo arena manteniendo todo lo demás
+========================================= */
+
+.tarjeta-noticia {
+  background: #f1e3c8;
+  border: 1px solid #e2cfaa;
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0 8px 24px rgba(22, 63, 85, 0.08);
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.tarjeta-noticia:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 32px rgba(22, 63, 85, 0.12);
+}
+
+.tarjeta-noticia__imagen {
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  border-bottom: 1px solid #dec79f;
+}
+
+.tarjeta-noticia__contenido {
+  padding: 22px;
+  background: #f1e3c8;
+}
+
+.tarjeta-noticia__contenido h3 {
+  color: #163f55;
+  margin: 0 0 12px;
+  line-height: 1.4;
+}
+
+.tarjeta-noticia__contenido p {
+  color: #495a62;
+  line-height: 1.7;
+  margin: 0 0 16px;
+}
+
+.tarjeta-noticia__contenido a {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: #33716c;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.tarjeta-noticia__contenido a:hover {
+  text-decoration: underline;
+}
+
+.noticia-fecha {
+  display: inline-block;
+  margin-bottom: 12px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #8a6a2f;
+}
+
+/* =========================================
+   TURISMO - FRANJA VERDE DEL VIDEO
+   CONOCE PUCHUNCAVÍ
+========================================= */
+
+.pagina-turismo .turismo-video__encabezado {
+  position: relative;
+  isolation: isolate;
+  padding: 32px 0;
+  margin-bottom: 40px;
+}
+
+.pagina-turismo .turismo-video__encabezado::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  width: 100vw;
+  transform: translateX(-50%);
+  background-color: #33716c;
+  z-index: -1;
+}
+
+.pagina-turismo .turismo-video__encabezado .etiqueta {
+  color: #e6d6b8;
+}
+
+.pagina-turismo .turismo-video__encabezado h2 {
+  color: #ffffff;
+}
+
+.pagina-turismo .turismo-video__encabezado p:last-child {
+  color: #ffffff;
+}
+
+
+/* ==================================================
+   ESTILOS DE PÁGINAS - UNIFICADOS
+   Una sola hoja de estilos para todo el sitio
+   Las clases están limitadas por página para evitar conflictos.
+================================================== */
+
+/* -------- index.html -------- */
+/* =============================================
+       1. PORTADA CON SLIDER
+       Reemplaza la imagen fija de la iglesia.
+       Conserva el ancho completo de la portada.
+    ============================================= */
+
+    .pagina-inicio .portada-carrusel {
+      position: relative;
+      display: block;
+      isolation: isolate;
+      width: 100%;
+      min-height: 0;
+      overflow: hidden;
+      padding: 0;
+      background: #163f55;
+      color: #ffffff;
+    }
+
+    /* Anulamos el degradado de la portada anterior
+       porque cada diapositiva tendrá el suyo. */
+
+    .pagina-inicio .portada-carrusel::before,
+    .pagina-inicio .portada-carrusel::after {
+      content: none;
+    }
+
+    .portada-carrusel__ventana {
+      position: relative;
+      width: 100%;
+      overflow: hidden;
+    }
+
+    .portada-carrusel__pista {
+      display: flex;
+      width: 100%;
+      transition: transform .7s ease-in-out;
+      will-change: transform;
+    }
+
+    .portada-carrusel__slide {
+      position: relative;
+      isolation: isolate;
+      flex: 0 0 100%;
+      width: 100%;
+      min-width: 0;
+      min-height: 570px;
+      display: flex;
+      align-items: center;
+      overflow: hidden;
+      background: #163f55;
+      color: #ffffff;
+    }
+
+    .portada-carrusel__foto {
+      position: absolute;
+      z-index: -2;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      display: block;
+      object-fit: cover;
+      object-position: center;
+    }
+
+    .portada-carrusel__slide::after {
+      content: "";
+      position: absolute;
+      z-index: -1;
+      inset: 0;
+      background: linear-gradient(
+        90deg,
+        rgba(10,39,55,.94) 0%,
+        rgba(10,39,55,.79) 36%,
+        rgba(10,39,55,.38) 68%,
+        rgba(10,39,55,.14) 100%
+      );
+      pointer-events: none;
+    }
+
+    /* La primera diapositiva mantiene la iglesia
+       y el estilo de la portada que aprobamos. */
+
+    .portada-carrusel__slide--inicio .portada-carrusel__foto {
+      object-position: center 47%;
+    }
+
+    .portada-carrusel__interior {
+      position: relative;
+      z-index: 1;
+      width: min(calc(100% - 48px), 1540px);
+      margin-inline: auto;
+      padding: 95px 6px 105px;
+    }
+
+    .portada-carrusel__contenido {
+      max-width: 860px;
+      padding-right: 45px;
+    }
+
+    .portada-carrusel__etiqueta {
+      margin: 0 0 22px;
+      color: #e6d6b8;
+      font-size: .85rem;
+      font-weight: 800;
+      letter-spacing: .13em;
+      line-height: 1.5;
+      text-transform: uppercase;
+    }
+
+    .portada-carrusel__titulo {
+      margin: 0 0 28px;
+      color: #ffffff;
+      font-size: clamp(2.5rem, 5vw, 4.8rem);
+      font-weight: 800;
+      line-height: 1.09;
+      letter-spacing: -.04em;
+    }
+
+    .portada-carrusel__titulo span {
+      display: block;
+      color: #e6d6b8;
+    }
+
+    .portada-carrusel__descripcion {
+      max-width: 720px;
+      margin: 0;
+      color: #ffffff;
+      font-size: clamp(1rem, 1.35vw, 1.2rem);
+      line-height: 1.75;
+    }
+
+    /* Estilo del texto para las cuatro noticias */
+
+    .portada-carrusel__slide--noticia
+    .portada-carrusel__contenido {
+      max-width: 760px;
+    }
+
+    .portada-carrusel__slide--noticia
+    .portada-carrusel__titulo {
+      max-width: 760px;
+      font-size: clamp(2.15rem, 4vw, 3.7rem);
+      line-height: 1.14;
+    }
+
+    .portada-carrusel__slide--noticia
+    .portada-carrusel__descripcion {
+      max-width: 640px;
+      margin-bottom: 28px;
+    }
+
+    .portada-carrusel__enlace {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 13px;
+      padding: 13px 20px;
+      border: 1px solid #e6d6b8;
+      border-radius: 7px;
+      background: #e6d6b8;
+      color: #163f55;
+      font-size: .92rem;
+      font-weight: 800;
+      text-decoration: none;
+      transition: background .2s ease, color .2s ease;
+    }
+
+    .portada-carrusel__enlace:hover {
+      background: #ffffff;
+      color: #163f55;
+    }
+
+    /* =============================================
+       2. FLECHAS DEL CARRUSEL
+    ============================================= */
+
+    .portada-carrusel__flecha {
+      position: absolute;
+      z-index: 5;
+      top: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 49px;
+      height: 49px;
+      padding: 0;
+      transform: translateY(-50%);
+      border: 1px solid rgba(255,255,255,.6);
+      border-radius: 50%;
+      background: rgba(22,63,85,.75);
+      color: #ffffff;
+      font-size: 1.6rem;
+      line-height: 1;
+      cursor: pointer;
+      transition: background .2s ease;
+    }
+
+    .portada-carrusel__flecha:hover {
+      background: #33716c;
+    }
+
+    .portada-carrusel__flecha--izquierda {
+      left: 19px;
+    }
+
+    .portada-carrusel__flecha--derecha {
+      right: 19px;
+    }
+
+    /* =============================================
+       3. INDICADORES
+    ============================================= */
+
+    .portada-carrusel__indicadores {
+      position: absolute;
+      z-index: 5;
+      bottom: 26px;
+      left: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      transform: translateX(-50%);
+    }
+
+    .portada-carrusel__indicador {
+      width: 11px;
+      height: 11px;
+      padding: 0;
+      border: 1px solid rgba(255,255,255,.75);
+      border-radius: 30px;
+      background: rgba(255,255,255,.4);
+      cursor: pointer;
+      transition: background .2s ease, width .2s ease;
+    }
+
+    .portada-carrusel__indicador.activo {
+      width: 32px;
+      background: #e6d6b8;
+      border-color: #e6d6b8;
+    }
+
+    /* =============================================
+       4. LINKS DE INTERÉS
+       Conservamos las cinco columnas.
+    ============================================= */
+
+    .interes-introduccion {
+      max-width: 770px;
+      margin: 0 0 34px;
+      color: #52636c;
+      font-size: .96rem;
+      line-height: 1.8;
+    }
+
+    .interes-listado {
+      display: grid;
+      grid-template-columns: repeat(5, minmax(0, 1fr));
+      column-gap: 24px;
+      width: 100%;
+      align-items: stretch;
+    }
+
+    .interes-elemento {
+      display: flex;
+      flex-direction: column;
+      min-width: 0;
+      padding: 22px 0 24px;
+      border-bottom: 1px solid #d5dfdf;
+      background: transparent;
+    }
+
+    .interes-elemento:nth-child(-n+5) {
+      border-top: 2px solid #33716c;
+    }
+
+    .interes-elemento__categoria {
+      margin: 0 0 8px;
+      color: #33716c;
+      font-size: .68rem;
+      font-weight: 800;
+      letter-spacing: .065em;
+      line-height: 1.5;
+      text-transform: uppercase;
+      overflow-wrap: anywhere;
+    }
+
+    .interes-elemento:nth-child(4n+3)
+    .interes-elemento__categoria,
+    .interes-elemento:nth-child(4n+4)
+    .interes-elemento__categoria {
+      color: #8c6c37;
+    }
+
+    .interes-elemento h3 {
+      margin: 0 0 10px;
+      color: #163f55;
+      font-size: .98rem;
+      font-weight: 700;
+      line-height: 1.45;
+      overflow-wrap: anywhere;
+    }
+
+    .interes-elemento__descripcion {
+      margin: 0 0 15px;
+      color: #52636c;
+      font-size: .82rem;
+      line-height: 1.65;
+      overflow-wrap: anywhere;
+    }
+
+    .interes-elemento__enlace {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      align-self: flex-start;
+      margin-top: auto;
+      color: #33716c;
+      font-size: .82rem;
+      font-weight: 700;
+      line-height: 1.5;
+      text-decoration: none;
+      transition: color .2s ease;
+    }
+
+    .interes-elemento__enlace:hover {
+      color: #163f55;
+      text-decoration: underline;
+    }
+
+    .interes-elemento__enlace:focus-visible {
+      outline: 3px solid #33716c;
+      outline-offset: 4px;
+    }
+
+    .interes-elemento__flecha {
+      font-size: 1.05rem;
+    }
+
+    /* =============================================
+       5. FRANJAS VERDES DE NOTICIAS Y YOUTUBE
+       Se conservan igual.
+    ============================================= */
+
+    .pagina-inicio .seccion--noticias,
+    .pagina-inicio .seccion--video {
+      overflow: hidden;
+    }
+
+    .pagina-inicio .seccion--noticias .seccion__encabezado,
+    .pagina-inicio .seccion--video .seccion__encabezado {
+      position: relative;
+      isolation: isolate;
+      min-height: 135px;
+      display: flex;
+      align-items: center;
+      margin-bottom: 42px;
+      padding: 26px 0;
+    }
+
+    .pagina-inicio .seccion--noticias .seccion__encabezado::before,
+    .pagina-inicio .seccion--video .seccion__encabezado::before {
+      content: "";
+      position: absolute;
+      z-index: -1;
+      top: 0;
+      bottom: 0;
+      left: 50%;
+      width: 100vw;
+      transform: translateX(-50%);
+      background: #33716c;
+    }
+
+    .pagina-inicio .seccion--noticias .seccion__encabezado .etiqueta,
+    .pagina-inicio .seccion--video .seccion__encabezado .etiqueta {
+      margin-bottom: 10px;
+      color: #e6d6b8;
+      font-size: .78rem;
+      font-weight: 800;
+      letter-spacing: .12em;
+    }
+
+    .pagina-inicio .seccion--noticias .seccion__encabezado h2,
+    .pagina-inicio .seccion--video .seccion__encabezado h2 {
+      margin-bottom: 0;
+      color: #ffffff;
+      font-size: clamp(2rem,3vw,2.7rem);
+      font-weight: 800;
+    }
+
+    /* =============================================
+       6. DISEÑO ADAPTABLE
+    ============================================= */
+
+    @media (max-width: 1150px) {
+      .interes-listado {
+        grid-template-columns: repeat(3, minmax(0,1fr));
+        column-gap: 28px;
+      }
+
+      .interes-elemento:nth-child(-n+5) {
+        border-top: none;
+      }
+
+      .interes-elemento:nth-child(-n+3) {
+        border-top: 2px solid #33716c;
+      }
+
+      .portada-carrusel__contenido {
+        max-width: 760px;
+      }
+    }
+
+    @media (max-width: 750px) {
+      .interes-listado {
+        grid-template-columns: repeat(2, minmax(0,1fr));
+        column-gap: 24px;
+      }
+
+      .interes-elemento:nth-child(-n+3) {
+        border-top: none;
+      }
+
+      .interes-elemento:nth-child(-n+2) {
+        border-top: 2px solid #33716c;
+      }
+
+      .portada-carrusel__slide {
+        min-height: 570px;
+      }
+
+      .portada-carrusel__slide::after {
+        background: linear-gradient(
+          0deg,
+          rgba(10,39,55,.95) 0%,
+          rgba(10,39,55,.82) 60%,
+          rgba(10,39,55,.28) 100%
+        );
+      }
+
+      .portada-carrusel__interior {
+        display: flex;
+        align-items: flex-end;
+        min-height: 570px;
+        padding: 95px 30px 90px;
+      }
+
+      .portada-carrusel__contenido {
+        max-width: none;
+        padding-right: 0;
+      }
+
+      .portada-carrusel__titulo {
+        font-size: clamp(2.2rem, 7vw, 3.6rem);
+      }
+
+      .portada-carrusel__slide--noticia
+      .portada-carrusel__titulo {
+        font-size: clamp(1.8rem, 5.5vw, 2.5rem);
+      }
+
+      .portada-carrusel__flecha {
+        top: 48%;
+        width: 38px;
+        height: 38px;
+        font-size: 1.2rem;
+      }
+
+      .portada-carrusel__flecha--izquierda {
+        left: 9px;
+      }
+
+      .portada-carrusel__flecha--derecha {
+        right: 9px;
+      }
+    }
+
+    @media (max-width: 767px) {
+      .pagina-inicio .seccion--noticias .seccion__encabezado,
+      .pagina-inicio .seccion--video .seccion__encabezado {
+        min-height: 115px;
+        padding: 23px 0;
+        margin-bottom: 30px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .interes-listado {
+        grid-template-columns: 1fr;
+      }
+
+      .interes-elemento:nth-child(-n+2) {
+        border-top: none;
+      }
+
+      .interes-elemento:first-child {
+        border-top: 2px solid #33716c;
+      }
+
+      .interes-elemento h3 {
+        font-size: 1.04rem;
+      }
+
+      .interes-elemento__descripcion {
+        font-size: .87rem;
+      }
+
+      .portada-carrusel__slide {
+        min-height: 580px;
+      }
+
+      .portada-carrusel__interior {
+        min-height: 580px;
+        padding: 105px 35px 95px;
+      }
+
+      .portada-carrusel__etiqueta {
+        font-size: .68rem;
+        margin-bottom: 12px;
+      }
+
+      .portada-carrusel__titulo {
+        font-size: clamp(2rem, 8.5vw, 2.8rem);
+      }
+
+      .portada-carrusel__slide--noticia
+      .portada-carrusel__titulo {
+        font-size: clamp(1.65rem, 6vw, 2rem);
+        margin-bottom: 14px;
+      }
+
+      .portada-carrusel__descripcion {
+        font-size: .9rem;
+        line-height: 1.6;
+      }
+
+      .portada-carrusel__slide--noticia
+      .portada-carrusel__descripcion {
+        margin-bottom: 18px;
+      }
+
+      .portada-carrusel__enlace {
+        padding: 10px 13px;
+        font-size: .82rem;
+      }
+
+      .portada-carrusel__indicadores {
+        bottom: 20px;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .portada-carrusel__pista,
+      .portada-carrusel__indicador {
+        transition: none;
+      }
+    }
+
+/* -------- paginas/contacto.html -------- */
+/* =========================================
+       COLORES DE CONTACTO
+    ========================================= */
+
+    .pagina-contacto {
+      --contacto-mostaza: #b88a3b;
+      --contacto-mostaza-oscuro: #8c631f;
+      --contacto-arena-claro: #f4ead7;
+      --contacto-azul: #163f55;
+      --contacto-verde: #33716c;
+      --contacto-verde-claro: #e5f0e9;
+    }
+
+    /* =========================================
+       PORTADA DE CONTACTO
+       FOTOGRAFÍA ORIGINAL RECUPERADA
+    ========================================= */
+
+    .pagina-contacto .interior-hero {
+      position: relative;
+      display: flex;
+      align-items: center;
+      overflow: hidden;
+
+      min-height: 360px;
+
+      background-color: #163f55;
+
+      background-image:
+        linear-gradient(
+          90deg,
+          rgba(10, 31, 43, 0.84) 0%,
+          rgba(10, 31, 43, 0.65) 50%,
+          rgba(10, 31, 43, 0.34) 100%
+        ),
+        url("../assets/imagenes/heroes/hero-contacto.jpg");
+
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+
+      color: #ffffff;
+    }
+
+    /* Evita capas decorativas sobre la fotografía */
+
+    .pagina-contacto .interior-hero::before,
+    .pagina-contacto .interior-hero::after {
+      content: none;
+    }
+
+    /* Márgenes como Turismo y Trámites */
+
+    .pagina-contacto .interior-hero > .contenedor {
+      position: relative;
+      z-index: 1;
+
+      box-sizing: border-box;
+      width: 100%;
+      max-width: 1200px;
+
+      margin-left: auto;
+      margin-right: auto;
+
+      padding-left: 52px;
+      padding-right: 52px;
+    }
+
+    .pagina-contacto .interior-hero .migas {
+      position: relative;
+      z-index: 1;
+
+      padding-top: 30px;
+      margin-bottom: 22px;
+    }
+
+    .pagina-contacto .interior-hero .migas,
+    .pagina-contacto .interior-hero .migas a,
+    .pagina-contacto .interior-hero .migas li {
+      color: rgba(255, 255, 255, 0.9);
+    }
+
+    .pagina-contacto .interior-hero .migas a:hover {
+      color: #ffffff;
+      text-decoration: underline;
+    }
+
+    /* Posición original del contenido */
+
+    .pagina-contacto .interior-hero__contenido {
+      position: relative;
+      z-index: 1;
+
+      display: block;
+      padding: 38px 0 62px;
+    }
+
+    .pagina-contacto .interior-hero__texto {
+      width: 100%;
+      max-width: 730px;
+    }
+
+    .pagina-contacto .interior-hero__texto .etiqueta {
+      color: #e6d6b8;
+      margin-bottom: 15px;
+    }
+
+    /* Título corregido */
+
+    .pagina-contacto .interior-hero h1 {
+      margin: 0 0 20px;
+
+      color: #ffffff;
+      font-size: clamp(2.45rem, 4.4vw, 4rem);
+      font-weight: 800;
+      line-height: 1.12;
+      letter-spacing: -0.035em;
+    }
+
+    .pagina-contacto .interior-hero h1 span {
+      color: #e6d6b8;
+    }
+
+    .pagina-contacto .interior-hero__texto > p:last-child {
+      max-width: 650px;
+      margin: 0;
+
+      color: rgba(255, 255, 255, 0.94);
+      font-size: 1rem;
+      line-height: 1.7;
+    }
+
+    /* Elimina el número decorativo lateral de la portada */
+
+    .pagina-contacto .interior-hero__detalle {
+      display: none;
+    }
+
+    /* =========================================
+       FRANJAS MOSTAZA
+       CONTACTO PRINCIPAL Y OTROS TELÉFONOS
+    ========================================= */
+
+    .pagina-contacto .contacto-mostaza {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .pagina-contacto .contacto-mostaza > .contenedor {
+      position: relative;
+      z-index: 1;
+    }
+
+    .pagina-contacto
+    .contacto-mostaza
+    .seccion__encabezado {
+      position: relative;
+      isolation: isolate;
+
+      display: flex;
+      align-items: center;
+
+      min-height: 205px;
+      margin: 0 0 48px;
+      padding: 30px 0;
+
+      background: transparent;
+    }
+
+    .pagina-contacto
+    .contacto-mostaza
+    .seccion__encabezado::before {
+      content: "";
+      position: absolute;
+
+      top: 0;
+      bottom: 0;
+      left: 50%;
+
+      width: 100vw;
+      transform: translateX(-50%);
+
+      background-color: #b88a3b;
+      z-index: -1;
+    }
+
+    .pagina-contacto
+    .contacto-mostaza
+    .seccion__encabezado > div {
+      position: relative;
+      z-index: 1;
+      width: 100%;
+    }
+
+    .pagina-contacto
+    .contacto-mostaza
+    .seccion__encabezado .etiqueta {
+      margin-bottom: 14px;
+
+      color: #fff1d4;
+      font-weight: 800;
+      letter-spacing: 0.09em;
+      text-transform: uppercase;
+    }
+
+    .pagina-contacto
+    .contacto-mostaza
+    .seccion__encabezado h2 {
+      margin: 0 0 17px;
+
+      color: #ffffff;
+      font-size: clamp(2rem, 3.2vw, 3rem);
+      font-weight: 800;
+      line-height: 1.17;
+    }
+
+    .pagina-contacto
+    .contacto-mostaza
+    .seccion__encabezado
+    .seccion__descripcion {
+      max-width: 790px;
+      margin: 0;
+
+      color: #fffaf0;
+      font-size: 1.05rem;
+      line-height: 1.7;
+    }
+
+    /* =========================================
+       FICHAS CON CONTORNO MOSTAZA
+    ========================================= */
+
+    .pagina-contacto
+    .contacto-mostaza
+    .cuadricula {
+      align-items: stretch;
+    }
+
+    .pagina-contacto
+    .contacto-mostaza
+    .tarjeta-servicio {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+
+      box-sizing: border-box;
+      width: 100%;
+      min-width: 0;
+      height: 100%;
+
+      margin: 0;
+      padding: 28px 29px;
+
+      background: #ffffff;
+      border: 2px solid #b88a3b;
+      border-radius: 17px;
+
+      box-shadow: 0 8px 24px rgba(22, 63, 85, 0.04);
+
+      transition:
+        border-color 0.2s ease,
+        box-shadow 0.2s ease,
+        transform 0.2s ease;
+    }
+
+    .pagina-contacto
+    .contacto-mostaza
+    .tarjeta-servicio:hover {
+      border-color: #8c631f;
+      transform: translateY(-3px);
+      box-shadow: 0 12px 28px rgba(140, 99, 31, 0.1);
+    }
+
+    .pagina-contacto
+    .contacto-mostaza
+    .tarjeta-servicio__icono {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      width: 58px;
+      height: 58px;
+      min-width: 58px;
+
+      margin-bottom: 24px;
+      padding: 0;
+
+      border: 0;
+      border-radius: 14px;
+
+      background: #f4ead7;
+      color: #8c631f;
+
+      font-size: 1.05rem;
+      font-weight: 800;
+      line-height: 1;
+    }
+
+    .pagina-contacto
+    .contacto-mostaza
+    .tarjeta-servicio h3 {
+      margin: 0 0 14px;
+
+      color: #163f55;
+      font-size: 1.2rem;
+      font-weight: 800;
+      line-height: 1.4;
+    }
+
+    .pagina-contacto
+    .contacto-mostaza
+    .tarjeta-servicio p {
+      margin: 0 0 24px;
+
+      color: #52626a;
+      font-size: 0.96rem;
+      line-height: 1.7;
+    }
+
+    .pagina-contacto
+    .contacto-mostaza
+    .tarjeta-servicio a {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+
+      margin-top: auto;
+
+      color: #8c631f;
+      font-size: 0.94rem;
+      font-weight: 800;
+      line-height: 1.5;
+
+      text-decoration: none;
+    }
+
+    .pagina-contacto
+    .contacto-mostaza
+    .tarjeta-servicio a:hover {
+      color: #163f55;
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+
+    /* =========================================
+       RECUADRO VERDE DE UBICACIÓN
+    ========================================= */
+
+    .pagina-contacto
+    .introduccion-interior--verde {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+
+      gap: 32px;
+
+      box-sizing: border-box;
+      width: 100%;
+
+      padding: 38px 40px;
+
+      border: 2px solid #33716c;
+      border-radius: 18px;
+
+      background-color: #e5f0e9;
+
+      box-shadow: 0 8px 24px rgba(22, 63, 85, 0.04);
+    }
+
+    .pagina-contacto
+    .introduccion-interior--verde
+    .introduccion-interior__texto {
+      flex: 1 1 600px;
+      min-width: 0;
+      max-width: 900px;
+    }
+
+    .pagina-contacto
+    .introduccion-interior--verde
+    .etiqueta {
+      display: block;
+      margin-bottom: 14px;
+
+      color: #33716c;
+      font-weight: 800;
+    }
+
+    .pagina-contacto
+    .introduccion-interior--verde h2 {
+      margin: 0 0 24px;
+
+      color: #163f55;
+      font-size: clamp(1.8rem, 3vw, 2.8rem);
+      font-weight: 800;
+      line-height: 1.2;
+    }
+
+    .pagina-contacto
+    .introduccion-interior--verde p {
+      margin: 0 0 22px;
+
+      color: #455a64;
+      font-size: 1rem;
+      line-height: 1.7;
+    }
+
+    .pagina-contacto
+    .introduccion-interior--verde p:last-child {
+      margin-bottom: 0;
+    }
+
+    .pagina-contacto
+    .introduccion-interior--verde
+    .boton {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+
+      gap: 8px;
+      flex-shrink: 0;
+
+      padding: 14px 22px;
+
+      border: 2px solid #33716c;
+      border-radius: 10px;
+
+      background: #33716c;
+      color: #ffffff;
+
+      font-size: 0.92rem;
+      font-weight: 700;
+      line-height: 1.4;
+
+      text-decoration: none;
+
+      transition:
+        background-color 0.2s ease,
+        border-color 0.2s ease;
+    }
+
+    .pagina-contacto
+    .introduccion-interior--verde
+    .boton:hover {
+      background-color: #245a56;
+      border-color: #245a56;
+      color: #ffffff;
+    }
+
+    .pagina-contacto
+    .introduccion-interior--verde
+    .boton:focus-visible {
+      outline: 3px solid #163f55;
+      outline-offset: 3px;
+    }
+
+    /* =========================================
+       ADAPTACIÓN A TABLET
+    ========================================= */
+
+    @media (max-width: 900px) {
+
+      .pagina-contacto .interior-hero > .contenedor {
+        padding-left: 36px;
+        padding-right: 36px;
+      }
+
+      .pagina-contacto .interior-hero {
+        min-height: 310px;
+      }
+
+      .pagina-contacto
+      .contacto-mostaza
+      .cuadricula--tres {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .pagina-contacto
+      .contacto-mostaza
+      .seccion__encabezado {
+        min-height: 190px;
+      }
+
+      .pagina-contacto
+      .introduccion-interior--verde {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 32px 30px;
+      }
+
+      .pagina-contacto
+      .introduccion-interior--verde
+      .introduccion-interior__texto {
+        flex: initial;
+        width: 100%;
+        max-width: 100%;
+      }
+
+    }
+
+    /* =========================================
+       ADAPTACIÓN A CELULAR
+    ========================================= */
+
+    @media (max-width: 620px) {
+
+      .pagina-contacto .interior-hero {
+        min-height: 280px;
+      }
+
+      .pagina-contacto .interior-hero > .contenedor {
+        padding-left: 22px;
+        padding-right: 22px;
+      }
+
+      .pagina-contacto .interior-hero .migas {
+        padding-top: 20px;
+      }
+
+      .pagina-contacto .interior-hero__contenido {
+        padding: 24px 0 42px;
+      }
+
+      .pagina-contacto .interior-hero h1 {
+        font-size: clamp(2.15rem, 8vw, 3rem);
+      }
+
+      .pagina-contacto
+      .contacto-mostaza
+      .cuadricula--tres {
+        grid-template-columns: 1fr;
+      }
+
+      .pagina-contacto
+      .contacto-mostaza
+      .seccion__encabezado {
+        min-height: auto;
+        padding: 32px 0;
+        margin-bottom: 28px;
+      }
+
+      .pagina-contacto
+      .contacto-mostaza
+      .seccion__encabezado h2 {
+        font-size: 2rem;
+      }
+
+      .pagina-contacto
+      .contacto-mostaza
+      .seccion__encabezado
+      .seccion__descripcion {
+        font-size: 0.96rem;
+      }
+
+      .pagina-contacto
+      .contacto-mostaza
+      .tarjeta-servicio {
+        padding: 24px;
+      }
+
+      .pagina-contacto
+      .introduccion-interior--verde {
+        gap: 24px;
+        padding: 28px 23px;
+        border-radius: 14px;
+      }
+
+      .pagina-contacto
+      .introduccion-interior--verde h2 {
+        font-size: 1.8rem;
+      }
+
+      .pagina-contacto
+      .introduccion-interior--verde p {
+        font-size: 0.96rem;
+      }
+
+      .pagina-contacto
+      .introduccion-interior--verde
+      .boton {
+        width: 100%;
+      }
+
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+
+      .pagina-contacto
+      .contacto-mostaza
+      .tarjeta-servicio,
+
+      .pagina-contacto
+      .introduccion-interior--verde
+      .boton {
+        transition: none;
+      }
+
+    }
+
+/* -------- paginas/departamentos.html -------- */
+/* =========================================
+       PORTADA DE DEPARTAMENTOS
+       MISMAS MEDIDAS Y MÁRGENES QUE TURISMO
+    ========================================= */
+
+    .pagina-departamentos .interior-hero {
+      position: relative;
+      display: flex;
+      align-items: center;
+      overflow: hidden;
+      min-height: 360px;
+      background-color: #163f55;
+      background-image:
+        linear-gradient(
+          90deg,
+          rgba(10, 31, 43, 0.84) 0%,
+          rgba(10, 31, 43, 0.65) 50%,
+          rgba(10, 31, 43, 0.34) 100%
+        ),
+        url("../assets/imagenes/heroes/hero-departamentos.jpg");
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      color: #ffffff;
+    }
+
+    .pagina-departamentos .interior-hero::before,
+    .pagina-departamentos .interior-hero::after {
+      content: none;
+    }
+
+    .pagina-departamentos .interior-hero > .contenedor {
+      position: relative;
+      z-index: 1;
+      box-sizing: border-box;
+      width: 100%;
+      max-width: 1200px;
+      margin-left: auto;
+      margin-right: auto;
+      padding-left: 52px;
+      padding-right: 52px;
+    }
+
+    .pagina-departamentos .interior-hero__contenido {
+      position: relative;
+      z-index: 1;
+      padding: 38px 0 62px;
+    }
+
+    .pagina-departamentos .interior-hero__texto {
+      max-width: 730px;
+    }
+
+    .pagina-departamentos .interior-hero .migas {
+      position: relative;
+      z-index: 1;
+      padding-top: 30px;
+      margin-bottom: 22px;
+    }
+
+    .pagina-departamentos .interior-hero .migas,
+    .pagina-departamentos .interior-hero .migas a,
+    .pagina-departamentos .interior-hero .migas span {
+      color: rgba(255, 255, 255, 0.9);
+    }
+
+    .pagina-departamentos .interior-hero .migas a:hover {
+      color: #ffffff;
+      text-decoration: underline;
+    }
+
+    .pagina-departamentos .interior-hero h1 {
+      color: #ffffff;
+      margin-bottom: 17px;
+    }
+
+    .pagina-departamentos .interior-hero__texto > p {
+      color: rgba(255, 255, 255, 0.94);
+      line-height: 1.7;
+    }
+
+    .pagina-departamentos .interior-hero .etiqueta--clara {
+      color: #ffffff;
+    }
+
+    /* =========================================
+       PRESENTACIÓN DE DEPARTAMENTOS
+    ========================================= */
+
+    .departamentos-presentacion {
+      max-width: 900px;
+      margin-bottom: 38px;
+    }
+
+    .departamentos-presentacion h2 {
+      color: #163f55;
+      margin-bottom: 16px;
+    }
+
+    .departamentos-presentacion p {
+      line-height: 1.8;
+      color: #445760;
+    }
+
+    /* =========================================
+       CUADRÍCULA DE 16 DEPARTAMENTOS
+
+       CAMBIO 1:
+       CUATRO COLUMNAS EN LUGAR DE TRES
+    ========================================= */
+
+    .departamentos-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 20px;
+    }
+
+    .departamento-tarjeta {
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      min-width: 0;
+      min-height: 260px;
+      padding: 27px 25px;
+      background: #ffffff;
+      border: 1px solid #dce5e5;
+      border-top: 5px solid #33716c;
+      border-radius: 14px;
+      text-decoration: none;
+      color: #354f5a;
+      box-shadow: 0 3px 15px rgba(22, 63, 85, 0.03);
+      transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease,
+        border-color 0.2s ease;
+    }
+
+    /* =========================================
+       CAMBIO 2:
+       UN COLOR DE FONDO POR COLUMNA
+    ========================================= */
+
+    /* COLUMNA 1 - VERDE */
+    .departamento-tarjeta:nth-child(4n+1) {
+      background: #e5f0e9;
+      border-top-color: #33716c;
+    }
+
+    /* COLUMNA 2 - ARENA */
+    .departamento-tarjeta:nth-child(4n+2) {
+      background: #f4ead7;
+      border-top-color: #d0ab68;
+    }
+
+    /* COLUMNA 3 - AZUL */
+    .departamento-tarjeta:nth-child(4n+3) {
+      background: #e5eef2;
+      border-top-color: #286781;
+    }
+
+    /* COLUMNA 4 - CELESTE */
+    .departamento-tarjeta:nth-child(4n+4) {
+      background: #e3f3f6;
+      border-top-color: #6bb7c7;
+    }
+
+    /* SE MANTIENE EL EFECTO ORIGINAL */
+
+    .departamento-tarjeta:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 15px 32px rgba(22, 63, 85, 0.12);
+      border-color: #b9cbca;
+    }
+
+    .departamento-tarjeta:focus-visible {
+      outline: 3px solid #33716c;
+      outline-offset: 4px;
+    }
+
+    /* NÚMERO Y CATEGORÍA */
+
+    .departamento-tarjeta__numero {
+      display: block;
+      margin-bottom: 17px;
+      color: #33716c;
+      font-size: 0.78rem;
+      font-weight: 800;
+      letter-spacing: 0.1em;
+    }
+
+    /* NOMBRE DEL DEPARTAMENTO */
+
+    .departamento-tarjeta h3 {
+      margin: 0 0 13px;
+      color: #163f55;
+      font-size: 1.13rem;
+      font-weight: 700;
+      line-height: 1.4;
+    }
+
+    /* DESCRIPCIÓN */
+
+    .departamento-tarjeta__descripcion {
+      margin: 0 0 25px;
+      color: #52626a;
+      font-size: 0.91rem;
+      line-height: 1.7;
+      flex-grow: 1;
+    }
+
+    /* ENLACE */
+
+    .departamento-tarjeta__accion {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      width: fit-content;
+      color: #33716c;
+      font-size: 0.88rem;
+      font-weight: 700;
+      line-height: 1.5;
+    }
+
+    .departamento-tarjeta__flecha {
+      font-size: 1.15rem;
+      transition: transform 0.2s ease;
+    }
+
+    .departamento-tarjeta:hover
+    .departamento-tarjeta__flecha {
+      transform: translate(3px, -3px);
+    }
+
+    /* =========================================
+       INFORMACIÓN COMPLEMENTARIA
+    ========================================= */
+
+    .departamentos-informacion {
+      padding: 60px 0;
+      background: #f1f6f5;
+    }
+
+    .departamentos-informacion__contenido {
+      max-width: 950px;
+    }
+
+    .departamentos-informacion h2 {
+      margin-bottom: 18px;
+      color: #163f55;
+    }
+
+    .departamentos-informacion p {
+      margin-bottom: 15px;
+      line-height: 1.8;
+      color: #445760;
+    }
+
+    /* =========================================
+       CONTACTO MUNICIPAL
+    ========================================= */
+
+    .departamentos-contacto {
+      padding: 54px 0;
+      background: #163f55;
+      color: #ffffff;
+    }
+
+    .departamentos-contacto h2 {
+      margin-bottom: 18px;
+      color: #ffffff;
+    }
+
+    .departamentos-contacto p {
+      margin-bottom: 12px;
+      line-height: 1.8;
+    }
+
+    .departamentos-contacto a {
+      color: #cdecef;
+    }
+
+    /* =========================================
+       RESPONSIVO ORIGINAL
+
+       COMPUTADOR: 4 COLUMNAS
+       TABLET: 2 COLUMNAS
+       CELULAR: 1 COLUMNA
+    ========================================= */
+
+    @media (max-width: 1000px) {
+      .departamentos-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .pagina-departamentos .interior-hero > .contenedor {
+        padding-left: 36px;
+        padding-right: 36px;
+      }
+    }
+
+    @media (max-width: 900px) {
+      .pagina-departamentos .interior-hero {
+        min-height: 310px;
+      }
+    }
+
+    @media (max-width: 620px) {
+      .departamentos-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .departamento-tarjeta {
+        min-height: auto;
+        padding: 23px;
+      }
+
+      .departamentos-informacion,
+      .departamentos-contacto {
+        padding: 40px 0;
+      }
+
+      .pagina-departamentos .interior-hero {
+        min-height: 280px;
+      }
+
+      .pagina-departamentos .interior-hero > .contenedor {
+        padding-left: 22px;
+        padding-right: 22px;
+      }
+
+      .pagina-departamentos .interior-hero .migas {
+        padding-top: 20px;
+      }
+
+      .pagina-departamentos .interior-hero__contenido {
+        padding: 24px 0 42px;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .departamento-tarjeta,
+      .departamento-tarjeta__flecha {
+        transition: none;
+      }
+    }
+
+/* -------- paginas/desarrollo-comunitario.html -------- */
+/* =========================================
+       PORTADA DE COMUNIDAD
+       MISMO FORMATO QUE TURISMO Y DEPARTAMENTOS
+    ========================================= */
+
+    .pagina-comunidad .interior-hero {
+      position: relative;
+      display: flex;
+      align-items: center;
+      overflow: hidden;
+
+      min-height: 360px;
+
+      background-color: #163f55;
+
+      background-image:
+        linear-gradient(
+          90deg,
+          rgba(10, 31, 43, 0.84) 0%,
+          rgba(10, 31, 43, 0.65) 50%,
+          rgba(10, 31, 43, 0.34) 100%
+        ),
+        url("../assets/imagenes/heroes/hero-comunidad.jpg");
+
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+
+      color: #ffffff;
+    }
+
+    .pagina-comunidad .interior-hero::before,
+    .pagina-comunidad .interior-hero::after {
+      content: none;
+    }
+
+    /* MÁRGENES DE LA PORTADA */
+
+    .pagina-comunidad .interior-hero > .contenedor {
+      position: relative;
+      z-index: 1;
+
+      box-sizing: border-box;
+      width: 100%;
+      max-width: 1200px;
+
+      margin-left: auto;
+      margin-right: auto;
+
+      padding-left: 52px;
+      padding-right: 52px;
+    }
+
+    .pagina-comunidad .interior-hero__contenido {
+      position: relative;
+      z-index: 1;
+
+      display: block;
+      padding: 38px 0 62px;
+    }
+
+    .pagina-comunidad .interior-hero__texto {
+      max-width: 730px;
+    }
+
+    .pagina-comunidad .interior-hero .migas {
+      position: relative;
+      z-index: 1;
+
+      padding-top: 30px;
+      margin-bottom: 22px;
+    }
+
+    .pagina-comunidad .interior-hero .migas,
+    .pagina-comunidad .interior-hero .migas a,
+    .pagina-comunidad .interior-hero .migas span {
+      color: rgba(255, 255, 255, 0.9);
+    }
+
+    .pagina-comunidad .interior-hero .migas a:hover {
+      color: #ffffff;
+      text-decoration: underline;
+    }
+
+    .pagina-comunidad .interior-hero h1 {
+      color: #ffffff;
+      margin-bottom: 17px;
+    }
+
+    .pagina-comunidad .interior-hero__texto > p {
+      color: rgba(255, 255, 255, 0.94);
+      line-height: 1.7;
+    }
+
+    .pagina-comunidad .interior-hero .etiqueta--clara {
+      color: #ffffff;
+    }
+
+    /* =========================================
+       CAMBIO 1
+
+       FONDOS DE LAS CUATRO FICHAS DE COMUNIDAD
+       SEGÚN EL COLOR DE SU LÍNEA SUPERIOR
+    ========================================= */
+
+    /* 01 - BIENESTAR: VERDE */
+
+    .pagina-comunidad
+    .seccion--areas-comunidad
+    .categoria-tramite--verde {
+      background-color: #e8f4ed;
+    }
+
+    /* 02 - PARTICIPACIÓN: ARENA */
+
+    .pagina-comunidad
+    .seccion--areas-comunidad
+    .categoria-tramite--arena {
+      background-color: #faf0dc;
+    }
+
+    /* 03 - PERSONAS: AZUL */
+
+    .pagina-comunidad
+    .seccion--areas-comunidad
+    .categoria-tramite--azul {
+      background-color: #e8f2f8;
+    }
+
+    /* 04 - TERRITORIO: CELESTE */
+
+    .pagina-comunidad
+    .seccion--areas-comunidad
+    .categoria-tramite--celeste {
+      background-color: #e8f7f9;
+    }
+
+    /* =========================================
+       CAMBIO 2
+
+       FRANJA MARRÓN DE EXTREMO A EXTREMO
+       ¿CÓMO ENCONTRAR EL APOYO QUE BUSCAS?
+    ========================================= */
+
+    .pagina-comunidad .seccion--guia-marron {
+      overflow: clip;
+    }
+
+    .pagina-comunidad
+    .seccion--guia-marron
+    .seccion__encabezado {
+      position: relative;
+      isolation: isolate;
+
+      padding: 28px 0;
+      margin-bottom: 42px;
+    }
+
+    .pagina-comunidad
+    .seccion--guia-marron
+    .seccion__encabezado::before {
+      content: "";
+
+      position: absolute;
+      z-index: -1;
+
+      top: 0;
+      bottom: 0;
+      left: 50%;
+
+      width: 100vw;
+      transform: translateX(-50%);
+
+      background: #946747;
+    }
+
+    /* TEXTOS SOBRE LA FRANJA MARRÓN */
+
+    .pagina-comunidad
+    .seccion--guia-marron
+    .seccion__encabezado
+    .etiqueta {
+      color: #f4e0ca;
+    }
+
+    .pagina-comunidad
+    .seccion--guia-marron
+    .seccion__encabezado h2 {
+      color: #ffffff;
+    }
+
+    .pagina-comunidad
+    .seccion--guia-marron
+    .seccion__encabezado
+    .seccion__descripcion {
+      color: #ffffff;
+    }
+
+    /* BORDES MARRONES DE LAS TRES FICHAS */
+
+    .pagina-comunidad
+    .seccion--guia-marron
+    .tarjeta-servicio {
+      border: 2px solid #946747;
+    }
+
+    /* =========================================
+       RESPONSIVO
+    ========================================= */
+
+    @media (max-width: 1000px) {
+
+      .pagina-comunidad .interior-hero > .contenedor {
+        padding-left: 36px;
+        padding-right: 36px;
+      }
+
+    }
+
+    @media (max-width: 900px) {
+
+      .pagina-comunidad .interior-hero {
+        min-height: 310px;
+      }
+
+    }
+
+    @media (max-width: 620px) {
+
+      .pagina-comunidad .interior-hero {
+        min-height: 280px;
+      }
+
+      .pagina-comunidad .interior-hero > .contenedor {
+        padding-left: 22px;
+        padding-right: 22px;
+      }
+
+      .pagina-comunidad .interior-hero .migas {
+        padding-top: 20px;
+      }
+
+      .pagina-comunidad .interior-hero__contenido {
+        padding: 24px 0 42px;
+      }
+
+      .pagina-comunidad .interior-hero h1 {
+        font-size: clamp(2.2rem, 8vw, 3.5rem);
+      }
+
+      .pagina-comunidad
+      .seccion--guia-marron
+      .seccion__encabezado {
+        padding: 24px 0;
+        margin-bottom: 30px;
+      }
+
+    }
+
+/* -------- paginas/direccion-obras.html -------- */
+/* =========================================
+       PALETA DE COLORES
+    ========================================= */
+
+    .pagina-obras {
+      --obras-azul: #163f55;
+      --obras-azul-medio: #397b91;
+      --obras-celeste: #6bb7c7;
+      --obras-celeste-claro: #e3f3f6;
+      --obras-verde: #33716c;
+      --obras-verde-claro: #e5f0e9;
+      --obras-arena: #e6d6b8;
+      --obras-arena-claro: #f4ead7;
+      --obras-marron: #946747;
+      --obras-marron-claro: #f5eee4;
+    }
+
+    /* =========================================
+       PORTADA CON FOTOGRAFÍA
+       MISMOS MÁRGENES QUE OTRAS PÁGINAS
+    ========================================= */
+
+    .pagina-obras .interior-hero {
+      position: relative;
+      display: flex;
+      align-items: center;
+      overflow: hidden;
+      min-height: 360px;
+
+      background-color: #163f55;
+
+      background-image:
+        linear-gradient(
+          90deg,
+          rgba(10, 31, 43, 0.86) 0%,
+          rgba(10, 31, 43, 0.64) 52%,
+          rgba(10, 31, 43, 0.32) 100%
+        ),
+        url("../assets/imagenes/heroes/hero-obras.jpg");
+
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+
+      color: #ffffff;
+    }
+
+    .pagina-obras .interior-hero::before,
+    .pagina-obras .interior-hero::after {
+      content: none;
+    }
+
+    .pagina-obras .interior-hero > .contenedor {
+      position: relative;
+      z-index: 1;
+
+      box-sizing: border-box;
+      width: 100%;
+      max-width: 1200px;
+      margin-left: auto;
+      margin-right: auto;
+
+      padding-left: 52px;
+      padding-right: 52px;
+    }
+
+    .pagina-obras .interior-hero .migas {
+      position: relative;
+      z-index: 1;
+      margin-bottom: 22px;
+      padding-top: 30px;
+    }
+
+    .pagina-obras .interior-hero .migas,
+    .pagina-obras .interior-hero .migas li,
+    .pagina-obras .interior-hero .migas a {
+      color: rgba(255,255,255,0.9);
+    }
+
+    .pagina-obras .interior-hero .migas a:hover {
+      color: #ffffff;
+      text-decoration: underline;
+    }
+
+    .pagina-obras .interior-hero__contenido {
+      position: relative;
+      z-index: 1;
+      display: block;
+      padding: 38px 0 62px;
+    }
+
+    .pagina-obras .interior-hero__texto {
+      width: 100%;
+      max-width: 800px;
+    }
+
+    .pagina-obras .interior-hero__texto .etiqueta {
+      margin-bottom: 15px;
+      color: #e6d6b8;
+    }
+
+    .pagina-obras .interior-hero h1 {
+      margin: 0 0 20px;
+
+      color: #ffffff;
+      font-size: clamp(2.45rem, 4.4vw, 4rem);
+      font-weight: 800;
+      line-height: 1.12;
+      letter-spacing: -0.035em;
+    }
+
+    .pagina-obras .interior-hero h1 span {
+      color: #e6d6b8;
+    }
+
+    .pagina-obras .interior-hero__texto > p:last-child {
+      max-width: 670px;
+      margin: 0;
+
+      color: rgba(255,255,255,0.94);
+      font-size: 1rem;
+      line-height: 1.7;
+    }
+
+    .pagina-obras .interior-hero__detalle {
+      display: none;
+    }
+
+    /* =========================================
+       INTRODUCCIÓN
+       FONDO CELESTE CLARO
+    ========================================= */
+
+    .pagina-obras .obras-introduccion .introduccion-interior {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 30px;
+
+      box-sizing: border-box;
+      width: 100%;
+      padding: 38px 40px;
+
+      background: #e3f3f6;
+      border: 2px solid #6bb7c7;
+      border-radius: 17px;
+
+      box-shadow: 0 8px 24px rgba(22,63,85,0.04);
+    }
+
+    .pagina-obras .obras-introduccion .introduccion-interior > div {
+      flex: 1 1 580px;
+      min-width: 0;
+      max-width: 850px;
+    }
+
+    .pagina-obras .obras-introduccion .etiqueta {
+      color: #397b91;
+      font-weight: 800;
+    }
+
+    .pagina-obras .obras-introduccion h2 {
+      color: #163f55;
+    }
+
+    .pagina-obras .obras-introduccion p {
+      color: #455d68;
+      line-height: 1.7;
+    }
+
+    .pagina-obras .obras-introduccion .boton {
+      flex-shrink: 0;
+
+      padding: 14px 22px;
+      border: 2px solid #397b91;
+      border-radius: 10px;
+
+      background: #397b91;
+      color: #ffffff;
+
+      font-weight: 700;
+    }
+
+    .pagina-obras .obras-introduccion .boton:hover {
+      background: #285d73;
+      border-color: #285d73;
+      color: #ffffff;
+    }
+
+    /* =========================================
+       FRANJAS DE ENCABEZADOS
+       ANCHO COMPLETO
+    ========================================= */
+
+    .pagina-obras .obras-franja {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .pagina-obras .obras-franja > .contenedor {
+      position: relative;
+      z-index: 1;
+    }
+
+    .pagina-obras .obras-franja .seccion__encabezado {
+      position: relative;
+      isolation: isolate;
+
+      display: flex;
+      align-items: center;
+
+      min-height: 190px;
+      margin: 0 0 44px;
+      padding: 32px 0;
+
+      background: transparent;
+    }
+
+    .pagina-obras .obras-franja .seccion__encabezado::before {
+      content: "";
+
+      position: absolute;
+      z-index: -1;
+      top: 0;
+      bottom: 0;
+      left: 50%;
+
+      width: 100vw;
+      transform: translateX(-50%);
+
+      background: var(--obras-franja, #163f55);
+    }
+
+    .pagina-obras .obras-franja .seccion__encabezado > div {
+      position: relative;
+      z-index: 1;
+      width: 100%;
+    }
+
+    .pagina-obras .obras-franja .seccion__encabezado .etiqueta {
+      color: #e6d6b8;
+      font-weight: 800;
+    }
+
+    .pagina-obras .obras-franja .seccion__encabezado h2 {
+      color: #ffffff;
+
+      font-size: clamp(2rem, 3.2vw, 3rem);
+      font-weight: 800;
+      line-height: 1.2;
+    }
+
+    .pagina-obras .obras-franja .seccion__descripcion {
+      max-width: 790px;
+      color: #ffffff;
+
+      font-size: 1.03rem;
+      line-height: 1.7;
+    }
+
+    .pagina-obras .obras-gestiones {
+      --obras-franja: #163f55;
+    }
+
+    .pagina-obras .obras-guia {
+      --obras-franja: #33716c;
+    }
+
+    .pagina-obras .obras-relacionados {
+      --obras-franja: #946747;
+    }
+
+    /* =========================================
+       CUATRO TIPOS DE CONSULTA
+       DOS COLUMNAS Y COLORES ALTERNADOS
+    ========================================= */
+
+    .pagina-obras .obras-gestiones .obras-gestiones__grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 24px;
+      align-items: stretch;
+    }
+
+    .pagina-obras .obras-gestiones .categoria-tramite {
+      --color-ficha: #33716c;
+      --fondo-icono: #e5f0e9;
+      --fondo-ficha: #f8fbf9;
+
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+
+      box-sizing: border-box;
+      min-width: 0;
+      height: 100%;
+      margin: 0;
+      padding: 30px;
+
+      background: var(--fondo-ficha);
+      border: 2px solid var(--color-ficha);
+      border-radius: 16px;
+
+      box-shadow: 0 8px 22px rgba(22,63,85,0.045);
+      transition: transform .2s, box-shadow .2s;
+    }
+
+    .pagina-obras .obras-gestiones .categoria-tramite:nth-child(4n+1) {
+      --color-ficha: #33716c;
+      --fondo-icono: #e5f0e9;
+      --fondo-ficha: #f5faf7;
+    }
+
+    .pagina-obras .obras-gestiones .categoria-tramite:nth-child(4n+2) {
+      --color-ficha: #397b91;
+      --fondo-icono: #e5eef2;
+      --fondo-ficha: #f5f9fa;
+    }
+
+    .pagina-obras .obras-gestiones .categoria-tramite:nth-child(4n+3) {
+      --color-ficha: #b88a3b;
+      --fondo-icono: #f4ead7;
+      --fondo-ficha: #fdfaf3;
+    }
+
+    .pagina-obras .obras-gestiones .categoria-tramite:nth-child(4n+4) {
+      --color-ficha: #6bb7c7;
+      --fondo-icono: #e3f3f6;
+      --fondo-ficha: #f5fbfc;
+    }
+
+    .pagina-obras .obras-gestiones .categoria-tramite:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 12px 28px rgba(22,63,85,0.09);
+    }
+
+    .pagina-obras .obras-gestiones .categoria-tramite__encabezado {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 14px;
+
+      width: 100%;
+      margin-bottom: 19px;
+    }
+
+    .pagina-obras .obras-gestiones .categoria-tramite__numero {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      width: 52px;
+      height: 52px;
+      padding: 0;
+
+      border-radius: 12px;
+      background: var(--fondo-icono);
+      color: var(--color-ficha);
+
+      font-size: 1.05rem;
+      font-weight: 800;
+    }
+
+    .pagina-obras .obras-gestiones .categoria-tramite__tipo {
+      color: var(--color-ficha);
+
+      font-size: 0.78rem;
+      font-weight: 800;
+      letter-spacing: .035em;
+      text-transform: uppercase;
+    }
+
+    .pagina-obras .obras-gestiones .categoria-tramite h3 {
+      margin: 0 0 13px;
+
+      color: #163f55;
+      font-size: 1.18rem;
+      font-weight: 800;
+      line-height: 1.4;
+    }
+
+    .pagina-obras .obras-gestiones .categoria-tramite p {
+      margin: 0 0 22px;
+
+      color: #52626a;
+      line-height: 1.7;
+    }
+
+    .pagina-obras .obras-gestiones .categoria-tramite__enlaces {
+      width: 100%;
+      margin-top: auto;
+      padding-top: 14px;
+
+      border-top: 1px solid #d7e2e5;
+    }
+
+    .pagina-obras .obras-gestiones .categoria-tramite__enlaces a {
+      color: #245d70;
+      font-weight: 800;
+    }
+
+    /* =========================================
+       GUÍA EN TRES ETAPAS
+       FRANJA VERDE Y BORDES VERDES
+    ========================================= */
+
+    .pagina-obras .obras-guia .cuadricula {
+      align-items: stretch;
+    }
+
+    .pagina-obras .obras-guia .tarjeta-servicio {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+
+      box-sizing: border-box;
+      min-width: 0;
+      height: 100%;
+      padding: 29px;
+
+      background: #ffffff;
+      border: 2px solid #33716c;
+      border-radius: 16px;
+
+      box-shadow: 0 8px 22px rgba(22,63,85,0.05);
+      transition: transform .2s, box-shadow .2s;
+    }
+
+    .pagina-obras .obras-guia .tarjeta-servicio:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 12px 28px rgba(22,63,85,0.09);
+    }
+
+    .pagina-obras .obras-guia .tarjeta-servicio__icono {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      width: 58px;
+      height: 58px;
+      margin-bottom: 24px;
+
+      background: #e5f0e9;
+      border: 0;
+      border-radius: 14px;
+
+      color: #33716c;
+      font-size: 1.05rem;
+      font-weight: 800;
+    }
+
+    .pagina-obras .obras-guia .tarjeta-servicio h3 {
+      color: #163f55;
+      font-size: 1.18rem;
+      font-weight: 800;
+    }
+
+    .pagina-obras .obras-guia .tarjeta-servicio p {
+      color: #52626a;
+      line-height: 1.7;
+    }
+
+    .pagina-obras .obras-guia .tarjeta-servicio a {
+      margin-top: auto;
+      color: #33716c;
+      font-weight: 800;
+    }
+
+    /* =========================================
+       OTRAS SECCIONES DE INTERÉS
+       DOS RECUADROS MARRÓN Y ARENA
+    ========================================= */
+
+    .pagina-obras .obras-relacionados .obras-relacionados__grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 24px;
+      align-items: stretch;
+    }
+
+    .pagina-obras .obras-relacionados .tarjeta-comunidad {
+      display: flex;
+      box-sizing: border-box;
+      min-width: 0;
+      height: 100%;
+      padding: 0;
+
+      border-radius: 16px;
+      box-shadow: 0 8px 22px rgba(22,63,85,0.04);
+    }
+
+    .pagina-obras .obras-relacionados .tarjeta-comunidad:nth-child(1) {
+      background: #e5f0e9;
+      border: 2px solid #33716c;
+    }
+
+    .pagina-obras .obras-relacionados .tarjeta-comunidad:nth-child(2) {
+      background: #f4ead7;
+      border: 2px solid #b88a3b;
+    }
+
+    .pagina-obras .obras-relacionados .tarjeta-comunidad__contenido {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+
+      width: 100%;
+      padding: 33px;
+    }
+
+    .pagina-obras .obras-relacionados .tarjeta-comunidad__numero {
+      margin-bottom: 14px;
+
+      font-size: .8rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: .04em;
+    }
+
+    .pagina-obras .obras-relacionados .tarjeta-comunidad:nth-child(1)
+    .tarjeta-comunidad__numero {
+      color: #33716c;
+    }
+
+    .pagina-obras .obras-relacionados .tarjeta-comunidad:nth-child(2)
+    .tarjeta-comunidad__numero {
+      color: #8c631f;
+    }
+
+    .pagina-obras .obras-relacionados .tarjeta-comunidad h3 {
+      margin-bottom: 13px;
+      color: #163f55;
+      font-size: 1.22rem;
+      font-weight: 800;
+    }
+
+    .pagina-obras .obras-relacionados .tarjeta-comunidad p {
+      margin-bottom: 22px;
+      color: #52626a;
+      line-height: 1.7;
+    }
+
+    .pagina-obras .obras-relacionados .tarjeta-comunidad a {
+      margin-top: auto;
+      color: #163f55;
+      font-weight: 800;
+    }
+
+    /* =========================================
+       BLOQUE FINAL
+       MARRÓN CLARO
+    ========================================= */
+
+    .pagina-obras .obras-ayuda .bloque-orientacion {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 30px;
+
+      box-sizing: border-box;
+      width: 100%;
+      padding: 38px 40px;
+
+      background: #f5eee4;
+      border: 2px solid #946747;
+      border-radius: 17px;
+
+      box-shadow: 0 8px 24px rgba(22,63,85,0.04);
+    }
+
+    .pagina-obras .obras-ayuda .bloque-orientacion__texto {
+      flex: 1 1 540px;
+      min-width: 0;
+      max-width: 830px;
+    }
+
+    .pagina-obras .obras-ayuda .etiqueta {
+      color: #946747;
+      font-weight: 800;
+    }
+
+    .pagina-obras .obras-ayuda .bloque-orientacion h2 {
+      color: #163f55;
+    }
+
+    .pagina-obras .obras-ayuda .bloque-orientacion p {
+      color: #52626a;
+      line-height: 1.7;
+    }
+
+    .pagina-obras .obras-ayuda .boton {
+      flex-shrink: 0;
+
+      padding: 14px 22px;
+      border: 2px solid #946747;
+      border-radius: 10px;
+
+      background: #946747;
+      color: #ffffff;
+
+      font-weight: 800;
+    }
+
+    .pagina-obras .obras-ayuda .boton:hover {
+      background: #775032;
+      border-color: #775032;
+      color: #ffffff;
+    }
+
+    /* =========================================
+       RESPONSIVE
+    ========================================= */
+
+    @media (max-width: 900px) {
+
+      .pagina-obras .interior-hero {
+        min-height: 310px;
+      }
+
+      .pagina-obras .interior-hero > .contenedor {
+        padding-left: 36px;
+        padding-right: 36px;
+      }
+
+      .pagina-obras .obras-introduccion .introduccion-interior,
+      .pagina-obras .obras-ayuda .bloque-orientacion {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 32px 30px;
+      }
+
+      .pagina-obras .obras-introduccion .introduccion-interior > div,
+      .pagina-obras .obras-ayuda .bloque-orientacion__texto {
+        flex: initial;
+        width: 100%;
+        max-width: 100%;
+      }
+
+    }
+
+    @media (max-width: 700px) {
+
+      .pagina-obras .obras-gestiones .obras-gestiones__grid,
+      .pagina-obras .obras-relacionados .obras-relacionados__grid {
+        grid-template-columns: 1fr;
+      }
+
+    }
+
+    @media (max-width: 620px) {
+
+      .pagina-obras .interior-hero {
+        min-height: 280px;
+      }
+
+      .pagina-obras .interior-hero > .contenedor {
+        padding-left: 22px;
+        padding-right: 22px;
+      }
+
+      .pagina-obras .interior-hero .migas {
+        padding-top: 20px;
+      }
+
+      .pagina-obras .interior-hero__contenido {
+        padding: 24px 0 42px;
+      }
+
+      .pagina-obras .interior-hero h1 {
+        font-size: clamp(2.15rem, 8vw, 3rem);
+      }
+
+      .pagina-obras .obras-franja .seccion__encabezado {
+        min-height: auto;
+        margin-bottom: 28px;
+        padding: 32px 0;
+      }
+
+      .pagina-obras .obras-franja .seccion__encabezado h2 {
+        font-size: 2rem;
+      }
+
+      .pagina-obras .obras-guia .cuadricula--tres {
+        grid-template-columns: 1fr;
+      }
+
+      .pagina-obras .obras-introduccion .introduccion-interior,
+      .pagina-obras .obras-ayuda .bloque-orientacion {
+        padding: 28px 23px;
+        border-radius: 14px;
+      }
+
+      .pagina-obras .obras-introduccion .boton,
+      .pagina-obras .obras-ayuda .boton {
+        width: 100%;
+      }
+
+      .pagina-obras .obras-gestiones .categoria-tramite,
+      .pagina-obras .obras-guia .tarjeta-servicio {
+        padding: 24px;
+      }
+
+      .pagina-obras .obras-relacionados
+      .tarjeta-comunidad__contenido {
+        padding: 25px;
+      }
+
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+
+      .pagina-obras .obras-gestiones .categoria-tramite,
+      .pagina-obras .obras-guia .tarjeta-servicio {
+        transition: none;
+      }
+
+    }
+
+/* -------- paginas/pagos-municipales.html -------- */
+/* =========================================
+       COLORES EXCLUSIVOS DE PAGOS MUNICIPALES
+    ========================================= */
+
+    .pagina-pagos {
+      --pagos-azul: #163f55;
+      --pagos-mostaza: #b88a3b;
+      --pagos-mostaza-oscuro: #8c631f;
+      --pagos-arena: #f4ead7;
+      --pagos-celeste: #6bb7c7;
+      --pagos-celeste-claro: #e3f3f6;
+      --pagos-verde: #33716c;
+      --pagos-verde-claro: #e5f0e9;
+      --pagos-marron: #946747;
+      --pagos-marron-claro: #f5eee4;
+    }
+
+    /* =========================================
+       PORTADA CON LA NUEVA FOTOGRAFÍA
+       MISMO TAMAÑO QUE CONTACTO Y TURISMO
+    ========================================= */
+
+    .pagina-pagos .interior-hero {
+      position: relative;
+      display: flex;
+      align-items: center;
+      overflow: hidden;
+      min-height: 360px;
+
+      background-color: #163f55;
+      background-image:
+        linear-gradient(
+          90deg,
+          rgba(10, 31, 43, 0.84) 0%,
+          rgba(10, 31, 43, 0.65) 50%,
+          rgba(10, 31, 43, 0.34) 100%
+        ),
+        url("../assets/imagenes/heroes/hero-pagos.jpg");
+
+      background-position: center;
+      background-size: cover;
+      background-repeat: no-repeat;
+      color: #ffffff;
+    }
+
+    .pagina-pagos .interior-hero::before,
+    .pagina-pagos .interior-hero::after {
+      content: none;
+    }
+
+    .pagina-pagos .interior-hero > .contenedor {
+      position: relative;
+      z-index: 1;
+      box-sizing: border-box;
+      width: 100%;
+      max-width: 1200px;
+      margin-left: auto;
+      margin-right: auto;
+      padding-left: 52px;
+      padding-right: 52px;
+    }
+
+    .pagina-pagos .interior-hero .migas {
+      position: relative;
+      z-index: 1;
+      padding-top: 30px;
+      margin-bottom: 22px;
+    }
+
+    .pagina-pagos .interior-hero .migas,
+    .pagina-pagos .interior-hero .migas a,
+    .pagina-pagos .interior-hero .migas li {
+      color: rgba(255,255,255,0.9);
+    }
+
+    .pagina-pagos .interior-hero .migas a:hover {
+      color: #ffffff;
+      text-decoration: underline;
+    }
+
+    .pagina-pagos .interior-hero__contenido {
+      position: relative;
+      z-index: 1;
+      display: block;
+      padding: 38px 0 62px;
+    }
+
+    .pagina-pagos .interior-hero__texto {
+      width: 100%;
+      max-width: 730px;
+    }
+
+    .pagina-pagos .interior-hero__texto .etiqueta {
+      margin-bottom: 15px;
+      color: #e6d6b8;
+    }
+
+    .pagina-pagos .interior-hero h1 {
+      margin: 0 0 20px;
+      color: #ffffff;
+      font-size: clamp(2.45rem, 4.4vw, 4rem);
+      font-weight: 800;
+      line-height: 1.12;
+      letter-spacing: -0.035em;
+    }
+
+    .pagina-pagos .interior-hero h1 span {
+      color: #e6d6b8;
+    }
+
+    .pagina-pagos .interior-hero__texto > p:last-child {
+      max-width: 650px;
+      margin: 0;
+      color: rgba(255,255,255,0.94);
+      font-size: 1rem;
+      line-height: 1.7;
+    }
+
+    .pagina-pagos .interior-hero__detalle {
+      display: none;
+    }
+
+    /* =========================================
+       INTRODUCCIÓN
+       RECUADRO ARENA
+    ========================================= */
+
+    .pagina-pagos .pagos-introduccion .introduccion-interior {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 28px;
+      box-sizing: border-box;
+      width: 100%;
+      padding: 38px 40px;
+      background: #f4ead7;
+      border: 2px solid #d0ab68;
+      border-radius: 17px;
+      box-shadow: 0 8px 24px rgba(22,63,85,0.04);
+    }
+
+    .pagina-pagos .pagos-introduccion .introduccion-interior > div {
+      flex: 1 1 540px;
+      min-width: 0;
+      max-width: 850px;
+    }
+
+    .pagina-pagos .pagos-introduccion .etiqueta {
+      color: #946747;
+    }
+
+    .pagina-pagos .pagos-introduccion h2 {
+      color: #163f55;
+    }
+
+    .pagina-pagos .pagos-introduccion .introduccion-interior p {
+      color: #52626a;
+      line-height: 1.7;
+    }
+
+    .pagina-pagos .pagos-introduccion .boton {
+      flex-shrink: 0;
+      background: #946747;
+      color: #ffffff;
+      border: 2px solid #946747;
+      border-radius: 10px;
+      padding: 14px 20px;
+      font-weight: 700;
+    }
+
+    .pagina-pagos .pagos-introduccion .boton:hover {
+      background: #775032;
+      border-color: #775032;
+      color: #ffffff;
+    }
+
+    /* =========================================
+       FRANJAS DE COLOR DE ANCHO COMPLETO
+    ========================================= */
+
+    .pagina-pagos .pagos-franja {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .pagina-pagos .pagos-franja > .contenedor {
+      position: relative;
+      z-index: 1;
+    }
+
+    .pagina-pagos .pagos-franja .seccion__encabezado {
+      position: relative;
+      isolation: isolate;
+      display: flex;
+      align-items: center;
+      min-height: 195px;
+      margin: 0 0 46px;
+      padding: 32px 0;
+      background: transparent;
+    }
+
+    .pagina-pagos .pagos-franja .seccion__encabezado::before {
+      content: "";
+      position: absolute;
+      z-index: -1;
+      top: 0;
+      bottom: 0;
+      left: 50%;
+      width: 100vw;
+      transform: translateX(-50%);
+      background: var(--color-franja, #b88a3b);
+    }
+
+    .pagina-pagos .pagos-franja .seccion__encabezado > div {
+      position: relative;
+      z-index: 1;
+      width: 100%;
+    }
+
+    .pagina-pagos .pagos-franja .seccion__encabezado .etiqueta {
+      color: #fff0d2;
+      font-weight: 800;
+    }
+
+    .pagina-pagos .pagos-franja .seccion__encabezado h2 {
+      color: #ffffff;
+      font-size: clamp(2rem, 3.2vw, 3rem);
+      font-weight: 800;
+      line-height: 1.2;
+    }
+
+    .pagina-pagos .pagos-franja .seccion__encabezado .seccion__descripcion {
+      max-width: 790px;
+      color: #ffffff;
+      font-size: 1.03rem;
+      line-height: 1.7;
+    }
+
+    .pagina-pagos .pagos-servicios {
+      --color-franja: #b88a3b;
+    }
+
+    .pagina-pagos .pagos-rentas {
+      --color-franja: #397b91;
+    }
+
+    .pagina-pagos .pagos-contacto {
+      --color-franja: #33716c;
+    }
+
+    /* =========================================
+       SERVICIOS DISPONIBLES
+       TRES FICHAS CON BORDE MOSTAZA
+    ========================================= */
+
+    .pagina-pagos .pagos-servicios .cuadricula {
+      align-items: stretch;
+    }
+
+    .pagina-pagos .pagos-servicios .tarjeta-servicio {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      box-sizing: border-box;
+      min-width: 0;
+      height: 100%;
+      padding: 28px 29px;
+      background: #ffffff;
+      border: 2px solid #b88a3b;
+      border-radius: 16px;
+      box-shadow: 0 8px 22px rgba(22,63,85,0.05);
+      transition: transform .2s, box-shadow .2s;
+    }
+
+    .pagina-pagos .pagos-servicios .tarjeta-servicio:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 12px 28px rgba(140,99,31,0.1);
+    }
+
+    .pagina-pagos .pagos-servicios .tarjeta-servicio__icono {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 58px;
+      height: 58px;
+      margin-bottom: 24px;
+      border: 0;
+      border-radius: 14px;
+      background: #f4ead7;
+      color: #8c631f;
+      font-size: 1.05rem;
+      font-weight: 800;
+    }
+
+    .pagina-pagos .pagos-servicios .tarjeta-servicio h3 {
+      color: #163f55;
+      font-size: 1.18rem;
+      font-weight: 800;
+    }
+
+    .pagina-pagos .pagos-servicios .tarjeta-servicio p {
+      color: #52626a;
+      line-height: 1.7;
+    }
+
+    .pagina-pagos .pagos-servicios .tarjeta-servicio a {
+      margin-top: auto;
+      color: #8c631f;
+      font-weight: 800;
+    }
+
+    /* =========================================
+       RENTAS Y PATENTES
+       ESTILO DE ACTIVIDADES DE TURISMO
+    ========================================= */
+
+    .pagina-pagos .pagos-rentas .pagos-rentas__grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 30px 25px;
+      align-items: start;
+    }
+
+    .pagina-pagos .pagos-rentas .categoria-tramite {
+      --color-tarjeta: #33716c;
+      --fondo-icono: #e5f0e9;
+      display: flex;
+      flex-direction: column;
+      align-items: stretch;
+      min-width: 0;
+      margin: 0;
+      padding: 22px 0 26px;
+      background: transparent;
+      border: 0;
+      border-top: 3px solid var(--color-tarjeta);
+      border-bottom: 1px solid #d6e2e6;
+      border-radius: 0;
+      box-shadow: none;
+      text-align: left;
+    }
+
+    .pagina-pagos .pagos-rentas .categoria-tramite:nth-child(4n+1) {
+      --color-tarjeta: #33716c;
+      --fondo-icono: #e5f0e9;
+    }
+
+    .pagina-pagos .pagos-rentas .categoria-tramite:nth-child(4n+2) {
+      --color-tarjeta: #b88a3b;
+      --fondo-icono: #f4ead7;
+    }
+
+    .pagina-pagos .pagos-rentas .categoria-tramite:nth-child(4n+3) {
+      --color-tarjeta: #397b91;
+      --fondo-icono: #e5eef2;
+    }
+
+    .pagina-pagos .pagos-rentas .categoria-tramite:nth-child(4n+4) {
+      --color-tarjeta: #6bb7c7;
+      --fondo-icono: #e3f3f6;
+    }
+
+    .pagina-pagos .pagos-rentas .categoria-tramite:hover {
+      box-shadow: none;
+      transform: none;
+    }
+
+    .pagina-pagos .pagos-rentas .categoria-tramite__encabezado {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-bottom: 20px;
+    }
+
+    .pagina-pagos .pagos-rentas .categoria-tramite__numero {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 44px;
+      height: 44px;
+      padding: 0;
+      border-radius: 11px;
+      background: var(--fondo-icono);
+      color: var(--color-tarjeta);
+      font-size: 0.95rem;
+      font-weight: 800;
+    }
+
+    .pagina-pagos .pagos-rentas .categoria-tramite__tipo {
+      color: var(--color-tarjeta);
+      font-size: 0.72rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: .04em;
+    }
+
+    .pagina-pagos .pagos-rentas .categoria-tramite h3 {
+      margin: 0 0 13px;
+      color: #163f55;
+      font-size: 1.06rem;
+      font-weight: 800;
+      line-height: 1.4;
+    }
+
+    .pagina-pagos .pagos-rentas .categoria-tramite p {
+      margin: 0 0 20px;
+      color: #52626a;
+      font-size: .9rem;
+      line-height: 1.7;
+    }
+
+    .pagina-pagos .pagos-rentas .categoria-tramite__enlaces {
+      width: 100%;
+      margin-top: auto;
+      padding: 12px 0 0;
+      border-top: 1px solid #d6e2e6;
+    }
+
+    .pagina-pagos .pagos-rentas .categoria-tramite__enlaces li {
+      margin-bottom: 11px;
+    }
+
+    .pagina-pagos .pagos-rentas .categoria-tramite__enlaces a {
+      color: #286781;
+      font-size: .86rem;
+      font-weight: 800;
+      line-height: 1.6;
+    }
+
+    /* =========================================
+       DERECHOS DE ASEO
+       RECUADRO MARRÓN
+    ========================================= */
+
+    .pagina-pagos .pagos-aseo .introduccion-interior {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 32px;
+      box-sizing: border-box;
+      width: 100%;
+      padding: 38px 40px;
+      background: #f5eee4;
+      border: 2px solid #946747;
+      border-radius: 18px;
+      box-shadow: 0 8px 24px rgba(22,63,85,0.04);
+    }
+
+    .pagina-pagos .pagos-aseo .introduccion-interior > div {
+      flex: 1 1 600px;
+      min-width: 0;
+      max-width: 900px;
+    }
+
+    .pagina-pagos .pagos-aseo .etiqueta {
+      color: #946747;
+    }
+
+    .pagina-pagos .pagos-aseo h2 {
+      color: #163f55;
+    }
+
+    .pagina-pagos .pagos-aseo .introduccion-interior p {
+      color: #455a64;
+      line-height: 1.7;
+    }
+
+    .pagina-pagos .pagos-aseo .boton {
+      flex-shrink: 0;
+      padding: 14px 22px;
+      border: 2px solid #946747;
+      border-radius: 10px;
+      background: #946747;
+      color: #ffffff;
+      font-weight: 700;
+    }
+
+    .pagina-pagos .pagos-aseo .boton:hover {
+      background: #775032;
+      border-color: #775032;
+      color: #ffffff;
+    }
+
+    /* =========================================
+       CONTACTA A RENTAS Y PATENTES
+       BORDE VERDE EN LAS TRES FICHAS
+    ========================================= */
+
+    .pagina-pagos .pagos-contacto .cuadricula {
+      align-items: stretch;
+    }
+
+    .pagina-pagos .pagos-contacto .tarjeta-servicio {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      box-sizing: border-box;
+      min-width: 0;
+      height: 100%;
+      padding: 28px 29px;
+      border: 2px solid #33716c;
+      border-radius: 16px;
+      background: #ffffff;
+      box-shadow: 0 8px 22px rgba(22,63,85,0.05);
+      transition: transform .2s, box-shadow .2s;
+    }
+
+    .pagina-pagos .pagos-contacto .tarjeta-servicio:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 12px 28px rgba(22,63,85,0.1);
+    }
+
+    .pagina-pagos .pagos-contacto .tarjeta-servicio__icono {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 58px;
+      height: 58px;
+      margin-bottom: 24px;
+      border: 0;
+      border-radius: 14px;
+      background: #e5f0e9;
+      color: #33716c;
+      font-size: 1.05rem;
+      font-weight: 800;
+    }
+
+    .pagina-pagos .pagos-contacto .tarjeta-servicio h3 {
+      color: #163f55;
+      font-size: 1.18rem;
+      font-weight: 800;
+    }
+
+    .pagina-pagos .pagos-contacto .tarjeta-servicio p {
+      color: #52626a;
+      line-height: 1.7;
+    }
+
+    .pagina-pagos .pagos-contacto .tarjeta-servicio a {
+      margin-top: auto;
+      color: #33716c;
+      font-weight: 800;
+    }
+
+    /* =========================================
+       TABLET
+    ========================================= */
+
+    @media (max-width: 1100px) {
+      .pagina-pagos .pagos-rentas .pagos-rentas__grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 900px) {
+      .pagina-pagos .interior-hero {
+        min-height: 310px;
+      }
+
+      .pagina-pagos .interior-hero > .contenedor {
+        padding-left: 36px;
+        padding-right: 36px;
+      }
+
+      .pagina-pagos .pagos-introduccion .introduccion-interior,
+      .pagina-pagos .pagos-aseo .introduccion-interior {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 32px 30px;
+      }
+
+      .pagina-pagos .pagos-introduccion .introduccion-interior > div,
+      .pagina-pagos .pagos-aseo .introduccion-interior > div {
+        flex: initial;
+        width: 100%;
+        max-width: 100%;
+      }
+    }
+
+    /* =========================================
+       CELULAR
+    ========================================= */
+
+    @media (max-width: 620px) {
+      .pagina-pagos .interior-hero {
+        min-height: 280px;
+      }
+
+      .pagina-pagos .interior-hero > .contenedor {
+        padding-left: 22px;
+        padding-right: 22px;
+      }
+
+      .pagina-pagos .interior-hero .migas {
+        padding-top: 20px;
+      }
+
+      .pagina-pagos .interior-hero__contenido {
+        padding: 24px 0 42px;
+      }
+
+      .pagina-pagos .interior-hero h1 {
+        font-size: clamp(2.15rem, 8vw, 3rem);
+      }
+
+      .pagina-pagos .pagos-servicios .cuadricula--tres,
+      .pagina-pagos .pagos-contacto .cuadricula--tres,
+      .pagina-pagos .pagos-rentas .pagos-rentas__grid {
+        grid-template-columns: 1fr;
+      }
+
+      .pagina-pagos .pagos-franja .seccion__encabezado {
+        min-height: auto;
+        margin-bottom: 28px;
+        padding: 32px 0;
+      }
+
+      .pagina-pagos .pagos-franja .seccion__encabezado h2 {
+        font-size: 2rem;
+      }
+
+      .pagina-pagos .pagos-introduccion .introduccion-interior,
+      .pagina-pagos .pagos-aseo .introduccion-interior {
+        padding: 28px 23px;
+        border-radius: 14px;
+      }
+
+      .pagina-pagos .pagos-introduccion .boton,
+      .pagina-pagos .pagos-aseo .boton {
+        width: 100%;
+      }
+
+      .pagina-pagos .pagos-servicios .tarjeta-servicio,
+      .pagina-pagos .pagos-contacto .tarjeta-servicio {
+        padding: 24px;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .pagina-pagos .pagos-servicios .tarjeta-servicio,
+      .pagina-pagos .pagos-contacto .tarjeta-servicio {
+        transition: none;
+      }
+    }
+
+/* -------- paginas/permiso-circulacion.html -------- */
+/* =========================================
+       PALETA
+    ========================================= */
+
+    .pagina-permiso-circulacion {
+      --permiso-verde: #33716c;
+      --permiso-verde-oscuro: #245a56;
+      --permiso-verde-claro: #e5f0e9;
+      --permiso-azul: #163f55;
+      --permiso-arena: #d0ab68;
+      --permiso-marron: #946747;
+    }
+
+    /* =========================================
+       PORTADA CON FOTOGRAFÍA
+       MISMO FORMATO QUE TURISMO Y CONTACTO
+    ========================================= */
+
+    .pagina-permiso-circulacion .interior-hero {
+      position: relative;
+      display: flex;
+      align-items: center;
+      overflow: hidden;
+
+      min-height: 360px;
+
+      background-color: #163f55;
+
+      background-image:
+        linear-gradient(
+          90deg,
+          rgba(10, 31, 43, 0.84) 0%,
+          rgba(10, 31, 43, 0.65) 50%,
+          rgba(10, 31, 43, 0.34) 100%
+        ),
+        url("../assets/imagenes/heroes/hero-permiso-circulacion.jpg");
+
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+
+      color: #ffffff;
+    }
+
+    .pagina-permiso-circulacion .interior-hero::before,
+    .pagina-permiso-circulacion .interior-hero::after {
+      content: none;
+    }
+
+    .pagina-permiso-circulacion
+    .interior-hero > .contenedor {
+      position: relative;
+      z-index: 1;
+
+      box-sizing: border-box;
+      width: 100%;
+      max-width: 1200px;
+
+      margin-left: auto;
+      margin-right: auto;
+
+      padding-left: 52px;
+      padding-right: 52px;
+    }
+
+    .pagina-permiso-circulacion .interior-hero .migas {
+      position: relative;
+      z-index: 1;
+
+      padding-top: 30px;
+      margin-bottom: 22px;
+    }
+
+    .pagina-permiso-circulacion .interior-hero .migas,
+    .pagina-permiso-circulacion .interior-hero .migas a,
+    .pagina-permiso-circulacion .interior-hero .migas li {
+      color: rgba(255, 255, 255, 0.9);
+    }
+
+    .pagina-permiso-circulacion .interior-hero .migas a:hover {
+      color: #ffffff;
+      text-decoration: underline;
+    }
+
+    .pagina-permiso-circulacion .interior-hero__contenido {
+      position: relative;
+      z-index: 1;
+
+      display: block;
+      padding: 38px 0 62px;
+    }
+
+    .pagina-permiso-circulacion .interior-hero__texto {
+      width: 100%;
+      max-width: 730px;
+    }
+
+    .pagina-permiso-circulacion
+    .interior-hero__texto .etiqueta {
+      color: #e6d6b8;
+      margin-bottom: 15px;
+    }
+
+    .pagina-permiso-circulacion .interior-hero h1 {
+      margin: 0 0 20px;
+
+      color: #ffffff;
+      font-size: clamp(2.45rem, 4.4vw, 4rem);
+      font-weight: 800;
+      line-height: 1.12;
+      letter-spacing: -0.035em;
+    }
+
+    .pagina-permiso-circulacion .interior-hero h1 span {
+      color: #e6d6b8;
+    }
+
+    .pagina-permiso-circulacion
+    .interior-hero__texto > p:last-child {
+      max-width: 650px;
+      margin: 0;
+
+      color: rgba(255, 255, 255, 0.94);
+      font-size: 1rem;
+      line-height: 1.7;
+    }
+
+    .pagina-permiso-circulacion .interior-hero__detalle {
+      display: none;
+    }
+
+    /* =========================================
+       PAGO ONLINE
+       DOS FICHAS VERDES COMPLETAS
+    ========================================= */
+
+    .pagina-permiso-circulacion .permiso-pago-online {
+      background-color: #ffffff;
+    }
+
+    .pagina-permiso-circulacion
+    .permiso-pago-online
+    .cuadricula {
+      align-items: stretch;
+      margin-bottom: 22px;
+    }
+
+    .pagina-permiso-circulacion
+    .permiso-pago-online
+    .categoria-tramite {
+      display: flex;
+      flex-direction: column;
+
+      min-width: 0;
+      height: 100%;
+      box-sizing: border-box;
+
+      padding: 32px;
+
+      background: #33716c;
+      border: 2px solid #33716c;
+      border-radius: 16px;
+
+      color: #ffffff;
+
+      box-shadow: 0 8px 22px rgba(22, 63, 85, 0.08);
+
+      transition:
+        background-color 0.2s ease,
+        box-shadow 0.2s ease,
+        transform 0.2s ease;
+    }
+
+    .pagina-permiso-circulacion
+    .permiso-pago-online
+    .categoria-tramite:hover {
+      background: #245a56;
+      border-color: #245a56;
+      transform: translateY(-3px);
+      box-shadow: 0 12px 26px rgba(22, 63, 85, 0.12);
+    }
+
+    .pagina-permiso-circulacion
+    .permiso-pago-online
+    .categoria-tramite__encabezado {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+
+      margin-bottom: 26px;
+    }
+
+    .pagina-permiso-circulacion
+    .permiso-pago-online
+    .categoria-tramite__numero {
+      color: #ffffff;
+      font-size: 1.1rem;
+      font-weight: 800;
+    }
+
+    .pagina-permiso-circulacion
+    .permiso-pago-online
+    .categoria-tramite__tipo {
+      color: #e6d6b8;
+      font-size: 0.78rem;
+      font-weight: 800;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+
+    .pagina-permiso-circulacion
+    .permiso-pago-online
+    .categoria-tramite h3 {
+      margin: 0 0 14px;
+
+      color: #ffffff;
+      font-size: 1.26rem;
+      font-weight: 800;
+      line-height: 1.4;
+    }
+
+    .pagina-permiso-circulacion
+    .permiso-pago-online
+    .categoria-tramite p {
+      margin: 0 0 23px;
+
+      color: #f1faf7;
+      font-size: 0.96rem;
+      line-height: 1.7;
+    }
+
+    .pagina-permiso-circulacion
+    .permiso-pago-online
+    .categoria-tramite__enlaces {
+      margin-top: auto;
+      padding: 0;
+    }
+
+    .pagina-permiso-circulacion
+    .permiso-pago-online
+    .categoria-tramite__enlaces a {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+
+      color: #ffffff;
+      font-size: 0.94rem;
+      font-weight: 800;
+      line-height: 1.5;
+      text-decoration: none;
+    }
+
+    .pagina-permiso-circulacion
+    .permiso-pago-online
+    .categoria-tramite__enlaces a:hover {
+      color: #fff0d2;
+      text-decoration: underline;
+      text-underline-offset: 4px;
+    }
+
+    /* =========================================
+       TRÁMITES Y REQUISITOS
+       MISMO LENGUAJE QUE ACTIVIDADES DE TURISMO
+
+       - CUATRO COLUMNAS EN ESCRITORIO
+       - LÍNEAS SUPERIORES DE COLORES
+       - ÍCONOS DISCRETOS
+       - FONDO TRANSPARENTE
+       - REQUISITOS DESPLEGABLES
+    ========================================= */
+
+    .pagina-permiso-circulacion .permiso-tramites {
+      background: #eaf3f7;
+    }
+
+    .pagina-permiso-circulacion
+    .permiso-tramites
+    .permiso-tramites__grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 34px 25px;
+      align-items: start;
+      margin-top: 36px;
+    }
+
+    .pagina-permiso-circulacion
+    .permiso-tramites
+    .permiso-tramite {
+      --tramite-color: #33716c;
+      --tramite-fondo: #e5f0e9;
+      --tramite-linea: #33716c;
+
+      display: flex;
+      flex-direction: column;
+      align-items: stretch;
+
+      min-width: 0;
+      margin: 0;
+
+      padding: 21px 0 24px;
+
+      background: transparent;
+      border: 0;
+      border-top: 3px solid var(--tramite-linea);
+      border-bottom: 1px solid #cadde2;
+      border-radius: 0;
+
+      box-shadow: none;
+      text-align: left;
+    }
+
+    .pagina-permiso-circulacion
+    .permiso-tramites
+    .permiso-tramite:hover {
+      transform: none;
+      box-shadow: none;
+    }
+
+    /* COLORES */
+
+    .pagina-permiso-circulacion
+    .permiso-tramite:nth-child(4n+1) {
+      --tramite-color: #33716c;
+      --tramite-fondo: #e5f0e9;
+      --tramite-linea: #33716c;
+    }
+
+    .pagina-permiso-circulacion
+    .permiso-tramite:nth-child(4n+2) {
+      --tramite-color: #956d29;
+      --tramite-fondo: #f4ead7;
+      --tramite-linea: #d0ab68;
+    }
+
+    .pagina-permiso-circulacion
+    .permiso-tramite:nth-child(4n+3) {
+      --tramite-color: #286781;
+      --tramite-fondo: #e5eef2;
+      --tramite-linea: #286781;
+    }
+
+    .pagina-permiso-circulacion
+    .permiso-tramite:nth-child(4n+4) {
+      --tramite-color: #286e7e;
+      --tramite-fondo: #e3f3f6;
+      --tramite-linea: #6bb7c7;
+    }
+
+    /* ÍCONOS */
+
+    .pagina-permiso-circulacion .permiso-tramite__icono {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      width: 46px;
+      height: 46px;
+
+      margin-bottom: 16px;
+
+      border-radius: 11px;
+      background: var(--tramite-fondo);
+      color: var(--tramite-color);
+    }
+
+    .pagina-permiso-circulacion .permiso-tramite__icono svg {
+      display: block;
+      width: 23px;
+      height: 23px;
+
+      fill: none;
+      stroke: currentColor;
+      stroke-width: 1.8;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    /* CATEGORÍAS */
+
+    .pagina-permiso-circulacion
+    .permiso-tramite__categoria {
+      display: block;
+      margin-bottom: 10px;
+
+      color: var(--tramite-color);
+
+      font-size: 0.72rem;
+      font-weight: 800;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      line-height: 1.5;
+    }
+
+    /* TÍTULOS */
+
+    .pagina-permiso-circulacion
+    .permiso-tramite h3 {
+      margin: 0 0 12px;
+
+      color: #163f55;
+      font-size: 1.05rem;
+      font-weight: 800;
+      line-height: 1.4;
+    }
+
+    /* DESCRIPCIONES */
+
+    .pagina-permiso-circulacion
+    .permiso-tramite > p {
+      margin: 0 0 20px;
+
+      color: #52626a;
+      font-size: 0.9rem;
+      line-height: 1.7;
+    }
+
+    /* REQUISITOS DESPLEGABLES */
+
+    .pagina-permiso-circulacion
+    .permiso-tramite details {
+      display: block;
+      width: 100%;
+
+      margin-top: auto;
+      padding: 0;
+
+      background: transparent;
+      border: 0;
+      border-radius: 0;
+
+      color: #163f55;
+    }
+
+    .pagina-permiso-circulacion
+    .permiso-tramite details summary {
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+
+      padding: 12px 0;
+
+      background: transparent;
+      border: 0;
+      border-top: 1px solid #c6d7db;
+      border-radius: 0;
+
+      color: var(--tramite-color);
+      font-size: 0.86rem;
+      font-weight: 800;
+      line-height: 1.5;
+
+      cursor: pointer;
+      list-style: none;
+    }
+
+    .pagina-permiso-circulacion
+    .permiso-tramite details summary::-webkit-details-marker {
+      display: none;
+    }
+
+    .pagina-permiso-circulacion
+    .permiso-tramite details summary::before {
+      content: "+";
+      flex-shrink: 0;
+
+      color: var(--tramite-color);
+      font-size: 1.1rem;
+      font-weight: 800;
+      line-height: 1.2;
+    }
+
+    .pagina-permiso-circulacion
+    .permiso-tramite details[open] summary::before {
+      content: "−";
+    }
+
+    .pagina-permiso-circulacion
+    .permiso-tramite details summary:hover {
+      color: #163f55;
+    }
+
+    .pagina-permiso-circulacion
+    .permiso-tramite details summary:focus-visible {
+      outline: 2px solid #33716c;
+      outline-offset: 3px;
+    }
+
+    .pagina-permiso-circulacion
+    .permiso-tramite details p,
+    .pagina-permiso-circulacion
+    .permiso-tramite details li {
+      color: #455a64;
+      font-size: 0.85rem;
+      line-height: 1.65;
+      overflow-wrap: anywhere;
+    }
+
+    .pagina-permiso-circulacion
+    .permiso-tramite details p {
+      margin: 13px 0 10px;
+    }
+
+    .pagina-permiso-circulacion
+    .permiso-tramite details ul {
+      margin: 10px 0 16px;
+      padding-left: 21px;
+
+      list-style: disc;
+    }
+
+    .pagina-permiso-circulacion
+    .permiso-tramite details li {
+      margin-bottom: 8px;
+    }
+
+    /* =========================================
+       FORMAS DE PAGO PRESENCIAL
+       FRANJA VERDE DE EXTREMO A EXTREMO
+    ========================================= */
+
+    .pagina-permiso-circulacion
+    .permiso-presencial {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .pagina-permiso-circulacion
+    .permiso-presencial > .contenedor {
+      position: relative;
+      z-index: 1;
+    }
+
+    .pagina-permiso-circulacion
+    .permiso-presencial
+    .seccion__encabezado {
+      position: relative;
+      isolation: isolate;
+
+      display: flex;
+      align-items: center;
+
+      min-height: 195px;
+      margin: 0 0 46px;
+      padding: 32px 0;
+
+      background: transparent;
+    }
+
+    .pagina-permiso-circulacion
+    .permiso-presencial
+    .seccion__encabezado::before {
+      content: "";
+      position: absolute;
+
+      top: 0;
+      bottom: 0;
+      left: 50%;
+
+      width: 100vw;
+      transform: translateX(-50%);
+
+      background-color: #33716c;
+      z-index: -1;
+    }
+
+    .pagina-permiso-circulacion
+    .permiso-presencial
+    .seccion__encabezado > div {
+      width: 100%;
+    }
+
+    .pagina-permiso-circulacion
+    .permiso-presencial
+    .seccion__encabezado .etiqueta {
+      color: #e6d6b8;
+      font-weight: 800;
+    }
+
+    .pagina-permiso-circulacion
+    .permiso-presencial
+    .seccion__encabezado h2 {
+      color: #ffffff;
+      font-size: clamp(2rem, 3.2vw, 3rem);
+      line-height: 1.2;
+    }
+
+    .pagina-permiso-circulacion
+    .permiso-presencial
+    .seccion__encabezado .seccion__descripcion {
+      color: #ffffff;
+      font-size: 1.05rem;
+      line-height: 1.7;
+    }
+
+    /* =========================================
+       FICHAS DE PAGO PRESENCIAL
+       CONTORNO VERDE COMPLETO
+    ========================================= */
+
+    .pagina-permiso-circulacion
+    .permiso-presencial .cuadricula {
+      align-items: stretch;
+    }
+
+    .pagina-permiso-circulacion
+    .permiso-presencial .tarjeta-servicio {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+
+      box-sizing: border-box;
+      width: 100%;
+      min-width: 0;
+      height: 100%;
+
+      padding: 28px 29px;
+
+      border: 2px solid #33716c;
+      border-radius: 16px;
+
+      background: #ffffff;
+
+      box-shadow: 0 8px 22px rgba(22, 63, 85, 0.05);
+
+      transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+    }
+
+    .pagina-permiso-circulacion
+    .permiso-presencial .tarjeta-servicio:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 12px 28px rgba(22, 63, 85, 0.1);
+    }
+
+    .pagina-permiso-circulacion
+    .permiso-presencial .tarjeta-servicio__icono {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      width: 58px;
+      height: 58px;
+
+      margin-bottom: 24px;
+
+      border-radius: 14px;
+      background: #e5f0e9;
+      color: #33716c;
+
+      font-size: 1.05rem;
+      font-weight: 800;
+    }
+
+    .pagina-permiso-circulacion
+    .permiso-presencial .tarjeta-servicio h3 {
+      margin: 0 0 14px;
+      color: #163f55;
+      font-size: 1.18rem;
+      font-weight: 800;
+    }
+
+    .pagina-permiso-circulacion
+    .permiso-presencial .tarjeta-servicio p {
+      margin: 0 0 24px;
+      color: #52626a;
+      font-size: 0.95rem;
+      line-height: 1.7;
+    }
+
+    .pagina-permiso-circulacion
+    .permiso-presencial .tarjeta-servicio a {
+      margin-top: auto;
+      color: #33716c;
+      font-size: 0.92rem;
+      font-weight: 800;
+    }
+
+    /* =========================================
+       UNIDAD DE PERMISOS DE CIRCULACIÓN
+       RECUADRO MARRÓN
+    ========================================= */
+
+    .pagina-permiso-circulacion
+    .permiso-contacto__recuadro {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+
+      gap: 32px;
+
+      box-sizing: border-box;
+      width: 100%;
+
+      padding: 38px 40px;
+
+      background: #f5eee4;
+      border: 2px solid #946747;
+      border-radius: 18px;
+
+      box-shadow: 0 8px 24px rgba(22, 63, 85, 0.04);
+    }
+
+    .pagina-permiso-circulacion
+    .permiso-contacto__texto {
+      flex: 1 1 600px;
+      min-width: 0;
+      max-width: 900px;
+    }
+
+    .pagina-permiso-circulacion
+    .permiso-contacto__recuadro .etiqueta {
+      display: block;
+      margin-bottom: 14px;
+
+      color: #946747;
+      font-weight: 800;
+    }
+
+    .pagina-permiso-circulacion
+    .permiso-contacto__recuadro h2 {
+      margin: 0 0 25px;
+
+      color: #163f55;
+      font-size: clamp(1.8rem, 3vw, 2.8rem);
+      font-weight: 800;
+      line-height: 1.2;
+    }
+
+    .pagina-permiso-circulacion
+    .permiso-contacto__recuadro p {
+      margin: 0 0 17px;
+
+      color: #455a64;
+      font-size: 0.98rem;
+      line-height: 1.7;
+    }
+
+    .pagina-permiso-circulacion
+    .permiso-contacto__recuadro p:last-child {
+      margin-bottom: 0;
+    }
+
+    .pagina-permiso-circulacion
+    .permiso-contacto__recuadro strong {
+      color: #163f55;
+    }
+
+    .pagina-permiso-circulacion
+    .permiso-contacto__recuadro p a {
+      color: #805831;
+      overflow-wrap: anywhere;
+    }
+
+    .pagina-permiso-circulacion
+    .permiso-contacto__recuadro > .boton {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+
+      flex-shrink: 0;
+      gap: 8px;
+
+      padding: 14px 22px;
+
+      border: 2px solid #946747;
+      border-radius: 10px;
+
+      background: #946747;
+      color: #ffffff;
+
+      font-size: 0.92rem;
+      font-weight: 700;
+      text-decoration: none;
+    }
+
+    .pagina-permiso-circulacion
+    .permiso-contacto__recuadro > .boton:hover {
+      border-color: #775032;
+      background: #775032;
+      color: #ffffff;
+    }
+
+    /* =========================================
+       RESPONSIVE
+    ========================================= */
+
+    @media (max-width: 1150px) {
+
+      .pagina-permiso-circulacion
+      .permiso-tramites
+      .permiso-tramites__grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+
+    }
+
+    @media (max-width: 900px) {
+
+      .pagina-permiso-circulacion .interior-hero {
+        min-height: 310px;
+      }
+
+      .pagina-permiso-circulacion
+      .interior-hero > .contenedor {
+        padding-left: 36px;
+        padding-right: 36px;
+      }
+
+      .pagina-permiso-circulacion
+      .permiso-tramites
+      .permiso-tramites__grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .pagina-permiso-circulacion
+      .permiso-contacto__recuadro {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 32px 30px;
+      }
+
+      .pagina-permiso-circulacion
+      .permiso-contacto__texto {
+        flex: initial;
+        width: 100%;
+        max-width: 100%;
+      }
+
+    }
+
+    @media (max-width: 620px) {
+
+      .pagina-permiso-circulacion .interior-hero {
+        min-height: 280px;
+      }
+
+      .pagina-permiso-circulacion
+      .interior-hero > .contenedor {
+        padding-left: 22px;
+        padding-right: 22px;
+      }
+
+      .pagina-permiso-circulacion
+      .interior-hero .migas {
+        padding-top: 20px;
+      }
+
+      .pagina-permiso-circulacion
+      .interior-hero__contenido {
+        padding: 24px 0 42px;
+      }
+
+      .pagina-permiso-circulacion
+      .interior-hero h1 {
+        font-size: clamp(2.15rem, 8vw, 3rem);
+      }
+
+      .pagina-permiso-circulacion
+      .permiso-pago-online
+      .cuadricula--dos,
+      .pagina-permiso-circulacion
+      .permiso-presencial
+      .cuadricula--tres,
+      .pagina-permiso-circulacion
+      .permiso-tramites
+      .permiso-tramites__grid {
+        grid-template-columns: 1fr;
+      }
+
+      .pagina-permiso-circulacion
+      .permiso-pago-online
+      .categoria-tramite,
+      .pagina-permiso-circulacion
+      .permiso-presencial
+      .tarjeta-servicio {
+        padding: 24px;
+      }
+
+      .pagina-permiso-circulacion
+      .permiso-presencial
+      .seccion__encabezado {
+        min-height: auto;
+        padding: 32px 0;
+        margin-bottom: 28px;
+      }
+
+      .pagina-permiso-circulacion
+      .permiso-presencial
+      .seccion__encabezado h2 {
+        font-size: 2rem;
+      }
+
+      .pagina-permiso-circulacion
+      .permiso-contacto__recuadro {
+        padding: 28px 23px;
+        border-radius: 14px;
+      }
+
+      .pagina-permiso-circulacion
+      .permiso-contacto__recuadro h2 {
+        font-size: 1.8rem;
+      }
+
+      .pagina-permiso-circulacion
+      .permiso-contacto__recuadro > .boton {
+        width: 100%;
+      }
+
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+
+      .pagina-permiso-circulacion
+      .permiso-pago-online .categoria-tramite,
+      .pagina-permiso-circulacion
+      .permiso-presencial .tarjeta-servicio {
+        transition: none;
+      }
+
+    }
+
+/* -------- paginas/tramites.html -------- */
+/* =========================================
+       PORTADA TRÁMITES Y SERVICIOS
+       SE CONSERVA EL DISEÑO ORIGINAL
+    ========================================= */
+
+    .pagina-tramites .interior-hero {
+      position: relative;
+      display: flex;
+      align-items: center;
+      overflow: hidden;
+
+      min-height: 360px;
+
+      background-color: #163f55;
+
+      background-image:
+        linear-gradient(
+          90deg,
+          rgba(10, 31, 43, 0.84) 0%,
+          rgba(10, 31, 43, 0.65) 50%,
+          rgba(10, 31, 43, 0.34) 100%
+        ),
+        url("../assets/imagenes/heroes/hero-tramites.jpg");
+
+      background-position: center;
+      background-size: cover;
+      background-repeat: no-repeat;
+
+      color: #ffffff;
+    }
+
+    .pagina-tramites .interior-hero::before,
+    .pagina-tramites .interior-hero::after {
+      content: none;
+    }
+
+    /* MÁRGENES DE LA PORTADA */
+
+    .pagina-tramites .interior-hero > .contenedor {
+      position: relative;
+      z-index: 1;
+
+      box-sizing: border-box;
+
+      width: 100%;
+      max-width: 1200px;
+
+      margin-left: auto;
+      margin-right: auto;
+
+      padding-left: 52px;
+      padding-right: 52px;
+    }
+
+    .pagina-tramites .interior-hero__contenido {
+      position: relative;
+      z-index: 1;
+
+      display: block;
+      padding: 38px 0 62px;
+    }
+
+    .pagina-tramites .interior-hero__texto {
+      max-width: 730px;
+    }
+
+    .pagina-tramites .interior-hero .migas {
+      position: relative;
+      z-index: 1;
+
+      padding-top: 30px;
+      margin-bottom: 22px;
+    }
+
+    .pagina-tramites .interior-hero .migas,
+    .pagina-tramites .interior-hero .migas a,
+    .pagina-tramites .interior-hero .migas span,
+    .pagina-tramites .interior-hero .migas li {
+      color: rgba(255, 255, 255, 0.9);
+    }
+
+    .pagina-tramites .interior-hero .migas a:hover {
+      color: #ffffff;
+      text-decoration: underline;
+    }
+
+    .pagina-tramites .interior-hero h1 {
+      color: #ffffff;
+      margin-bottom: 17px;
+    }
+
+    .pagina-tramites .interior-hero h1 span {
+      color: #ffffff;
+    }
+
+    .pagina-tramites .interior-hero__texto > p {
+      color: rgba(255, 255, 255, 0.94);
+      line-height: 1.7;
+    }
+
+    .pagina-tramites .interior-hero .etiqueta--clara {
+      color: #ffffff;
+    }
+
+    /* =========================================
+       NUEVOS CAMBIOS
+
+       FRANJAS VERDES DE EXTREMO A EXTREMO
+       TRÁMITES EN LÍNEA Y SERVICIOS DESTACADOS
+    ========================================= */
+
+    .pagina-tramites .seccion--tramites-franja {
+      overflow: hidden;
+    }
+
+    .pagina-tramites
+    .seccion--tramites-franja
+    .seccion__encabezado {
+      position: relative;
+      isolation: isolate;
+
+      display: flex;
+      align-items: center;
+
+      min-height: 135px;
+      margin-bottom: 42px;
+      padding: 26px 0;
+    }
+
+    .pagina-tramites
+    .seccion--tramites-franja
+    .seccion__encabezado::before {
+      content: "";
+
+      position: absolute;
+      z-index: -1;
+
+      top: 0;
+      bottom: 0;
+      left: 50%;
+
+      width: 100vw;
+
+      transform: translateX(-50%);
+
+      background: #33716c;
+    }
+
+    /* TEXTOS SOBRE FONDO VERDE */
+
+    .pagina-tramites
+    .seccion--tramites-franja
+    .seccion__encabezado .etiqueta {
+      color: #e6d6b8;
+      font-size: 0.78rem;
+      font-weight: 800;
+      letter-spacing: 0.12em;
+      margin-bottom: 10px;
+    }
+
+    .pagina-tramites
+    .seccion--tramites-franja
+    .seccion__encabezado h2 {
+      color: #ffffff;
+      margin-bottom: 12px;
+
+      font-size: clamp(2rem, 3vw, 2.7rem);
+      font-weight: 800;
+    }
+
+    .pagina-tramites
+    .seccion--tramites-franja
+    .seccion__encabezado
+    .seccion__descripcion {
+      color: #ffffff;
+      margin-bottom: 0;
+    }
+
+    /* =========================================
+       NUEVOS CONTORNOS VERDES
+       EN LAS SEIS FICHAS
+    ========================================= */
+
+    .pagina-tramites
+    .seccion--tramites-franja
+    .tarjeta-servicio {
+      border: 2px solid #33716c;
+    }
+
+    /* =========================================
+       RESPONSIVO
+    ========================================= */
+
+    @media (max-width: 1000px) {
+
+      .pagina-tramites
+      .interior-hero > .contenedor {
+        padding-left: 36px;
+        padding-right: 36px;
+      }
+
+    }
+
+    @media (max-width: 900px) {
+
+      .pagina-tramites .interior-hero {
+        min-height: 310px;
+      }
+
+    }
+
+    @media (max-width: 767px) {
+
+      .pagina-tramites
+      .seccion--tramites-franja
+      .seccion__encabezado {
+        min-height: 115px;
+        margin-bottom: 30px;
+        padding: 23px 0;
+      }
+
+    }
+
+    @media (max-width: 620px) {
+
+      .pagina-tramites .interior-hero {
+        min-height: 280px;
+      }
+
+      .pagina-tramites
+      .interior-hero > .contenedor {
+        padding-left: 22px;
+        padding-right: 22px;
+      }
+
+      .pagina-tramites
+      .interior-hero .migas {
+        padding-top: 20px;
+      }
+
+      .pagina-tramites
+      .interior-hero__contenido {
+        padding: 24px 0 42px;
+      }
+
+      .pagina-tramites .interior-hero h1 {
+        font-size: clamp(2.2rem, 8vw, 3.5rem);
+      }
+
+    }
+
+/* -------- paginas/turismo.html -------- */
+/* =========================================
+       PORTADA DE TURISMO
+    ========================================= */
+
+    .pagina-turismo .interior-hero {
+      position: relative;
+      display: flex;
+      align-items: center;
+      overflow: hidden;
+      min-height: 360px;
+
+      background-color: #163f55;
+
+      background-image:
+        linear-gradient(
+          90deg,
+          rgba(10, 31, 43, 0.84) 0%,
+          rgba(10, 31, 43, 0.65) 50%,
+          rgba(10, 31, 43, 0.34) 100%
+        ),
+        url("../assets/imagenes/heroes/hero-turismo.jpg");
+
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      color: #ffffff;
+    }
+
+    .pagina-turismo .interior-hero::before,
+    .pagina-turismo .interior-hero::after {
+      content: none;
+    }
+
+    .pagina-turismo .interior-hero > .contenedor {
+      position: relative;
+      z-index: 1;
+      box-sizing: border-box;
+      width: 100%;
+      max-width: 1200px;
+      margin-left: auto;
+      margin-right: auto;
+      padding-left: 52px;
+      padding-right: 52px;
+    }
+
+    .pagina-turismo .interior-hero__contenido {
+      position: relative;
+      z-index: 1;
+      padding: 38px 0 62px;
+    }
+
+    .pagina-turismo .interior-hero__texto {
+      max-width: 730px;
+    }
+
+    .pagina-turismo .interior-hero .migas {
+      position: relative;
+      z-index: 1;
+      padding-top: 30px;
+      margin-bottom: 22px;
+    }
+
+    .pagina-turismo .interior-hero .migas,
+    .pagina-turismo .interior-hero .migas a,
+    .pagina-turismo .interior-hero .migas span {
+      color: rgba(255, 255, 255, 0.9);
+    }
+
+    .pagina-turismo .interior-hero .migas a:hover {
+      color: #ffffff;
+      text-decoration: underline;
+    }
+
+    .pagina-turismo .interior-hero h1 {
+      color: #ffffff;
+      margin-bottom: 17px;
+    }
+
+    .pagina-turismo .interior-hero__texto > p {
+      color: rgba(255, 255, 255, 0.94);
+      line-height: 1.7;
+    }
+
+    .pagina-turismo .interior-hero .etiqueta--clara {
+      color: #ffffff;
+    }
+
+    /* =========================================
+       INTRODUCCIÓN AMARILLO ARENA
+    ========================================= */
+
+    .pagina-turismo .turismo-introduccion {
+      max-width: 950px;
+      margin: 0 0 40px 0;
+      padding: 32px 38px;
+      background-color: #f4ead7;
+      border-left: 5px solid #d0ab68;
+      border-radius: 16px;
+      box-shadow: 0 5px 18px rgba(22, 63, 85, 0.05);
+      line-height: 1.8;
+    }
+
+    .pagina-turismo .turismo-introduccion p {
+      margin-bottom: 18px;
+      color: #163f55;
+      line-height: 1.8;
+    }
+
+    .pagina-turismo .turismo-introduccion p:last-child {
+      margin-bottom: 0;
+    }
+
+    /* =========================================
+       DATOS DE LA OFICINA
+
+       NUEVO:
+       CONTORNO COMPLETO MARRÓN
+       PARA LAS TRES CASILLAS
+    ========================================= */
+
+    .turismo-datos {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 16px;
+      margin: 30px 0 40px;
+    }
+
+    .pagina-turismo .turismo-dato {
+      background: #f4f7f6;
+      padding: 24px;
+      border: 2px solid #946747;
+      border-radius: 14px;
+      overflow-wrap: anywhere;
+    }
+
+    .turismo-dato strong {
+      display: block;
+      color: #163f55;
+      margin-bottom: 10px;
+    }
+
+    .turismo-dato a {
+      color: #245f63;
+    }
+
+    .turismo-dato a:hover {
+      text-decoration: underline;
+    }
+
+    /* =========================================
+       ACTIVIDADES
+       MISMO LENGUAJE QUE LINKS DE INTERÉS
+
+       - 4 COLUMNAS
+       - LÍNEAS SUPERIORES DE COLORES
+       - SIN RECUADROS NI CÍRCULOS
+       - ÍCONOS LINEALES
+       - ENLACES ALINEADOS ABAJO
+    ========================================= */
+
+    .pagina-turismo .turismo-actividades {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 28px 24px;
+      margin-top: 36px;
+    }
+
+    .pagina-turismo .turismo-actividad {
+      display: flex;
+      flex-direction: column;
+      align-items: stretch;
+
+      width: 100%;
+      min-width: 0;
+      min-height: 260px;
+      max-width: none;
+
+      margin: 0;
+      padding: 22px 0 20px;
+
+      border: 0;
+      border-top: 3px solid #33716c;
+      border-bottom: 1px solid #d8e2e2;
+      border-radius: 0;
+
+      background: transparent;
+      color: #163f55;
+      box-shadow: none;
+
+      text-align: left;
+      transition: border-color 0.2s ease;
+    }
+
+    .pagina-turismo .turismo-actividad:hover {
+      transform: none;
+      box-shadow: none;
+    }
+
+    /* COLORES DE ACTIVIDADES */
+
+    .pagina-turismo .turismo-actividad:nth-child(4n+1) {
+      --actividad-color: #33716c;
+      --actividad-fondo: #e5f0e9;
+      border-top-color: #33716c;
+    }
+
+    .pagina-turismo .turismo-actividad:nth-child(4n+2) {
+      --actividad-color: #9d742f;
+      --actividad-fondo: #f4ead7;
+      border-top-color: #d0ab68;
+    }
+
+    .pagina-turismo .turismo-actividad:nth-child(4n+3) {
+      --actividad-color: #286781;
+      --actividad-fondo: #e5eef2;
+      border-top-color: #286781;
+    }
+
+    .pagina-turismo .turismo-actividad:nth-child(4n+4) {
+      --actividad-color: #286e7e;
+      --actividad-fondo: #e3f3f6;
+      border-top-color: #6bb7c7;
+    }
+
+    /* ÍCONOS */
+
+    .pagina-turismo .turismo-actividad__icono {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      width: 46px;
+      height: 46px;
+      margin-bottom: 16px;
+
+      border-radius: 11px;
+      background: var(--actividad-fondo, #e5f0e9);
+      color: var(--actividad-color, #33716c);
+    }
+
+    .pagina-turismo .turismo-actividad__icono svg {
+      display: block;
+      width: 23px;
+      height: 23px;
+      fill: none;
+      stroke: currentColor;
+      stroke-width: 1.8;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    /* CATEGORÍAS */
+
+    .pagina-turismo .turismo-actividad__categoria {
+      display: block;
+      margin: 0 0 10px;
+
+      color: var(--actividad-color, #33716c);
+      font-size: 0.73rem;
+      font-weight: 800;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      line-height: 1.5;
+    }
+
+    /* TÍTULOS */
+
+    .pagina-turismo .turismo-actividad h3 {
+      margin: 0 0 12px;
+      color: #163f55;
+      font-size: 1.05rem;
+      font-weight: 800;
+      line-height: 1.4;
+    }
+
+    /* DESCRIPCIONES */
+
+    .pagina-turismo .turismo-actividad p {
+      margin: 0 0 10px;
+      color: #52626a;
+      font-size: 0.9rem;
+      line-height: 1.65;
+    }
+
+    /* ENLACES */
+
+    .pagina-turismo .turismo-actividad a {
+      display: inline-flex;
+      align-items: center;
+      align-self: flex-start;
+      gap: 6px;
+
+      margin-top: auto;
+      padding-top: 16px;
+
+      color: #245f63;
+      font-size: 0.88rem;
+      font-weight: 800;
+      line-height: 1.45;
+      text-decoration: none;
+    }
+
+    .pagina-turismo .turismo-actividad a:hover {
+      color: #163f55;
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+
+    /* =========================================
+       NUESTRAS LOCALIDADES
+    ========================================= */
+
+    .turismo-seccion-localidades {
+      background: #f3f7f7;
+      padding: 70px 0;
+    }
+
+    /* FRANJA CELESTE CLARA */
+
+    .pagina-turismo
+    .turismo-seccion-localidades
+    .seccion__encabezado {
+      position: relative;
+      isolation: isolate;
+      padding: 32px 0;
+      margin-bottom: 40px;
+    }
+
+    .pagina-turismo
+    .turismo-seccion-localidades
+    .seccion__encabezado::before {
+      content: "";
+      position: absolute;
+
+      top: 0;
+      bottom: 0;
+      left: 50%;
+      width: 100vw;
+      transform: translateX(-50%);
+
+      background: #a5dbe5;
+      z-index: -1;
+    }
+
+    .pagina-turismo
+    .turismo-seccion-localidades
+    .seccion__encabezado .etiqueta {
+      color: #163f55;
+    }
+
+    .pagina-turismo
+    .turismo-seccion-localidades
+    .seccion__encabezado h2 {
+      color: #163f55;
+    }
+
+    .pagina-turismo
+    .turismo-seccion-localidades
+    .seccion__encabezado p {
+      color: #163f55;
+    }
+
+    /* FICHAS CON FOTOGRAFÍAS */
+
+    .turismo-localidades {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 22px;
+      margin-top: 35px;
+    }
+
+    .turismo-localidad {
+      display: flex;
+      flex-direction: column;
+      min-width: 0;
+
+      background: #ffffff;
+      border: 1px solid #dae5e5;
+      border-radius: 16px;
+      overflow: hidden;
+
+      text-decoration: none;
+      color: #163f55;
+
+      box-shadow: 0 4px 18px rgba(22, 63, 85, 0.04);
+
+      transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease,
+        border-color 0.25s ease;
+    }
+
+    .turismo-localidad:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 15px 32px rgba(22, 63, 85, 0.12);
+      border-color: #33716c;
+    }
+
+    .turismo-localidad:focus-visible {
+      outline: 3px solid #33716c;
+      outline-offset: 4px;
+    }
+
+    .turismo-localidad__imagen {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 16 / 10;
+      display: block;
+      background: #d6e5e2;
+      overflow: hidden;
+    }
+
+    .turismo-localidad__imagen img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      transition: transform 0.35s ease;
+    }
+
+    .turismo-localidad:hover
+    .turismo-localidad__imagen img {
+      transform: scale(1.04);
+    }
+
+    .turismo-localidad__contenido {
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+
+      padding: 25px;
+      border-top: 4px solid #d0ab68;
+    }
+
+    .turismo-localidad:nth-child(3n+2)
+    .turismo-localidad__contenido {
+      border-top-color: #33716c;
+    }
+
+    .turismo-localidad:nth-child(3n)
+    .turismo-localidad__contenido {
+      border-top-color: #6bb7c7;
+    }
+
+    .turismo-localidad__categoria {
+      display: block;
+      color: #33716c;
+
+      font-size: 0.75rem;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 10px;
+    }
+
+    .turismo-localidad h3 {
+      color: #163f55;
+      font-size: 1.2rem;
+      font-weight: 700;
+      line-height: 1.4;
+      margin: 0 0 12px;
+    }
+
+    .turismo-localidad__descripcion {
+      color: #52626a;
+      font-size: 0.9rem;
+      line-height: 1.7;
+      margin: 0 0 24px;
+      flex-grow: 1;
+    }
+
+    .turismo-localidad__accion {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      color: #33716c;
+      font-size: 0.88rem;
+      font-weight: 700;
+    }
+
+    .turismo-localidad__flecha {
+      font-size: 1.2rem;
+      transition: transform 0.2s ease;
+    }
+
+    .turismo-localidad:hover
+    .turismo-localidad__flecha {
+      transform: translate(3px, -3px);
+    }
+
+    /* =========================================
+       VIDEO DE YOUTUBE
+    ========================================= */
+
+    .turismo-video {
+      padding: 70px 0 85px;
+      background: #ffffff;
+    }
+
+    .turismo-video__encabezado {
+      margin-bottom: 32px;
+    }
+
+    .turismo-video__encabezado h2 {
+      color: #163f55;
+      font-size: clamp(1.9rem, 3vw, 2.65rem);
+      font-weight: 800;
+      margin-bottom: 12px;
+    }
+
+    .turismo-video__encabezado p:last-child {
+      color: #52626a;
+      font-size: 1rem;
+      line-height: 1.7;
+    }
+
+    .turismo-video__marco {
+      width: 100%;
+      max-width: 1050px;
+      margin: 0 auto;
+      aspect-ratio: 16 / 9;
+
+      overflow: hidden;
+      border-radius: 18px;
+      background: #163f55;
+
+      box-shadow: 0 14px 35px rgba(22, 63, 85, 0.13);
+    }
+
+    .turismo-video__marco iframe {
+      display: block;
+      width: 100%;
+      height: 100%;
+      border: 0;
+    }
+
+    /* =========================================
+       FRANJA VERDE DEL VIDEO
+
+       SE CONSERVA EL CAMBIO QUE YA FUNCIONÓ
+    ========================================= */
+
+    .pagina-turismo .turismo-video__encabezado {
+      position: relative;
+      isolation: isolate;
+      padding: 32px 0;
+      margin-bottom: 40px;
+    }
+
+    .pagina-turismo .turismo-video__encabezado::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 50%;
+      width: 100vw;
+      transform: translateX(-50%);
+      background-color: #33716c;
+      z-index: -1;
+    }
+
+    .pagina-turismo .turismo-video__encabezado .etiqueta {
+      color: #e6d6b8;
+    }
+
+    .pagina-turismo .turismo-video__encabezado h2 {
+      color: #ffffff;
+    }
+
+    .pagina-turismo .turismo-video__encabezado p:last-child {
+      color: #ffffff;
+    }
+
+    /* =========================================
+       CONTACTO DE TURISMO
+    ========================================= */
+
+    .turismo-contacto {
+      background: #163f55;
+      color: #ffffff;
+      padding: 50px 0;
+    }
+
+    .turismo-contacto h2 {
+      color: #ffffff;
+      margin-bottom: 14px;
+    }
+
+    .turismo-contacto p {
+      margin-bottom: 12px;
+    }
+
+    .turismo-contacto a {
+      color: #cdecef;
+      text-decoration: underline;
+    }
+
+    /* =========================================
+       RESPONSIVO
+    ========================================= */
+
+    @media (max-width: 1150px) {
+
+      .pagina-turismo .turismo-actividades {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+
+    }
+
+    @media (max-width: 1000px) {
+
+      .turismo-localidades {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .pagina-turismo .interior-hero > .contenedor {
+        padding-left: 36px;
+        padding-right: 36px;
+      }
+
+    }
+
+    @media (max-width: 900px) {
+
+      .turismo-datos {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .pagina-turismo .interior-hero {
+        min-height: 310px;
+      }
+
+      .pagina-turismo .turismo-actividades {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+    }
+
+    @media (max-width: 620px) {
+
+      .turismo-datos,
+      .turismo-localidades,
+      .pagina-turismo .turismo-actividades {
+        grid-template-columns: 1fr;
+      }
+
+      .turismo-seccion-localidades {
+        padding: 45px 0;
+      }
+
+      .turismo-localidad__contenido {
+        padding: 22px;
+      }
+
+      .pagina-turismo .turismo-introduccion {
+        padding: 24px;
+      }
+
+      .pagina-turismo .interior-hero {
+        min-height: 280px;
+      }
+
+      .pagina-turismo .interior-hero > .contenedor {
+        padding-left: 22px;
+        padding-right: 22px;
+      }
+
+      .pagina-turismo .interior-hero .migas {
+        padding-top: 20px;
+      }
+
+      .pagina-turismo .interior-hero__contenido {
+        padding: 24px 0 42px;
+      }
+
+      .turismo-video {
+        padding: 45px 0 55px;
+      }
+
+      .turismo-video__marco {
+        border-radius: 12px;
+      }
+
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+
+      .turismo-localidad,
+      .turismo-localidad__flecha,
+      .turismo-localidad__imagen img {
+        transition: none;
+      }
+
+    }
+
+/* Estilo antes definido como atributo style en OMIL */
+.pagina-omil .bloque-orientacion--separado, .bloque-orientacion--separado { margin-top: 28px; }
+
+/* -------- Buscador de cabecera, antes inyectado por main.js -------- */
+/* =========================================
+       TRES COLUMNAS EN LA CABECERA BLANCA
+    ========================================= */
+
+    .cabecera__principal.cabecera--con-buscador {
+      display: grid;
+
+      grid-template-columns:
+        minmax(280px, 1fr)
+        minmax(260px, 490px)
+        minmax(180px, 1fr);
+
+      align-items: center;
+      column-gap: 22px;
+    }
+
+    .cabecera--con-buscador > .identidad {
+      grid-column: 1;
+      grid-row: 1;
+      justify-self: start;
+    }
+
+    .cabecera--con-buscador > .cabecera__acciones {
+      grid-column: 3;
+      grid-row: 1;
+      justify-self: end;
+    }
+
+    /* =========================================
+       BUSCADOR VERDE MUNICIPAL
+       COLOR PRINCIPAL: #33716c
+    ========================================= */
+
+    .buscador-municipal {
+      grid-column: 2;
+      grid-row: 1;
+
+      display: flex;
+      align-items: center;
+      gap: 5px;
+
+      justify-self: center;
+
+      width: 100%;
+      max-width: 490px;
+      min-width: 0;
+
+      margin: 0;
+      padding: 5px;
+
+      border: 2px solid #33716c;
+      border-radius: 999px;
+
+      background: #33716c;
+
+      box-shadow:
+        0 5px 16px rgba(22, 63, 85, 0.07);
+    }
+
+    /* LUPA BLANCA */
+
+    .buscador-municipal__lupa {
+      display: grid;
+      place-items: center;
+
+      flex-shrink: 0;
+
+      width: 36px;
+      height: 36px;
+
+      color: #ffffff;
+    }
+
+    .buscador-municipal__lupa svg {
+      display: block;
+      width: 21px;
+      height: 21px;
+    }
+
+    /* CAMPO DE TEXTO BLANCO */
+
+    .buscador-municipal__campo {
+      flex: 1;
+      min-width: 0;
+
+      padding: 11px 5px;
+
+      border: 0;
+      outline: none;
+
+      background: transparent;
+
+      color: #ffffff;
+      caret-color: #ffffff;
+
+      font-family: inherit;
+      font-size: 0.87rem;
+    }
+
+    .buscador-municipal__campo::placeholder {
+      color: #ffffff;
+      opacity: 0.9;
+    }
+
+    /* BOTÓN BLANCO CON LETRAS VERDES */
+
+    .buscador-municipal__boton {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+
+      flex-shrink: 0;
+
+      min-height: 43px;
+      padding: 10px 18px;
+
+      border: 0;
+      border-radius: 999px;
+
+      background: #ffffff;
+      color: #33716c;
+
+      font-size: 0.88rem;
+      font-weight: 700;
+
+      cursor: pointer;
+
+      transition: background 0.2s ease;
+    }
+
+    .buscador-municipal__boton:hover {
+      background: #e6d6b8;
+      color: #163f55;
+    }
+
+    /* ESTADO AL ESCRIBIR */
+
+    .buscador-municipal:focus-within {
+      border-color: #163f55;
+
+      box-shadow:
+        0 0 0 4px rgba(51, 113, 108, 0.14);
+    }
+
+    /* MENSAJE ACCESIBLE */
+
+    .buscador-municipal__aviso {
+      position: absolute;
+
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+
+      overflow: hidden;
+
+      clip-path: inset(50%);
+      white-space: nowrap;
+      border: 0;
+    }
+
+    /* =========================================
+       PANTALLAS MEDIANAS
+    ========================================= */
+
+    @media (min-width: 901px) and (max-width: 1250px) {
+
+      .cabecera__principal.cabecera--con-buscador {
+        grid-template-columns:
+          minmax(220px, 1fr)
+          minmax(180px, 360px)
+          auto;
+
+        column-gap: 14px;
+      }
+
+      .buscador-municipal__campo {
+        font-size: 0.78rem;
+      }
+
+      .buscador-municipal__boton {
+        padding-inline: 12px;
+        font-size: 0.79rem;
+      }
+
+    }
+
+    /* =========================================
+       TABLET Y CELULAR
+       MISMA FRANJA BLANCA
+    ========================================= */
+
+    @media (max-width: 900px) {
+
+      .cabecera__principal.cabecera--con-buscador {
+        grid-template-columns:
+          minmax(0, 1fr)
+          minmax(140px, 260px)
+          auto;
+
+        column-gap: 12px;
+      }
+
+      .buscador-municipal {
+        max-width: 260px;
+        padding: 3px;
+      }
+
+      .buscador-municipal__lupa {
+        display: none;
+      }
+
+      .buscador-municipal__campo {
+        padding: 9px;
+        font-size: 0.8rem;
+      }
+
+      .buscador-municipal__boton {
+        min-height: 38px;
+        padding: 8px 11px;
+        font-size: 0.77rem;
+      }
+
+    }
+
+    @media (max-width: 650px) {
+
+      .cabecera__principal.cabecera--con-buscador {
+        grid-template-columns:
+          minmax(0, 1fr)
+          minmax(110px, 170px)
+          auto;
+
+        column-gap: 7px;
+      }
+
+      .buscador-municipal {
+        max-width: 170px;
+      }
+
+      .buscador-municipal__campo {
+        padding: 7px;
+        font-size: 0.72rem;
+      }
+
+      .buscador-municipal__campo::placeholder {
+        color: transparent;
+      }
+
+      .buscador-municipal__boton {
+        min-height: 34px;
+        padding: 6px 9px;
+        font-size: 0.72rem;
+      }
+
+    }
+
+    @media (max-width: 430px) {
+
+      .cabecera__principal.cabecera--con-buscador {
+        grid-template-columns:
+          minmax(0, 1fr)
+          minmax(80px, 105px)
+          auto;
+
+        gap: 5px;
+      }
+
+      .buscador-municipal {
+        width: 100%;
+        max-width: 105px;
+
+        border-radius: 12px;
+        padding: 3px;
+      }
+
+      .buscador-municipal__campo {
+        width: 100%;
+        padding: 7px 3px;
+        font-size: 0.72rem;
+      }
+
+      .buscador-municipal__boton {
+        min-height: 30px;
+        padding: 5px 7px;
+        border-radius: 9px;
+        font-size: 0.68rem;
+      }
+
+    }
+
+    /* =========================================
+       ALTO CONTRASTE
+    ========================================= */
+
+    html.contraste-alto .buscador-municipal {
+      border-color: #163f55;
+      background: #ffffff;
+    }
+
+    html.contraste-alto .buscador-municipal__lupa {
+      color: #06283d;
+    }
+
+    html.contraste-alto .buscador-municipal__campo {
+      color: #092e44;
+      caret-color: #092e44;
+    }
+
+    html.contraste-alto
+    .buscador-municipal__campo::placeholder {
+      color: #244b61;
+    }
+
+    html.contraste-alto .buscador-municipal__boton {
+      background: #06283d;
+      color: #ffffff;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+
+      .buscador-municipal__boton {
+        transition: none;
+      }
+
+    }
+
+/* ==================================================
+   BÚSQUEDA CON SUGERENCIAS
+================================================== */
+.buscador-municipal { position: relative; }
+.buscador-municipal__resultados[hidden] { display: none !important; }
+.buscador-municipal__resultados {
+  position: absolute; z-index: 1000; left: 0; right: 0; top: calc(100% + 8px);
+  max-height: 330px; overflow-y: auto; padding: 12px;
+  background: #fff; color: #163f55; border: 1px solid #b8d0d1;
+  border-radius: 14px; box-shadow: 0 14px 32px rgba(18,51,69,.22);
+}
+.buscador-municipal__resultados-titulo {
+  margin: 0 0 5px; padding: 7px 9px; font-size: .82rem;
+  font-weight: 800; color: #33716c;
+}
+.buscador-municipal__resultado {
+  display: block; padding: 12px 10px; color: #163f55;
+  text-decoration: none; border-radius: 8px; font-size: .9rem;
+}
+.buscador-municipal__resultado:hover,
+.buscador-municipal__resultado:focus-visible {
+  background: #e5f0e9; outline: 2px solid #33716c; outline-offset: -2px;
+}
+/* ==================================================
+   FORMULARIO ORIENTACIÓN CIUDADANA
+================================================== */
+.pagina-contacto .orientacion-formulario__encabezado { max-width: 770px; margin-bottom: 28px; }
+.pagina-contacto .orientacion-formulario__encabezado h2 { color: #163f55; margin: 8px 0 12px; }
+.pagina-contacto .orientacion-formulario__encabezado p { line-height: 1.7; }
+.pagina-contacto .orientacion-formulario__formulario {
+  padding: clamp(22px, 4vw, 42px); border: 2px solid #6bb7c7;
+  border-radius: 16px; background: #eaf3f7;
+}
+.pagina-contacto .orientacion-formulario__fila {
+  display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 22px;
+}
+.pagina-contacto .orientacion-formulario__campo { display: flex; flex-direction: column; gap: 8px; margin-bottom: 22px; min-width: 0; }
+.pagina-contacto .orientacion-formulario__campo label { font-weight: 700; color: #163f55; }
+.pagina-contacto .orientacion-formulario__campo input,
+.pagina-contacto .orientacion-formulario__campo select,
+.pagina-contacto .orientacion-formulario__campo textarea {
+  box-sizing: border-box; width: 100%; min-width: 0; padding: 13px 15px;
+  border: 1.5px solid #9fb9c3; border-radius: 9px; background: #fff;
+  color: #163f55; font: inherit; line-height: 1.5;
+}
+.pagina-contacto .orientacion-formulario__campo textarea { resize: vertical; }
+.pagina-contacto .orientacion-formulario__campo :is(input,select,textarea):focus-visible {
+  outline: 3px solid #33716c; outline-offset: 2px;
+}
+.pagina-contacto .orientacion-formulario__nota { max-width: 750px; font-size: .88rem; line-height: 1.65; color: #455d68; }
+.pagina-contacto .orientacion-formulario__enviar { margin-top: 16px; padding: 14px 24px; border: 0; background: #33716c; color: white; border-radius: 10px; font-weight: 800; cursor: pointer; }
+.pagina-contacto .orientacion-formulario__enviar:hover { background: #24554f; }
+.pagina-contacto .orientacion-formulario__aviso { margin-top: 14px; font-size: .9rem; color: #163f55; font-weight: 600; }
+@media (max-width: 650px) {
+  .pagina-contacto .orientacion-formulario__fila { grid-template-columns: 1fr; gap: 0; }
+  .pagina-contacto .orientacion-formulario__enviar { width: 100%; }
+}
+
+
+/* =====================================================
+   AJUSTES EXCLUSIVOS PARA CELULARES (HASTA 600 PX)
+   Mantiene intactos computador y tablet.
+===================================================== */
+.accesos-movil__boton { display: none; }
+
+@media (max-width: 600px) {
+  /* Los accesos se contraen por defecto; el botón los muestra. */
+  .barra-superior--institucional .barra-superior__contenido {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 10px;
+    padding-block: 12px;
+  }
+  .barra-superior--institucional .barra-superior__redes {
+    grid-column: 1;
+    grid-row: 1;
+  }
+  .barra-superior--institucional .herramientas-accesibilidad {
+    grid-column: 1;
+    grid-row: 2;
+    justify-content: flex-start;
+  }
+  .barra-superior--institucional .accesos-movil__boton {
+    grid-column: 1;
+    grid-row: 3;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    min-height: 44px;
+    padding: 10px 14px;
+    border: 1px solid rgba(255,255,255,.45);
+    border-radius: 9px;
+    background: #20536a;
+    color: #fff;
+    font: inherit;
+    font-weight: 700;
+    cursor: pointer;
+  }
+  .accesos-movil__flecha { font-size: 1.35rem; transition: transform .2s; }
+  .accesos-movil__boton[aria-expanded="true"] .accesos-movil__flecha {
+    transform: rotate(180deg);
+  }
+  .barra-superior--institucional .enlaces-institucionales {
+    grid-column: 1;
+    grid-row: 4;
+    display: none;
+    grid-template-columns: 1fr;
+    gap: 8px;
+    margin-top: 0;
+  }
+  .barra-superior--institucional .enlaces-institucionales.accesos-movil--abiertos {
+    display: grid;
+  }
+  .enlaces-institucionales > a { min-height: 55px; }
+
+  /* Dos filas en la franja blanca: identidad+menú y buscador ancho. */
+  .cabecera__principal.cabecera--con-buscador {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    align-items: center;
+    gap: 12px 8px;
+    padding-block: 14px;
+    min-height: 0;
+  }
+  .cabecera--con-buscador > .identidad {
+    grid-column: 1;
+    grid-row: 1;
+    min-width: 0;
+    max-width: 100%;
+    gap: 8px;
+  }
+  .cabecera--con-buscador > .cabecera__acciones {
+    grid-column: 2;
+    grid-row: 1;
+    justify-self: end;
+  }
+  .cabecera--con-buscador > .buscador-municipal {
+    grid-column: 1 / -1;
+    grid-row: 2;
+    width: 100%;
+    max-width: none;
+    min-width: 0;
+    border-radius: 999px;
+    padding: 4px;
+  }
+  .cabecera--con-buscador .identidad__logo {
+    width: 50px;
+    height: 50px;
+  }
+  .cabecera--con-buscador .identidad__texto { min-width: 0; }
+  .cabecera--con-buscador .identidad__superior {
+    font-size: .57rem;
+    line-height: 1.3;
+  }
+  .cabecera--con-buscador .identidad__nombre {
+    font-size: clamp(1.1rem, 5vw, 1.4rem);
+    line-height: 1.12;
+  }
+  .cabecera--con-buscador .identidad__descripcion {
+    font-size: .61rem;
+    line-height: 1.3;
+    margin-top: 3px;
+  }
+  .cabecera--con-buscador .buscador-municipal__lupa {
+    display: grid;
+    width: 34px;
+  }
+  .cabecera--con-buscador .buscador-municipal__campo {
+    min-width: 0;
+    width: 100%;
+    padding: 10px 6px;
+    font-size: .82rem;
+  }
+  .cabecera--con-buscador .buscador-municipal__campo::placeholder {
+    color: #fff;
+    opacity: .9;
+  }
+  .cabecera--con-buscador .buscador-municipal__boton {
+    min-height: 40px;
+    padding: 9px 15px;
+    border-radius: 999px;
+    font-size: .81rem;
+  }
+  .cabecera--con-buscador .buscador-municipal__resultados {
+    left: 0;
+    right: 0;
+    max-width: 100%;
+  }
+}
+@media (max-width: 350px) {
+  .cabecera--con-buscador .identidad__logo { width: 44px; height: 44px; }
+  .cabecera--con-buscador .identidad__nombre { font-size: 1.06rem; }
+  .cabecera--con-buscador .identidad__descripcion { font-size: .55rem; }
+}
+
+
+/* =============================================
+   ACCESIBILIDAD Y RENDIMIENTO · PORTADA
+   Los puntos conservan su apariencia, con una zona
+   de interacción ampliada para pantallas táctiles.
+============================================= */
+.pagina-inicio .portada-carrusel__indicador {
+  position: relative;
+  flex-shrink: 0;
+}
+.pagina-inicio .portada-carrusel__indicador::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 44px;
+  height: 44px;
+  transform: translate(-50%, -50%);
+}
+.pagina-inicio .portada-carrusel__indicador:focus-visible {
+  outline: 3px solid #ffffff;
+  outline-offset: 6px;
+}
+@media (max-width: 600px) {
+  .pagina-inicio .portada-carrusel__indicadores { gap: 24px; }
+}
+
+/* Legibilidad de enlaces y microtextos de Inicio */
+.pagina-inicio .interes-elemento__categoria,
+.pagina-inicio .interes-elemento__enlace {
+  color: #28645f;
+}
+
+/* Optimización Inicio: las imágenes de noticias descargan al acercarse
+   al viewport; mantiene el mismo recorte de cover del fondo anterior. */
+.tarjeta-noticia__imagen { position: relative; overflow: hidden; }
+.tarjeta-noticia__foto { display: block; width: 100%; height: 100%; position: absolute; inset: 0; object-fit: cover; object-position: center; }
