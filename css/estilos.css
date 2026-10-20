@@ -7450,3 +7450,153 @@ html.contraste-alto .herramienta[aria-pressed="true"] {
    al viewport; mantiene el mismo recorte de cover del fondo anterior. */
 .tarjeta-noticia__imagen { position: relative; overflow: hidden; }
 .tarjeta-noticia__foto { display: block; width: 100%; height: 100%; position: absolute; inset: 0; object-fit: cover; object-position: center; }
+
+
+/* ================================================================
+   PORTADAS INTERIORES — MISMA GRILLA Y JERARQUÍA QUE CONTACTO
+   Noticias, Empleo y OMIL, Seguridad y emergencias.
+   Se conservan las fotos y variaciones de color propias de cada página.
+================================================================ */
+.pagina-noticias .interior-hero,
+.pagina-empleo .interior-hero,
+.pagina-seguridad .interior-hero {
+  position: relative;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  min-height: 360px;
+  padding: 0;
+  background-color: #163f55;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: #fff;
+}
+.pagina-noticias .interior-hero {
+  background-image: linear-gradient(90deg,rgba(14,48,67,.90) 0%,rgba(20,64,82,.71) 50%,rgba(20,64,82,.34) 100%),url('../assets/imagenes/turismo/puchuncavi.jpg');
+}
+.pagina-empleo .interior-hero {
+  background-image: linear-gradient(90deg,rgba(17,62,73,.90) 0%,rgba(32,93,94,.70) 50%,rgba(22,63,77,.34) 100%),url('../assets/imagenes/noticias/noticia-5.jpg');
+}
+.pagina-seguridad .interior-hero {
+  background-image: linear-gradient(90deg,rgba(19,52,75,.90) 0%,rgba(26,76,95,.72) 50%,rgba(23,73,88,.34) 100%),url('../assets/imagenes/heroes/hero-contacto.jpg');
+}
+.pagina-noticias .interior-hero::before,
+.pagina-noticias .interior-hero::after,
+.pagina-empleo .interior-hero::before,
+.pagina-empleo .interior-hero::after,
+.pagina-seguridad .interior-hero::before,
+.pagina-seguridad .interior-hero::after { content: none; }
+.pagina-noticias .interior-hero > .contenedor,
+.pagina-empleo .interior-hero > .contenedor,
+.pagina-seguridad .interior-hero > .contenedor {
+  position: relative;
+  z-index: 1;
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 1200px;
+  margin-inline: auto;
+  padding-inline: 52px;
+}
+.pagina-noticias .interior-hero .migas,
+.pagina-empleo .interior-hero .migas,
+.pagina-seguridad .interior-hero .migas {
+  position: relative;
+  z-index: 1;
+  padding-top: 30px;
+  margin-bottom: 22px;
+}
+.pagina-noticias .interior-hero .migas,
+.pagina-noticias .interior-hero .migas a,
+.pagina-noticias .interior-hero .migas li,
+.pagina-empleo .interior-hero .migas,
+.pagina-empleo .interior-hero .migas a,
+.pagina-empleo .interior-hero .migas li,
+.pagina-seguridad .interior-hero .migas,
+.pagina-seguridad .interior-hero .migas a,
+.pagina-seguridad .interior-hero .migas li { color: rgba(255,255,255,.9); }
+.pagina-noticias .interior-hero__contenido,
+.pagina-empleo .interior-hero__contenido,
+.pagina-seguridad .interior-hero__contenido {
+  position: relative;
+  z-index: 1;
+  display: block;
+  padding: 38px 0 62px;
+}
+.pagina-noticias .interior-hero__texto,
+.pagina-empleo .interior-hero__texto,
+.pagina-seguridad .interior-hero__texto { width: 100%; max-width: 730px; }
+.pagina-noticias .interior-hero__texto .etiqueta,
+.pagina-empleo .interior-hero__texto .etiqueta,
+.pagina-seguridad .interior-hero__texto .etiqueta { color: #e6d6b8; margin-bottom: 15px; }
+.pagina-noticias .interior-hero h1,
+.pagina-empleo .interior-hero h1,
+.pagina-seguridad .interior-hero h1 {
+  margin: 0 0 20px;
+  color: #fff;
+  font-size: clamp(2.45rem, 4.4vw, 4rem);
+  font-weight: 800;
+  line-height: 1.12;
+  letter-spacing: -.035em;
+}
+.pagina-noticias .interior-hero h1 span { color: #e6d6b8; }
+.pagina-empleo .interior-hero h1 span { color: #d5e9d7; }
+.pagina-seguridad .interior-hero h1 span { color: #d6e8ee; }
+.pagina-noticias .interior-hero__texto > p:last-child,
+.pagina-empleo .interior-hero__texto > p:last-child,
+.pagina-seguridad .interior-hero__texto > p:last-child {
+  max-width: 650px;
+  margin: 0;
+  color: rgba(255,255,255,.94);
+  font-size: 1rem;
+  line-height: 1.7;
+}
+.pagina-noticias .interior-hero__detalle,
+.pagina-empleo .interior-hero__detalle,
+.pagina-seguridad .interior-hero__detalle { display: none; }
+.pagina-noticias .seccion--noticias {background:#f5eee4;}
+.pagina-noticias .noticias-destacada {background:#fff;}
+.pagina-noticias .tarjeta-noticia {border-color:#d7e0dc;}
+.pagina-noticias .tarjeta-noticia__imagen {height:220px;flex-shrink:0;}
+.pagina-noticias .noticia-principal > .tarjeta-noticia__imagen {height:auto;min-height:350px;}
+.pagina-noticias .tarjeta-noticia__foto {object-fit:cover;}
+.pagina-noticias .tarjeta-noticia__contenido {padding:26px;}
+.pagina-noticias .noticia-principal {border:1px solid #dbe5e1;}
+.pagina-empleo .seccion--introduccion {background:#eaf3f7;}
+.pagina-empleo .seccion--categorias {background:#f5eee4;}
+.pagina-empleo .seccion--tramites-destacados {background:#e5f0e9;}
+.pagina-seguridad .seccion--tramites-destacados {background:#eaf3f7;}
+.pagina-seguridad .seccion--categorias {background:#f5eee4;}
+.pagina-seguridad .seccion--introduccion {background:#e5f0e9;}
+.boton-mas-noticias {text-decoration:none;white-space:nowrap;align-self:center;}
+#noticias > .contenedor > .seccion__encabezado {display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap;}
+@media (max-width: 900px) {
+  .pagina-noticias .interior-hero,
+  .pagina-empleo .interior-hero,
+  .pagina-seguridad .interior-hero { min-height: 310px; }
+  .pagina-noticias .interior-hero > .contenedor,
+  .pagina-empleo .interior-hero > .contenedor,
+  .pagina-seguridad .interior-hero > .contenedor { padding-inline: 36px; }
+}
+@media (max-width: 620px) {
+  .pagina-noticias .interior-hero,
+  .pagina-empleo .interior-hero,
+  .pagina-seguridad .interior-hero { min-height: 280px; }
+  .pagina-noticias .interior-hero > .contenedor,
+  .pagina-empleo .interior-hero > .contenedor,
+  .pagina-seguridad .interior-hero > .contenedor { padding-inline: 22px; }
+  .pagina-noticias .interior-hero .migas,
+  .pagina-empleo .interior-hero .migas,
+  .pagina-seguridad .interior-hero .migas { padding-top: 20px; }
+  .pagina-noticias .interior-hero__contenido,
+  .pagina-empleo .interior-hero__contenido,
+  .pagina-seguridad .interior-hero__contenido { padding: 24px 0 42px; }
+  .pagina-noticias .interior-hero h1,
+  .pagina-empleo .interior-hero h1,
+  .pagina-seguridad .interior-hero h1 { font-size: clamp(2.15rem, 8vw, 3rem); }
+  .pagina-noticias .noticia-principal > .tarjeta-noticia__imagen { height:255px; min-height:255px; }
+}
+
+/* Etiqueta explícita para imágenes de archivo usadas en noticias */
+.pagina-noticias .tarjeta-noticia__imagen {position:relative;overflow:hidden;}
+.pagina-noticias .noticia-imagen-referencial {position:absolute;bottom:12px;left:12px;right:12px;width:max-content;max-width:calc(100% - 24px);font-size:12px;line-height:1.35;font-weight:600;color:#163f55;background:rgba(255,255,255,.94);padding:6px 9px;border-radius:6px;z-index:2;}
